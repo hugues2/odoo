@@ -15,7 +15,7 @@
       <field name="name"> school.form.view </field>
         <field name="model">school.profile</field>
         <field name="arch" type="xml">
-             <form edit="True">
+             <form edit="true">
                  <group>
                     <group>
                         <field name="name"/>
@@ -33,7 +33,7 @@
    </record>
 
     <menuitem id="school_root_menu" name="School" />
-    <menuitem id="school_sub_menu" parent="school_root_menu"/>
-    <menuitem id="school_profile_menu" action="action_school_profile" parent="school_sub_menu"/>
+    <menuitem id="school_sub_menu" name="School Submenu" parent="school_root_menu"/>
+    <menuitem id="school_profile_menu" name="School Profile" action="action_school_profile" parent="school_sub_menu"/>
 
 </odoo>
