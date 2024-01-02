@@ -15,7 +15,7 @@
       <field name="name"> school.form.view </field>
         <field name="model">school.profile</field>
         <field name="arch" type="xml">
-             <form edit="true">
+             <form edit="true" >
                  <group>
                     <group>
                         <field name="name"/>
