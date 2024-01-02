@@ -22,11 +22,11 @@
             </form>
         </field>
   </record>
-    <record id="action_school_profile" model="ir.actions.act_window">
-        <field name="name">School profile</field>
-        <field name="res.model">school.profile</field>
-        <field name="view_mode">tree,form</field>
-    </record>
+   <record id="action_school_profile" model="ir.actions.act_window">
+    <field name="name">School profile</field>
+    <field name="res_model">school.profile</field>
+    <field name="view_mode">tree,form</field>
+   </record>
 
     <menuitem id="school_root_menu" name="School" />
     <menuitem id="school_sub_menu" parent="school_root_menu"/>
