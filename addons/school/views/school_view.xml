@@ -15,11 +15,16 @@
       <field name="name"> school.form.view </field>
         <field name="model">school.profile</field>
         <field name="arch" type="xml">
-            <form>
-                <field name="name"/>
-                <field name="email"/>
-                <field name="phone"/>
-            </form>
+            <group>
+                <group>
+                    <form>
+                        <field name="name"/>
+                        <field name="email"/>
+                        <field name="phone"/>
+                    </form>
+                </group>
+            </group>
+
         </field>
   </record>
    <record id="action_school_profile" model="ir.actions.act_window">
