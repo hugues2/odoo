@@ -1,2 +1,2 @@
-
-
+id,name, model_id, group_id, perm_read, perm_write, prem_create, prem_unlik
+school_user, Base user, model_school_profile, base.group_user, 1, 1, 1, 1
