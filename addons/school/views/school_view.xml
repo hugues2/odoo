@@ -20,7 +20,7 @@
                     <form>
                         <field name="name"/>
                         <field name="email"/>
-                        <field name="phone"/>
+                        <field name="phone" />
                     </form>
                 </group>
             </group>
