@@ -7,5 +7,8 @@
     'description': "this is a school management system",
     'category':'',
     'website':'http://www.lalibre.be',
-    'depends':['base']
+    'depends':['base'],
+    'data': [
+        "views/school_view.xml"
+    ]
 }
