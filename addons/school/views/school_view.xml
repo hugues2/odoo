@@ -1,16 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
-    <record id="school_list_view" model="ir.ui.view">
-        <field name="name"> school.list.view </field>
-        <field name="model">school.profile</field>
-        <field name="arch" tyoe="xml">
-            <tree>
-                <field name="name"/>
-                <field name="email"/>
-                <field name="phone"/>
-            </tree>
-        </field>
-    </record>
-
 
 </odoo>
