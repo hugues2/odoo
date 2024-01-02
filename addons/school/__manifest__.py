@@ -9,7 +9,7 @@
     'website':'http://www.lalibre.be',
     'depends':['base'],
     'data': [
-        "security/ir.model.access.csv"
+        "security/ir.model.access.csv",
         "views/school_view.xml"
     ]
 }
