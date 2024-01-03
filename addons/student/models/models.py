@@ -14,5 +14,6 @@ class Student(models.Model):
         # Concatenate "Hello" with the value of the "name" field
         message = "Hello " + self.name
 
+
         # Display a prompt or print the message (you can customize this part based on your needs)
-        self.env['base'].warning(title="Greeting", message=message)
+        self.env['base'].display_warning(title="Greeting", message=message)
