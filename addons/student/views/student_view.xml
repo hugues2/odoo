@@ -14,19 +14,19 @@
     <record id="wb_student_form_view" model="ir.ui.view">
       <field name="name">wb.student.form.view</field>
        <field name="model">wb.student</field>
-      <field name="arch" type="xml" >
-        <group>
+      <field name="arch" type="xml">
+        <form>
           <group>
-            <form>
+            <group>
+
               <field name="name"/>
               <field name="name1"/>
               <field name="name2"/>
               <field name="name3"/>
-            </form>
+            </group>
+
           </group>
-
-        </group>
-
+        </form>
       </field>
     </record>
 
