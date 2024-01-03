@@ -9,4 +9,3 @@ class Student(models.Model):
     name=fields.Char("Name")
     name1=fields.Char("Name1")
     name2=fields.Char("Name2")
-    name3=fields.Char("Name3")
