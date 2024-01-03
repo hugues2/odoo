@@ -15,12 +15,18 @@
       <field name="name">wb.student.form.view</field>
        <field name="model">wb.student</field>
       <field name="arch" type="xml" >
-        <form>
-          <field name="name"/>
-          <field name="name1"/>
-          <field name="name2"/>
-          <field name="name3"/>
-        </form>
+        <grouo>
+          <group>
+            <form>
+              <field name="name"/>
+              <field name="name1"/>
+              <field name="name2"/>
+              <field name="name3"/>
+            </form>
+          </group>
+
+        </grouo>
+
       </field>
     </record>
 
