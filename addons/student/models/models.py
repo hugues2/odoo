@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from odoo import models, fields
+from odoo import models, fields, api
 
 
 class Student(models.Model):
@@ -9,3 +9,11 @@ class Student(models.Model):
     name=fields.Char("Name")
     name1=fields.Char("Name1")
     name2=fields.Char("Name2")
+
+    @api.multi
+    def action_greet(self):
+        # Concatenate "Hello" with the value of the "name" field
+        message = "Hello " + self.name
+
+        # Display a prompt or print the message (you can customize this part based on your needs)
+        self.env['base'].warning(title="Greeting", message=message)
