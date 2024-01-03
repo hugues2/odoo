@@ -10,7 +10,6 @@ class Student(models.Model):
     name1=fields.Char("Name1")
     name2=fields.Char("Name2")
 
-    @api.multi
     def action_greet(self):
         # Concatenate "Hello" with the value of the "name" field
         message = "Hello " + self.name
