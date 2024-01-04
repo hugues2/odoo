@@ -10,10 +10,7 @@ class Student(models.Model):
     name1=fields.Char("Name1")
     name2=fields.Char("Name2")
 
-    def action_greet(self):
-        # Concatenate "Hello" with the value of the "name" field
-        message = "Hello " + self.name
-
-
-        # Display a prompt or print the message (you can customize this part based on your needs)
-        self.env['base'].display_warning(title="Greeting", message=message)
+    def action_do_something(self):
+        for record in self:
+            record.name = "Something"
+        return True
