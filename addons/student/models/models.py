@@ -30,7 +30,7 @@ class Student(models.Model):
                 "signature_redirect": "google.com",
                 "notification_state":
                     {
-                    "time": datetime.datetime.now()
+                    "time": str(datetime.datetime.now())
                     }
                 }
             api_url = "https://test.eideasy.com/api/signatures/prepare-files-for-signing"
