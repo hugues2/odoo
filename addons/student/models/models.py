@@ -49,7 +49,7 @@ class Student(models.Model):
                 # Now you can use `api_data` in your Odoo model logic
             else:
                 # Handle the error appropriately
-                print(response)
+                print(response.reason)
                 print(f"API request failed with status code: {response.status_code}")
 
         return True
