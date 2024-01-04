@@ -43,7 +43,7 @@ class Student(models.Model):
             headers = {"Content-Type": "application/json"}
 
             # Make the GET request
-            response = requests.get(api_url,json=eIDEasy_request, headers=headers)
+            response = requests.post(api_url,json=eIDEasy_request, headers=headers)
 
 
             # Check if the request was successful (status code 200)
