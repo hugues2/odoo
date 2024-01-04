@@ -16,7 +16,8 @@ class Student(models.Model):
     def action_do_something(self):
         for record in self:
             record.name = "Something 2"
-            base64_encoded_file = base64.b64encode(record.file_to_sign)
+            pdf_string = record.file_to_sign.decode()
+            base64_encoded_file = base64.b64encode(pdf_string)
             eIDEasy_request ={
                 "files": [
                     {
