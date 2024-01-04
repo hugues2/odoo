@@ -30,13 +30,13 @@ class Student(models.Model):
                 "signature_redirect": "google.com",
                 "notification_state":
                     {
-                    "time": str(datetime.datetime.now())
+                    "time": datetime.datetime.now().strftime('%Y-%m-%dT%H:%M:%S%z')
                     }
                 }
 
 
             print("File name : " + record.filename)
-            print("Timestamp : " + str(datetime.datetime.now()))
+            print("Timestamp : " + datetime.datetime.now().strftime('%Y-%m-%dT%H:%M:%S%z'))
 
             api_url = "https://test.eideasy.com/api/signatures/prepare-files-for-signing"
 
