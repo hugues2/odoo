@@ -13,5 +13,5 @@ class Student(models.Model):
     def action_do_something(self):
         for record in self:
             record.name = "Something"
-        print "hello"
+        print("hello")
         return True
