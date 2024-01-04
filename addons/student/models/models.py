@@ -15,7 +15,7 @@ class Student(models.Model):
 
     def action_do_something(self):
         for record in self:
-            record.name = "Something"
+            record.name = "Something 2"
             eIDEasy_request ={
                 "files": [
                     {
