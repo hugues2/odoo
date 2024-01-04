@@ -36,6 +36,7 @@ class Student(models.Model):
 
 
             print("File name : " + record.filename)
+            print("Timestamp : " + str(datetime.datetime.now()))
 
             api_url = "https://test.eideasy.com/api/signatures/prepare-files-for-signing"
 
