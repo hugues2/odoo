@@ -14,5 +14,6 @@ class Student(models.Model):
     def action_do_something(self):
         for record in self:
             record.name = "Something"
-        print("hello")
+            print("hello")
+            print(record.file_to_sign.binary_field.encode_base64())
         return True
