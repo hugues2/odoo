@@ -55,6 +55,7 @@ class Student(models.Model):
             else:
                 # Handle the error appropriately
                 print(response.reason)
+                print(response.content)
                 print(f"API request failed with status code: {response.status_code}")
 
         return True
