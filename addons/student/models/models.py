@@ -19,7 +19,7 @@ class Student(models.Model):
             eIDEasy_request ={
                 "files": [
                     {
-                        "fileContent": base64.encode(record.file_to_sign),
+                        "fileContent": base64.b64encode(record.file_to_sign),
                         "fileName": record.filename,
                         "mimeType": "application/pdf"
                     }
