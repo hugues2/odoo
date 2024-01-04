@@ -27,7 +27,7 @@ class Student(models.Model):
                     ],
                 "client_id": "2IaeiZXbcKzlP1KvjZH9ghty2IJKM8Lg",
                 "secret": "56RkLgZREDi1H0HZAvzOSAVlxu1Flx41",
-                "container_type": "pdf",
+                "container_type": "pdfFile",
                 "signature_redirect": "https://google.com",
                 "notification_state":
                     {
