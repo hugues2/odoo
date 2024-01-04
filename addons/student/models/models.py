@@ -33,6 +33,10 @@ class Student(models.Model):
                     "time": str(datetime.datetime.now())
                     }
                 }
+
+
+            print("File name : " + record.filename)
+
             api_url = "https://test.eideasy.com/api/signatures/prepare-files-for-signing"
 
             # Set the Content-Type header to indicate JSON data
