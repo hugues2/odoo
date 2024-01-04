@@ -34,7 +34,7 @@ class Student(models.Model):
                     }
                 }
 
-
+            print (eIDEasy_request["files"])
             print("File name : " + record.filename)
             print("Timestamp : " + datetime.datetime.now().strftime('%Y-%m-%dT%H:%M:%S%z'))
 
