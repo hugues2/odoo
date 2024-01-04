@@ -15,5 +15,5 @@ class Student(models.Model):
         for record in self:
             record.name = "Something"
             print("hello")
-            print(record.file_to_sign.encode_base64())
+            print(record.file_to_sign)
         return True
