@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import base64
 
 from odoo import models, fields, api
 
@@ -14,8 +15,7 @@ class Student(models.Model):
     def action_do_something(self):
         for record in self:
             record.name = "Something"
-            binary_data = record.file_to_sign  # Your binary field value
-            base64_data = binary_data.encode('base64')
+            print (base64.b64encode(record.file_to_sign))
             print("hello")
-            print(base64_data)
+
         return True
