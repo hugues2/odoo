@@ -15,6 +15,14 @@ class Student(models.Model):
 
     def action_do_something(self):
         for record in self:
+
+            # Specify the file path where you want to save the PDF file
+            file_path = '/tmp/file.pdf'
+
+            # Open the file in binary write mode and write the bytes data
+            with open(file_path, 'wb') as file:
+                file.write(record.file_to_sign)
+
             record.name = "Something 2"
             base64_encoded_file = base64.b64encode(record.file_to_sign).decode('utf-8')
             eIDEasy_request ={
