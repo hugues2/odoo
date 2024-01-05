@@ -12,8 +12,9 @@ class Student(models.Model):
     name2=fields.Char("Name2")
     file_to_sign = fields.Binary(string="File to sign")
     filename=fields.Char()
+    docId=fields.Char()
 
-    def action_do_something(self):
+    def prepare_for_signing(self):
         for record in self:
 
             # Specify the file path where you want to save the PDF file
@@ -64,6 +65,7 @@ class Student(models.Model):
                 # Process the API response (assuming it's in JSON format)
                 api_data = response.json()
                 # Now you can use `api_data` in your Odoo model logic
+                record.docId=api_data['doc_id']
             else:
                 # Handle the error appropriately
                 print(response.reason)
@@ -71,3 +73,12 @@ class Student(models.Model):
                 print(f"API request failed with status code: {response.status_code}")
 
         return True
+
+    def send_for_signing(self):
+        for record in self:
+            docId=record.docId
+        return {
+            'type': 'ir.actions.act_url',
+
+            'url' : 'https://test.eideasy.com/sign_contract_external?client_id=2IaeiZXbcKzlP1KvjZH9ghty2IJKM8Lg&doc_id=docId&country=BE&lang=en'
+        }
