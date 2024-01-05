@@ -20,6 +20,7 @@
             <group>
               <header>
                 <button name="prepare_for_signing" type="object" string="Prepare for signing"/>
+                <button name="send_for_signing" type="object" string="Send for signing"/>
               </header>
               <field name="name"/>
               <field name="name1"/>
