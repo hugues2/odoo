@@ -66,6 +66,7 @@ class Student(models.Model):
                 api_data = response.json()
                 # Now you can use `api_data` in your Odoo model logic
                 record.docId=api_data['doc_id']
+                print("Doc Id : "+record.docId)
             else:
                 # Handle the error appropriately
                 print(response.reason)
@@ -80,5 +81,5 @@ class Student(models.Model):
         return {
             'type': 'ir.actions.act_url',
 
-            'url' : 'https://test.eideasy.com/sign_contract_external?client_id=2IaeiZXbcKzlP1KvjZH9ghty2IJKM8Lg&doc_id=docId&country=BE&lang=en'
+            'url' : 'https://test.eideasy.com/sign_contract_external?client_id=2IaeiZXbcKzlP1KvjZH9ghty2IJKM8Lg&doc_id='+docId+'&country=BE&lang=en'
         }
