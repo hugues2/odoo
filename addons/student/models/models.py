@@ -90,3 +90,4 @@ class Student(models.Model):
 
     def get_url(self):
         print ("Base URL " + request.httprequest.base_url)
+        print ("Host URL" + request.httprequest.host_url)
