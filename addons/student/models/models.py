@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import base64, datetime, requests
+import base64, datetime, requests, json
 
 from odoo import models, fields, api
 
@@ -16,7 +16,7 @@ class Student(models.Model):
     def action_do_something(self):
         for record in self:
             record.name = "Something 2"
-            base64_encoded_file = base64.standard_b64encode(record.file_to_sign).decode()
+            base64_encoded_file = base64.b64encode(record.file_to_sign).decode('utf-8')
             eIDEasy_request ={
                 "files": [
                     {
@@ -27,7 +27,7 @@ class Student(models.Model):
                     ],
                 "client_id": "2IaeiZXbcKzlP1KvjZH9ghty2IJKM8Lg",
                 "secret": "56RkLgZREDi1H0HZAvzOSAVlxu1Flx41",
-                "container_type": "pdfFile",
+                "container_type": "pdf",
                 "signature_redirect": "https://google.com",
                 "notification_state":
                     {
@@ -35,7 +35,9 @@ class Student(models.Model):
                     }
                 }
 
-            print (eIDEasy_request["files"])
+            json_payload = json.dumps(eIDEasy_request)
+
+            # print (eIDEasy_request["files"])
             print("File name : " + record.filename)
             print("Timestamp : " + datetime.datetime.now().strftime('%Y-%m-%dT%H:%M:%S%z'))
 
@@ -45,7 +47,7 @@ class Student(models.Model):
             headers = {"Content-Type": "application/json"}
 
             # Make the GET request
-            response = requests.post(api_url,json=eIDEasy_request, headers=headers)
+            response = requests.post(api_url,data=json_payload, headers=headers)
 
 
             # Check if the request was successful (status code 200)
