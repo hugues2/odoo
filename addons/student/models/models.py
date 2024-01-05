@@ -3,6 +3,10 @@ import base64, datetime, requests, json
 
 from odoo import models, fields, api
 
+from odoo.http import request
+from odoo import http
+
+
 
 class Student(models.Model):
     _name = "wb.student"
@@ -83,3 +87,6 @@ class Student(models.Model):
 
             'url' : 'https://test.eideasy.com/sign_contract_external?client_id=2IaeiZXbcKzlP1KvjZH9ghty2IJKM8Lg&doc_id='+docId+'&country=BE&lang=en'
         }
+
+    def get_url(self):
+        print ("Base URL " + request.httprequest.base_url)

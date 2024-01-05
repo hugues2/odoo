@@ -21,6 +21,7 @@
               <header>
                 <button name="prepare_for_signing" type="object" string="Prepare for signing"/>
                 <button name="send_for_signing" type="object" string="Send for signing"/>
+                <button name="get_url" type="object" string="Get url"/>
               </header>
               <field name="name"/>
               <field name="name1"/>
