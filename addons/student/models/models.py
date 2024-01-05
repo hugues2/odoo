@@ -20,11 +20,11 @@ class Student(models.Model):
             file_path = '/tmp/file.pdf'
 
             # Open the file in binary write mode and write the bytes data
-            with open(file_path, 'wb') as file:
-                file.write(record.file_to_sign)
+            #with open(file_path, 'wb') as file:
+            #    file.write(record.file_to_sign)
 
             record.name = "Something 2"
-            base64_encoded_file = base64.b64encode(record.file_to_sign).decode('utf-8')
+            base64_encoded_file = record.file_to_sign.decode('utf-8')
             eIDEasy_request ={
                 "files": [
                     {
