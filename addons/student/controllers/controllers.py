@@ -15,7 +15,7 @@ class Test(http.Controller):
             'res_model': 'wb.student',
             'view_type': 'form',
             'view_mode': 'tree,form',
-            'views': [(view_id_tree[0].id, 'tree'), (False, 'form')],
+            'views': [(wb_student_tree_view[0].id, 'tree'), (False, 'form')],
             'view_id ref="student.wb_student_tree_view"': '',
             'target': 'current',
             'domain': domain,
