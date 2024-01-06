@@ -9,4 +9,5 @@ class Test(http.Controller):
         print("Return from eID Easy")
         print("docId : " + kwargs.get('docId'))
         print("formId : " + kwargs.get('formId'))
-        return "Hello, world"
+
+        return http.request.render('wb_student_tree_view')
