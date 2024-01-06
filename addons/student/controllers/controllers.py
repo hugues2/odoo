@@ -9,6 +9,7 @@ class Test(http.Controller):
         print("Return from eID Easy")
         print("docId : " + kwargs.get('docId'))
         print("formId : " + kwargs.get('formId'))
+        print ("actionId :" + self.env.ref('student.wb_student_action', raise_if_not_found=False))
 
         return {
             'type': 'ir.actions.act_window',
