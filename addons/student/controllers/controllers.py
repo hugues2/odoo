@@ -10,4 +10,13 @@ class Test(http.Controller):
         print("docId : " + kwargs.get('docId'))
         print("formId : " + kwargs.get('formId'))
 
-        return http.request.render('wb_student_tree_view')
+        return {
+            'type': 'ir.actions.act_window',
+            'res_model': 'wb.student',
+            'view_type': 'form',
+            'view_mode': 'tree,form',
+            'views': [(view_id_tree[0].id, 'tree'), (False, 'form')],
+            'view_id ref="student.wb_student_tree_view"': '',
+            'target': 'current',
+            'domain': domain,
+        }
