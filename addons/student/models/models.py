@@ -41,7 +41,7 @@ class Student(models.Model):
                 "client_id": "2IaeiZXbcKzlP1KvjZH9ghty2IJKM8Lg",
                 "secret": "56RkLgZREDi1H0HZAvzOSAVlxu1Flx41",
                 "container_type": "pdf",
-                "signature_redirect": request.httprequest.host_url+'afterSigning'&'returnUrl='+http.request.httprequest.full_path,
+                "signature_redirect": request.httprequest.host_url+'afterSigning&returnUrl='+http.request.httprequest.full_path,
                 "notification_state":
                     {
                     "time": datetime.datetime.now().strftime('%Y-%m-%dT%H:%M:%S%z')
