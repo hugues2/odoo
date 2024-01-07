@@ -9,16 +9,8 @@ class Test(http.Controller):
         print("Return from eID Easy")
         print("docId : " + kwargs.get('docId'))
         print("formId : " + kwargs.get('formId'))
-        action = http.request.env.ref("student.wb_student_form_view")
-        print ("actionId :" + action)
+        print("return URL : " + kwargs.get('returnUrl'))
 
-        return {
-            'type': 'ir.actions.act_window',
-            'res_model': 'wb.student',
-            'view_type': 'form',
-            'view_mode': 'tree,form',
-            'views': [(wb_student_tree_view[0].id, 'tree'), (False, 'form')],
-            'view_id ref="student.wb_student_tree_view"': '',
-            'target': 'current',
-            'domain': domain,
-        }
+        returnUrl=kwargs.get('return')
+
+        return http.request.redirect(returnUrl)
