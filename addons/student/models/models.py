@@ -28,6 +28,12 @@ class Student(models.Model):
             #with open(file_path, 'wb') as file:
             #    file.write(record.file_to_sign)
 
+            print ("url"+request.httprequest.url)
+
+            print ("base_url"+request.httprequest.base_url)
+
+            print("host_url"+ request.httprequest.host_url)
+
             record.name = "Something 2"
             base64_encoded_file = record.file_to_sign.decode('utf-8')
             eIDEasy_request ={
