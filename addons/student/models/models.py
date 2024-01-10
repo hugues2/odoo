@@ -29,10 +29,13 @@ class Student(models.Model):
             #    file.write(record.file_to_sign)
 
             print ("url"+request.httprequest.url)
-
             print ("base_url"+request.httprequest.base_url)
-
             print("host_url"+ request.httprequest.host_url)
+            print("id" + record.id)
+            print("cids" +1)
+            print("menu_id"+)
+            print (request.__dict_)
+
 
             record.name = "Something 2"
             base64_encoded_file = record.file_to_sign.decode('utf-8')
