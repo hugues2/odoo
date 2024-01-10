@@ -33,7 +33,7 @@ class Student(models.Model):
             print("host_url"+ request.httprequest.host_url)
             print(str(record.id))
             print("cids"+str(1))
-            action_id = self.env.ref('module_name.action_id', raise_if_not_found = False)
+            action_id = self.env.ref('wb_student.action_id', raise_if_not_found = False)
             print (str(action_id))
 
 
