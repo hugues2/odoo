@@ -31,8 +31,8 @@ class Student(models.Model):
             print ("url"+request.httprequest.url)
             print ("base_url"+request.httprequest.base_url)
             print("host_url"+ request.httprequest.host_url)
-            print(record.id)
-            print("cids" +1)
+            print(str(record.id))
+            print("cids"+str(1))
             print (request.__dict_)
 
 
