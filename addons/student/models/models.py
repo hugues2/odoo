@@ -33,7 +33,7 @@ class Student(models.Model):
             print("host_url"+ request.httprequest.host_url)
             print(str(record.id))
             print("cids"+str(1))
-            print ("menu_id" + self.env.context.get('menu_id'))
+            print ("menu_id" + str(self.env.context.get('menu_id')))
             print (request.content_params)
 
 
