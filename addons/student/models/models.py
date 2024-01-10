@@ -33,7 +33,7 @@ class Student(models.Model):
             print("host_url"+ request.httprequest.host_url)
             print(str(record.id))
             print("cids"+str(1))
-            action_id = self.env.ref('wb.student.action_id', raise_if_not_found = False)
+            action_id = self.env.ref('student.wb_student_form_view').id
             print (str(action_id))
 
 
