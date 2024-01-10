@@ -34,6 +34,7 @@ class Student(models.Model):
             print(str(record.id))
             print("cids"+str(1))
             print ("menu_id" + self.env.context.get('menu_id'))
+            print (request.content_params)
 
 
 
