@@ -33,8 +33,8 @@ class Student(models.Model):
             print("host_url"+ request.httprequest.host_url)
             print(str(record.id))
             print("cids"+str(1))
-            menu_id = self.env.ref('wb_student_root_menu').id
-            print (str(menu_id))
+            # menu_id = self.env.ref('wb_student_root_menu').id
+            # print (str(menu_id))
 
             action_id=self.env.ref('wb_student_action').id
             print(str(action_id))
