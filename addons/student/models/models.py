@@ -33,7 +33,6 @@ class Student(models.Model):
             print("host_url"+ request.httprequest.host_url)
             print("id" + record.id)
             print("cids" +1)
-            print("menu_id"+)
             print (request.__dict_)
 
 
