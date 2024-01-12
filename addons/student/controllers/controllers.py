@@ -13,11 +13,10 @@ class Test(http.Controller):
         action_id = kwargs.get('action_id')
 
 
-
-        #print("docId : " + kwargs.get('docId'))
-        print("cids : " + kwargs.get('cids'))
-        print("menu_id : " + kwargs.get('menu_id'))
-        print("return URL : " + kwargs.get('returnUrl'))
+        print ("id" + id)
+        print ("cid"+cid)
+        print("menu_id"+menu_id)
+        print("action_id"+action_id)
 
         host_url=http.request.httprequest.host_url
 
