@@ -28,16 +28,13 @@ class Student(models.Model):
             #with open(file_path, 'wb') as file:
             #    file.write(record.file_to_sign)
 
-            print ("url"+request.httprequest.url)
-            print ("base_url"+request.httprequest.base_url)
             print("host_url"+ request.httprequest.host_url)
-            print(str(record.id))
-            print("cids"+str(1))
-            menu_id = self.env.ref('student.wb_student_root_menu').id
-            print (str(menu_id))
+            id=(str(record.id))
+            cids=str(1)
+            menu_id = str(self.env.ref('student.wb_student_root_menu').id)
 
-            action_id=self.env.ref('student.wb_student_action').id
-            print(str(action_id))
+            action_id=str(self.env.ref('student.wb_student_action').id)
+            print(action_id)
 
 
             record.name = "Something 2"
@@ -53,7 +50,7 @@ class Student(models.Model):
                 "client_id": "2IaeiZXbcKzlP1KvjZH9ghty2IJKM8Lg",
                 "secret": "56RkLgZREDi1H0HZAvzOSAVlxu1Flx41",
                 "container_type": "pdf",
-                "signature_redirect": request.httprequest.host_url+'afterSigning&returnUrl='+http.request.httprequest.full_path,
+                "signature_redirect": request.httprequest.host_url+'/afterSigning'+'?id='+id+'&action='+action_id+'&cids='+cids+'&menu_id='+menu_id,
                 "notification_state":
                     {
                     "time": datetime.datetime.now().strftime('%Y-%m-%dT%H:%M:%S%z')
