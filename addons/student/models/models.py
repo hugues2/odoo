@@ -50,7 +50,7 @@ class Student(models.Model):
                 "client_id": "2IaeiZXbcKzlP1KvjZH9ghty2IJKM8Lg",
                 "secret": "56RkLgZREDi1H0HZAvzOSAVlxu1Flx41",
                 "container_type": "pdf",
-                "signature_redirect": request.httprequest.host_url+'/afterSigning'+'?id='+id+'&action='+action_id+'&cids='+cids+'&menu_id='+menu_id,
+                "signature_redirect": request.httprequest.host_url+'afterSigning'+'?id='+id+'&action='+action_id+'&cids='+cids+'&menu_id='+menu_id,
                 "notification_state":
                     {
                     "time": datetime.datetime.now().strftime('%Y-%m-%dT%H:%M:%S%z')
