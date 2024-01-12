@@ -14,7 +14,7 @@ class Test(http.Controller):
 
 
 
-        print("docId : " + kwargs.get('docId'))
+        #print("docId : " + kwargs.get('docId'))
         print("cids : " + kwargs.get('cids'))
         print("menu_id : " + kwargs.get('menu_id'))
         print("return URL : " + kwargs.get('returnUrl'))
