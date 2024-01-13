@@ -37,14 +37,14 @@ class Test(http.Controller):
                     "docId" : docId
                 }
 
-        json_payload = json.dumps(eIDEasy_request)
-        print(json_payload)
+        #json_payload = json.dumps(eIDEasy_request)
+        #print(json_payload)
         api_url = "https://test.eideasy.com/api/signatures/download-signed-file"
 
         headers = {"Content-Type": "application/json"}
 
         # Make the GET request
-        response = requests.post(api_url, data=json_payload, headers=headers)
+        response = requests.post(api_url, data=eIDEasy_request, headers=headers)
         print(response.reason)
         print(response.content)
 
