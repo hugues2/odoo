@@ -38,6 +38,7 @@ class Test(http.Controller):
                 }
 
         json_payload = json.dumps(eIDEasy_request)
+        print(json_payload)
         api_url = "https://test.eideasy.com/api/signatures/download-signed-file"
 
         headers = {"Content-Type": "application/json"}
