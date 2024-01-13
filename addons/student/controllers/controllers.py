@@ -1,6 +1,6 @@
 # controllers/controller.py
 
-import requests
+import requests, json
 # -*- coding: utf-8 -*-
 from odoo import http
 from odoo.http import request
