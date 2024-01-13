@@ -44,7 +44,7 @@ class Test(http.Controller):
         headers = {"Content-Type": "application/json"}
 
         # Make the GET request
-        response = requests.post(api_url, data=json_payload, headers=headers)
+        response = requests.get(api_url, data=json_payload, headers=headers)
         print(response.reason)
         print(response.content)
 
