@@ -27,6 +27,7 @@
               <field name="name1"/>
               <field name="name2"/>
               <field name="file_to_sign" filename="filename"/>
+              <field name="signed_file" filename="signed_file"/>
               <field name="filename" invisible="1"/>
               <field name="docId" invisible="1"/>
             </group>

@@ -2,7 +2,7 @@
 
 
 # -*- coding: utf-8 -*-
-from odoo import http
+from odoo import http, request
 class Test(http.Controller):
     @http.route('/afterSigning', auth='public')
     def index(self, **kwargs):
@@ -11,6 +11,10 @@ class Test(http.Controller):
         cids = kwargs.get('cids')
         menu_id = kwargs.get('menu_id')
         action_id = kwargs.get('action_id')
+
+        record = request.env['wb.student'].browse(id)
+
+        record.write({'name1': 'UPDATED'})
 
 
         print ("id" + id)

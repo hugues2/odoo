@@ -15,6 +15,7 @@ class Student(models.Model):
     name1=fields.Char("Name1")
     name2=fields.Char("Name2")
     file_to_sign = fields.Binary(string="File to sign")
+    signed_file = fields.Binary(string="Signed file")
     filename=fields.Char()
     docId=fields.Char()
 
