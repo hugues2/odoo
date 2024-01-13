@@ -4,6 +4,7 @@ import base64, datetime, requests, json
 from odoo import models, fields, api
 
 from odoo.http import request
+from addons.student.constants import SECRET, CLIENT_ID
 from odoo import http
 
 
@@ -48,8 +49,8 @@ class Student(models.Model):
                         "mimeType": "application/pdf"
                     }
                     ],
-                "client_id": "2IaeiZXbcKzlP1KvjZH9ghty2IJKM8Lg",
-                "secret": "56RkLgZREDi1H0HZAvzOSAVlxu1Flx41",
+                "client_id": CLIENT_ID,
+                "secret": SECRET,
                 "container_type": "pdf",
                 "signature_redirect": request.httprequest.host_url+'afterSigning'+'?id='+id+'&action_id='+action_id+'&cids='+cids+'&menu_id='+menu_id,
                 "notification_state":
