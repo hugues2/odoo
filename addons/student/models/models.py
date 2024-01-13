@@ -81,7 +81,7 @@ class Student(models.Model):
                 api_data = response.json()
                 # Now you can use `api_data` in your Odoo model logic
                 record.docId=api_data['doc_id']
-                record.write()
+                #record.write()
                 print("Doc Id : "+record.docId)
             else:
                 # Handle the error appropriately
