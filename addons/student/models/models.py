@@ -31,7 +31,7 @@ class Student(models.Model):
             #    file.write(record.file_to_sign)
 
             print("host_url"+ request.httprequest.host_url)
-            id=(str(self.))
+            id=(str(record.id))
             cids=str(1)
             menu_id = str(self.env.ref('student.wb_student_root_menu').id)
 
