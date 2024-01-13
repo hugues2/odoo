@@ -2,7 +2,8 @@
 
 
 # -*- coding: utf-8 -*-
-from odoo import http, request
+from odoo import http
+from odoo.http import request
 class Test(http.Controller):
     @http.route('/afterSigning', auth='public')
     def index(self, **kwargs):
