@@ -6,6 +6,13 @@ from odoo import http
 from odoo.http import request
 from ..constants import CLIENT_ID, SECRET
 class Test(http.Controller):
+
+    @http.route('/test', auth='public')
+    def index(self, **kwargs):
+        record=request.env['wb.student'].sudo().search([('id', '=', 5)])
+        docId=record['docId']
+        print(docId)
+
     @http.route('/afterSigning', auth='public')
     def index(self, **kwargs):
         print("Return from eID Easy")
@@ -14,9 +21,9 @@ class Test(http.Controller):
         menu_id = kwargs.get('menu_id')
         action_id = kwargs.get('action_id')
 
-        request.env['wb.student'].sudo().search([('id', '=', int(id))])
+        record=request.env['wb.student'].sudo().search([('id', '=', int(id))])
 
-        record = request.env['wb.student'].browse(id)
+        #record = request.env['wb.student'].browse(id)
 
         docId=record['docId']
 
