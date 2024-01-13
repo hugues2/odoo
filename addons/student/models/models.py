@@ -4,7 +4,7 @@ import base64, datetime, requests, json
 from odoo import models, fields, api
 
 from odoo.http import request
-from addons.student.constants import SECRET, CLIENT_ID
+from ..constants import SECRET, CLIENT_ID
 from odoo import http
 
 
