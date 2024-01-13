@@ -4,7 +4,7 @@ import requests
 # -*- coding: utf-8 -*-
 from odoo import http
 from odoo.http import request
-from addons.student.constants import CLIENT_ID, SECRET
+from ..constants import CLIENT_ID, SECRET
 class Test(http.Controller):
     @http.route('/afterSigning', auth='public')
     def index(self, **kwargs):
