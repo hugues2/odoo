@@ -14,7 +14,7 @@ class Test(http.Controller):
         menu_id = kwargs.get('menu_id')
         action_id = kwargs.get('action_id')
 
-        request.env['wb.student'].search([('id', '=', int(id))])
+        request.env['wb.student'].sudo().search([('id', '=', int(id))])
 
         record = request.env['wb.student'].browse(id)
 
