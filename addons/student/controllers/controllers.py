@@ -23,6 +23,8 @@ class Test(http.Controller):
 
         record=request.env['wb.student'].sudo().search([('id', '=', int(id))])
 
+        print(record)
+
         #record = request.env['wb.student'].browse(id)
 
         docId=record['docId']
