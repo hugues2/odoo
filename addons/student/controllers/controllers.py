@@ -34,7 +34,7 @@ class Test(http.Controller):
         eIDEasy_request = {
                     "secret": SECRET,
                     "client_id": CLIENT_ID,
-                    "docId": docId
+                    "doc_id": docId
                 }
 
         json_payload = json.dumps(eIDEasy_request)
