@@ -52,7 +52,7 @@ class Test(http.Controller):
         api_data = response.json()
 
         print ("response status" + api_data['status'])
-        record['signed_file']=api_data['signed_file_content']
+        record['signed_file']=api_data['signed_file_contents']
 
 
 
