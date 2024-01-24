@@ -24,8 +24,8 @@
                 <button name="get_url" type="object" string="Get url"/>
               </header>
               <field name="name" invisible="1" />
-              <field name="name1"invisible="1"/>
-              <field name="name2"invisible="1"/>
+              <field name="name1" invisible="1"/>
+              <field name="name2" invisible="1"/>
               <field name="file_to_sign" filename="filename"/>
               <field name="signed_file" filename="signed_file"/>
               <field name="filename" invisible="1"/>
