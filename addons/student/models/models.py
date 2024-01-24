@@ -39,7 +39,7 @@ class Student(models.Model):
             print(action_id)
 
 
-            record.name = "Something 2"
+            record.name = "Eid doc Id received"
             base64_encoded_file = record.file_to_sign.decode('utf-8')
             eIDEasy_request ={
                 "files": [
