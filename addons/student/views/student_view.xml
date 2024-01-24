@@ -19,13 +19,13 @@
           <group>
             <group>
               <header>
-                <button name="prepare_for_signing" type="object" string="Prepare for signing"/>
-                <button name="send_for_signing" type="object" string="Send for signing"/>
+                <button name="prepare_for_signing" type="object" string="Step 1 - Prepare for signing"/>
+                <button name="send_for_signing" type="object" string="Step 2 - Send for signing"/>
                 <button name="get_url" type="object" string="Get url"/>
               </header>
-              <field name="name"/>
-              <field name="name1"/>
-              <field name="name2"/>
+              <field name="name" invisible="1" />
+              <field name="name1"invisible="1"/>
+              <field name="name2"invisible="1"/>
               <field name="file_to_sign" filename="filename"/>
               <field name="signed_file" filename="signed_file"/>
               <field name="filename" invisible="1"/>
@@ -37,14 +37,14 @@
     </record>
 
     <record id="wb_student_action" model="ir.actions.act_window">
-      <field name="name">Student</field>
+      <field name="name">Secure Sign</field>
       <field name="res_model">wb.student</field>
       <field name="view_mode">tree,form</field>
     </record>
 
 
     <menuitem id="wb_student_root_menu"
-              name="Student"
+              name="Secure Sign"
     />
     <menuitem id="wb_student_sub_root_menu"
               name="Weblearns"

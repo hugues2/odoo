@@ -2,13 +2,13 @@
 {
     'name': "student",
 
-    'summary': "Short (1 phrase/line) summary of the module's purpose",
+    'summary': "Sign securely all your documents",
 
     'description': """
 Long description of module's purpose
     """,
 
-    'author': "My Company",
+    'author': "Lajuar",
     'website': "https://www.yourcompany.com",
 
     # Categories can be used to filter modules in modules listing
