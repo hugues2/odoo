@@ -18,29 +18,31 @@
 # Ramiz Deniz Öner <deniz@denizoner.com>, 2023
 # Ahmet Altinisik <aaltinisik@altinkaya.com.tr>, 2023
 # Gökhan Erdoğdu <gokhan.erdogdu@mechsoft.com.tr>, 2023
-# Nadir Gazioglu <nadirgazioglu@gmail.com>, 2023
 # Levent Karakaş <levent@mektup.at>, 2023
 # abc Def <hdogan1974@gmail.com>, 2023
 # Tugay Hatıl <tugayh@projetgrup.com>, 2023
 # İmat Yahya Çataklı <yahyacatakli@gmail.com>, 2023
 # Özlem Atalay <ozlema@eskayazilim.com.tr>, 2023
-# Ediz Duman <neps1192@gmail.com>, 2023
-# Martin Trigaux, 2023
 # Ozlem Cikrikci <ozlemc@eskayazilim.com.tr>, 2023
-# Umur Akın <umura@projetgrup.com>, 2023
 # Ayhan KIZILTAN <akiziltan76@hotmail.com>, 2023
 # Melih Melik Sonmez, 2023
 # İmat Yahya Çataklı <yahya.catakli@soluto.com.tr>, 2023
-# Ertuğrul Güreş <ertugrulg@projetgrup.com>, 2023
 # Murat Kaplan <muratk@projetgrup.com>, 2023
+# Nadir Gazioglu <nadirgazioglu@gmail.com>, 2024
+# Umur Akın <umura@projetgrup.com>, 2024
+# sinem cil, 2024
+# Martin Trigaux, 2024
+# Ertuğrul Güreş <ertugrulg@projetgrup.com>, 2024
+# Ediz Duman <neps1192@gmail.com>, 2024
+# Ayhan Kızıltan, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 17.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-26 21:54+0000\n"
+"POT-Creation-Date: 2024-01-29 10:44+0000\n"
 "PO-Revision-Date: 2023-10-26 23:09+0000\n"
-"Last-Translator: Murat Kaplan <muratk@projetgrup.com>, 2023\n"
+"Last-Translator: Ayhan Kızıltan, 2024\n"
 "Language-Team: Turkish (https://app.transifex.com/odoo/teams/41243/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -131,7 +133,7 @@ msgstr "%(amount)s vadesi dolmuş %(date)s"
 #: code:addons/account/models/account_move.py:0
 #, python-format
 msgid "%(partner_name)s has reached its credit limit of: %(credit_limit)s"
-msgstr ""
+msgstr "%(partner_name)s kredi limitine ulaştı: %(credit_limit)s"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.account_automatic_entry_wizard_form
@@ -212,14 +214,14 @@ msgstr "Vergiler Dahil %s"
 #: code:addons/account/models/account_bank_statement.py:0
 #, python-format
 msgid "%s Statement %s"
-msgstr ""
+msgstr "%s Hesap özeti%s"
 
 #. module: account
 #. odoo-python
 #: code:addons/account/models/account_move_line.py:0
 #, python-format
 msgid "%s installment #%s"
-msgstr ""
+msgstr "%s Taksit#%s"
 
 #. module: account
 #. odoo-python
@@ -277,7 +279,14 @@ msgstr "(object._get_report_base_filename())"
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.view_partner_bank_form_inherit_account
 msgid ").<br/>"
-msgstr ""
+msgstr ").<br/>"
+
+#. module: account
+#. odoo-python
+#: code:addons/account/models/account_tax.py:0
+#, python-format
+msgid "- %(name)s in %(company)s"
+msgstr "- %(name)s ve %(company)s"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.res_config_settings_view_form
@@ -297,7 +306,7 @@ msgstr ""
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.report_invoice_document
 msgid "- Installment of"
-msgstr ""
+msgstr "- Taksitlendirme"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.res_config_settings_view_form
@@ -338,37 +347,37 @@ msgstr "... (%s diğer)"
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.tax_groups_totals
 msgid "1.05"
-msgstr ""
+msgstr "1.05"
 
 #. module: account
 #: model:account.payment.term,name:account.account_payment_term_30_days_end_month_the_10
 msgid "10 Days after End of Next Month"
-msgstr ""
+msgstr "Sonraki Ayın Sonundan 10 gün sonra"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.report_statement
 msgid "100.0"
-msgstr ""
+msgstr "100.0"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.report_payment_receipt_document
 msgid "100.00 USD"
-msgstr ""
+msgstr "100.00 USD"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.report_statement
 msgid "1000.0"
-msgstr ""
+msgstr "1000.0"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.report_invoice_document
 msgid "11.05"
-msgstr ""
+msgstr "11.05"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.report_statement
 msgid "12345"
-msgstr ""
+msgstr "12345"
 
 #. module: account
 #: model:account.payment.term,name:account.account_payment_term_15days
@@ -379,12 +388,12 @@ msgstr "15 Gün"
 #: model:account.tax,name:account.1_purchase_tax_template
 #: model:account.tax,name:account.1_sale_tax_template
 msgid "15%"
-msgstr ""
+msgstr "15%"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.report_statement
 msgid "1500.0"
-msgstr ""
+msgstr "1500.0"
 
 #. module: account
 #: model:account.payment.term,name:account.account_payment_term_30days_early_discount
@@ -394,32 +403,32 @@ msgstr "2/7 Net 30"
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.report_invoice_document
 msgid "20.00"
-msgstr ""
+msgstr "20.00"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.report_invoice_document
 msgid "2021-09-19"
-msgstr ""
+msgstr "2021-09-19"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.report_payment_receipt_document
 msgid "2023-01-01"
-msgstr ""
+msgstr "2023-01-01"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.report_payment_receipt_document
 msgid "2023-01-05"
-msgstr ""
+msgstr "2023-01-05"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.report_statement
 msgid "2023-08-11"
-msgstr ""
+msgstr "2023-08-11"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.report_statement
 msgid "2023-08-15"
-msgstr ""
+msgstr "2023-08-15"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.report_statement
@@ -520,7 +529,7 @@ msgstr ""
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.report_payment_receipt_document
 msgid "50.00 EUR"
-msgstr ""
+msgstr "50.00 EUR"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.report_statement
@@ -540,6 +549,8 @@ msgid ""
 "<b>%(count)s#</b> Installment of <b>%(amount)s</b> due on <b style='color: "
 "#704A66;'>%(date)s</b>"
 msgstr ""
+"<b>%(count)s#</b> taksit tutarı olan <b>%(amount)s</b> ödeme tarihi <b "
+"style='color: #704A66;'>%(date)s</b>"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.view_account_payment_register_form
@@ -648,6 +659,51 @@ msgid ""
 "</div>\n"
 "            "
 msgstr ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"    <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"        Sayın\n"
+"        <t t-if=\"object.partner_id.parent_id\">\n"
+"            <t t-out=\"object.partner_id.name or ''\">Brandon Freeman</t> (<t t-out=\"object.partner_id.parent_id.name or ''\">Azure Interior</t>),\n"
+"        </t>\n"
+"        <t t-else=\"\">\n"
+"            <t t-out=\"object.partner_id.name or ''\">Brandon Freeman</t>,\n"
+"        </t>\n"
+"        <br><br>\n"
+"        Here is your\n"
+"        <t t-if=\"object.name\">\n"
+"            invoice <span style=\"font-weight:bold;\" t-out=\"object.name or ''\">INV/2021/05/0005</span>\n"
+"        </t>\n"
+"        <t t-else=\"\">\n"
+"            invoice\n"
+"        </t>\n"
+"        <t t-if=\"object.invoice_origin\">\n"
+"            (with reference: <t t-out=\"object.invoice_origin or ''\">SUB003</t>)\n"
+"        </t>\n"
+"        amounting in <span style=\"font-weight:bold;\" t-out=\"format_amount(object.amount_total, object.currency_id) or ''\">$ 143,750.00</span>\n"
+"        from <t t-out=\"object.company_id.name or ''\">YourCompany</t>.\n"
+"        <t t-if=\"object.payment_state in ('paid', 'in_payment')\">\n"
+"            This invoice is already paid.\n"
+"        </t>\n"
+"        <t t-else=\"\">\n"
+"            Please remit payment at your earliest convenience.\n"
+"            <t t-if=\"object.payment_reference\">\n"
+"                <br><br>\n"
+"                Please use the following communication for your payment: <span style=\"font-weight:bold;\" t-out=\"object.payment_reference or ''\">INV/2021/05/0005</span>.\n"
+"            </t>\n"
+"        </t>\n"
+"        <t t-if=\"hasattr(object, 'timesheet_count') and object.timesheet_count\">\n"
+"            <br><br>\n"
+"            PS: you can review your timesheets <a t-att-href=\"'my/timesheets?search_in=invoice&amp;search=%s' % object.name\">from the portal.</a>\n"
+"        </t>\n"
+"        <br><br>\n"
+"        Do not hesitate to contact us if you have any questions.\n"
+"        <t t-if=\"not is_html_empty(object.invoice_user_id.signature)\">\n"
+"            <br><br>\n"
+"            <t t-out=\"object.invoice_user_id.signature or ''\">--<br>Mitchell Admin</t>\n"
+"        </t>\n"
+"    </p>\n"
+"</div>\n"
+"            "
 
 #. module: account
 #: model:mail.template,body_html:account.mail_template_data_payment_receipt
@@ -699,20 +755,13 @@ msgid "<i class=\"fa fa-download\"/> Download"
 msgstr "<i class=\"fa fa-download\"/> İndir"
 
 #. module: account
-#: model_terms:ir.ui.view,arch_db:account.account_journal_dashboard_kanban_view
-msgid ""
-"<i class=\"fa fa-exclamation-triangle\"/>\n"
-"                            Gaps in the sequence"
-msgstr ""
-"<i class=\"fa fa-exclamation-triangle\"/>\n"
-"                            Sıralamadaki boşluklar"
-
-#. module: account
 #: model_terms:ir.ui.view,arch_db:account.portal_my_invoices
 msgid ""
 "<i class=\"fa fa-fw fa-check\" aria-label=\"Paid\" title=\"Paid\" role=\"img\"/>\n"
 "                                    <span class=\"d-none d-md-inline\"> Paid</span>"
 msgstr ""
+"<i class=\"fa fa-fw fa-check\" aria-label=\"Paid\" title=\"Paid\" role=\"img\"/>\n"
+"                                    <span class=\"d-none d-md-inline\"> Ödendı</span>"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.portal_my_invoices
@@ -720,6 +769,8 @@ msgid ""
 "<i class=\"fa fa-fw fa-check\" aria-label=\"Reversed\" title=\"Reversed\" role=\"img\"/>\n"
 "                                    <span class=\"d-none d-md-inline\"> Reversed</span>"
 msgstr ""
+"<i class=\"fa fa-fw fa-check\" aria-label=\"Reversed\" title=\"Reversed\" role=\"img\"/>\n"
+"                                    <span class=\"d-none d-md-inline\"> Geri çevrilmiş</span>"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.portal_my_invoices
@@ -727,6 +778,8 @@ msgid ""
 "<i class=\"fa fa-fw fa-clock-o\" aria-label=\"Opened\" title=\"Opened\" role=\"img\"/>\n"
 "                                    <span class=\"d-none d-md-inline\"> Waiting for Payment</span>"
 msgstr ""
+"<i class=\"fa fa-fw fa-clock-o\" aria-label=\"Opened\" title=\"Opened\" role=\"img\"/>\n"
+"                                    <span class=\"d-none d-md-inline\"> Ödeme için Bekliyor</span>"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.portal_invoice_page
@@ -744,7 +797,7 @@ msgstr ""
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.account_terms_conditions_setting_banner
 msgid "<i class=\"oi oi-arrow-right me-1\"/>Back to settings"
-msgstr ""
+msgstr "<i class=\"oi oi-arrow-right me-1\"/>Ayarlara dön"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.res_config_settings_view_form
@@ -752,6 +805,8 @@ msgid ""
 "<i class=\"oi oi-arrow-right\"/>\n"
 "                                                Preview"
 msgstr ""
+"<i class=\"oi oi-arrow-right\"/>\n"
+"                                                Önizleme"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.view_account_journal_form
@@ -759,12 +814,16 @@ msgid ""
 "<i class=\"oi oi-fw o_button_icon oi-arrow-right\"/> Choose or Configure "
 "Email Servers"
 msgstr ""
+"<i class=\"oi oi-fw o_button_icon oi-arrow-right\"/> E-posta Sunucularını "
+"Seçin veya Yapılandırın"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.account_tour_upload_bill_email_confirm
 msgid ""
 "<i class=\"oi oi-fw o_button_icon oi-arrow-right\"/> Configure Email Servers"
 msgstr ""
+"<i class=\"oi oi-fw o_button_icon oi-arrow-right\"/> E-posta Sunucusunu "
+"Ayarlama"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.portal_my_invoices
@@ -774,6 +833,10 @@ msgid ""
 "                                    <span class=\"d-none d-md-inline\"> Cancelled</span>\n"
 "                                </span>"
 msgstr ""
+"<span class=\"badge rounded-pill text-bg-warning\">\n"
+"                                    <i class=\"fa fa-fw fa-remove\" aria-label=\"Cancelled\" title=\"Cancelled\" role=\"img\"/>\n"
+"                                    <span class=\"d-none d-md-inline\"> İptal edildi</span>\n"
+"                                </span>"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.view_partner_bank_form_inherit_account
@@ -783,6 +846,10 @@ msgid ""
 "                            <span invisible=\"not allow_out_payment\" class=\"text-success\">Trusted</span>\n"
 "                        </span>"
 msgstr ""
+"<span class=\"d-flex gap-2 w-100\">\n"
+"                            <span invisible=\"allow_out_payment\" class=\"text-muted\">Güvenilmez</span>\n"
+"                            <span invisible=\"not allow_out_payment\" class=\"text-success\">Güvenilir</span>\n"
+"                        </span>"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.res_config_settings_view_form
@@ -799,6 +866,8 @@ msgid ""
 "<span class=\"o_form_label mx-3 oe_edit_only\" invisible=\"state != 'draft' "
 "or invoice_payment_term_id\"> or </span>"
 msgstr ""
+"<span class=\"o_form_label mx-3 oe_edit_only\" invisible=\"state != 'draft' "
+"or invoice_payment_term_id\"> veya </span>"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.view_account_reconcile_model_line_form
@@ -820,6 +889,8 @@ msgid ""
 "<span class=\"o_form_label\" invisible=\"match_amount != "
 "'between'\">and</span>"
 msgstr ""
+"<span class=\"o_form_label\" invisible=\"match_amount != "
+"'between'\">ve</span>"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.validate_account_move_view
@@ -856,12 +927,12 @@ msgstr ""
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.view_move_form
 msgid "<span class=\"o_stat_text\">1 Payment</span>"
-msgstr ""
+msgstr "<span class=\"o_stat_text\">1 Ödeme</span>"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.view_move_form
 msgid "<span class=\"o_stat_text\">Cash Basis Entries</span>"
-msgstr ""
+msgstr "<span class=\"o_stat_text\">Nakit Temelli Girişler</span>"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.partner_view_buttons
@@ -871,7 +942,7 @@ msgstr "<span class=\"o_stat_text\">Faturalandı</span>"
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.view_account_journal_form
 msgid "<span class=\"o_stat_text\">Journal Entries</span>"
-msgstr ""
+msgstr "<span class=\"o_stat_text\">Yevmiye Kaydı</span>"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.view_account_payment_form
@@ -881,12 +952,12 @@ msgstr "<span class=\"o_stat_text\">Yevmiye Kaydı</span>"
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.view_move_form
 msgid "<span class=\"o_stat_text\">Reconciled Items</span>"
-msgstr ""
+msgstr "<span class=\"o_stat_text\">Uzlaşılmış Öğeler</span>"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.view_account_payment_form
 msgid "<span class=\"o_stat_text\">Transaction</span>"
-msgstr ""
+msgstr "<span class=\"o_stat_text\">İşlem</span>"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.view_move_form
@@ -899,7 +970,7 @@ msgstr ""
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.view_partner_bank_form_inherit_account
 msgid "<span class=\"text-danger\">High risk</span>:"
-msgstr ""
+msgstr "<span class=\"text-danger\">Yüksek risk</span>:"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.setup_bank_account_wizard
@@ -952,17 +1023,18 @@ msgstr "<span class=\"text-nowrap\">2,350.00</span>"
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.view_partner_bank_form_inherit_account
 msgid "<span class=\"text-warning\">Medium risk</span>: Iban"
-msgstr ""
+msgstr "<span class=\"text-warning\">Orta risk</span>: Iban"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.view_payment_term_form
 msgid "<span invisible=\"not early_discount\"> % if paid within </span>"
 msgstr ""
+" <span invisible=\"not early_discount\"> eğer şu şartta ödenirse % </span>"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.view_payment_term_form
 msgid "<span invisible=\"not early_discount\"> days</span>"
-msgstr ""
+msgstr "<span invisible=\"not early_discount\"> /</span>"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.view_account_payment_form
@@ -978,6 +1050,8 @@ msgid ""
 "<span invisible=\"reconciled_invoices_type != 'invoice'\"> Invoice</span>\n"
 "                                        <span invisible=\"reconciled_invoices_type == 'invoice'\"> Credit Note</span>"
 msgstr ""
+"<span invisible=\"reconciled_invoices_type != 'invoice'\"> Fatura</span>\n"
+"                                        <span invisible=\"reconciled_invoices_type == 'invoice'\"> Alacak Dekontu</span>"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.view_account_reconcile_model_form
@@ -985,6 +1059,8 @@ msgid ""
 "<span invisible=\"rule_type != 'invoice_matching'\" class=\"o_form_label "
 "o_td_label\">Match Invoice/bill with</span>"
 msgstr ""
+"<span invisible=\"rule_type != 'invoice_matching'\" class=\"o_form_label "
+"o_td_label\">Fatura/fiş eşleştir</span>"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.view_move_form
@@ -992,16 +1068,13 @@ msgid ""
 "<span invisible=\"state != 'draft' or name != '/' or "
 "quick_edit_mode\">Draft</span>"
 msgstr ""
+"<span invisible=\"state != 'draft' or name != '/' or "
+"quick_edit_mode\">Taslak</span>"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.account_journal_dashboard_kanban_view
 msgid "<span role=\"separator\">New</span>"
 msgstr "<span role=\"separator\">Yeni</span>"
-
-#. module: account
-#: model_terms:ir.ui.view,arch_db:account.account_journal_dashboard_kanban_view
-msgid "<span role=\"separator\">Reconciliation</span>"
-msgstr "<span role=\"separator\">Denkleştirme</span>"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.account_journal_dashboard_kanban_view
@@ -1459,6 +1532,13 @@ msgid "A tax fiscal position could be defined only one time on same taxes."
 msgstr ""
 "Bir vergi mali koşulu, aynı vergiler üzerinden yalnızca bir kez "
 "tanımlanabilir."
+
+#. module: account
+#. odoo-python
+#: code:addons/account/models/account_move_line.py:0
+#, python-format
+msgid "A temporary number can not be used in a real matching"
+msgstr ""
 
 #. module: account
 #: model:res.groups,name:account.group_warning_account
@@ -2216,6 +2296,7 @@ msgstr "Bilgilendirilecek kişi ekle..."
 msgid ""
 "Add your terms & conditions at the bottom of invoices/orders/quotations"
 msgstr ""
+"Şartlar  & koşullarınızı faturaların/siparişlerin/tekliflerin altına ekleyin"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.account_automatic_entry_wizard_form
@@ -2273,15 +2354,6 @@ msgstr "Sonraki Vergi Tabanını Etkiler"
 #, python-format
 msgid "After"
 msgstr "Sonra"
-
-#. module: account
-#. odoo-javascript
-#: code:addons/account/static/src/js/tours/account.js:0
-#, python-format
-msgid ""
-"After the data extraction, check and validate the bill. If no vendor has "
-"been found, add one before validating."
-msgstr ""
 
 #. module: account
 #: model:ir.model.fields.selection,name:account.selection__account_report_expression__engine__aggregation
@@ -2521,7 +2593,7 @@ msgstr "Ödenecek Tutar (döviz)"
 #: model:ir.model.fields,field_description:account.field_account_move__amount_total_words
 #: model:ir.model.fields,field_description:account.field_account_payment__amount_total_words
 msgid "Amount total in words"
-msgstr ""
+msgstr "Yazı ile toplam tutar"
 
 #. module: account
 #. odoo-javascript
@@ -2535,13 +2607,13 @@ msgstr "Tutar:"
 #: model:ir.ui.menu,name:account.menu_action_open_payment_items
 #: model:ir.ui.menu,name:account.menu_action_open_sale_payment_items
 msgid "Amounts to Settle"
-msgstr ""
+msgstr "Ödenecek Tutarlar"
 
 #. module: account
 #: model_terms:ir.actions.act_window,help:account.action_open_payment_items
 #: model_terms:ir.actions.act_window,help:account.action_open_sale_payment_items
 msgid "Amounts to settle"
-msgstr ""
+msgstr "Ödenecek tutarlar"
 
 #. module: account
 #. odoo-python
@@ -2679,7 +2751,7 @@ msgstr "Analitik Hassasiyet"
 #: model:ir.actions.act_window,name:account.action_analytic_reporting
 #: model:ir.ui.menu,name:account.menu_action_analytic_reporting
 msgid "Analytic Reporting"
-msgstr ""
+msgstr "Analitik Raporlama"
 
 #. module: account
 #: model:ir.model.fields,field_description:account.field_account_move_line__analytic_line_ids
@@ -2925,7 +2997,7 @@ msgstr "Otomatik sıralama"
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.res_config_settings_view_form
 msgid "Automatically compute tax rates"
-msgstr ""
+msgstr "Vergi oranlarını otomatik olarak hesapla"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.res_config_settings_view_form
@@ -3023,7 +3095,7 @@ msgstr "Banka"
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.res_config_settings_view_form
 msgid "Bank & Cash"
-msgstr ""
+msgstr "Banka &  Kasa"
 
 #. module: account
 #: model:ir.model.fields,field_description:account.field_account_journal__bank_account_id
@@ -3056,7 +3128,7 @@ msgstr "%s numaralı Banka Hesabı %s silindi"
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.report_statement
 msgid "Bank Account Name"
-msgstr ""
+msgstr "Banka Hesap Adı"
 
 #. module: account
 #: model:ir.model.fields,field_description:account.field_account_bank_statement_line__account_number
@@ -4036,7 +4108,7 @@ msgstr "İletişim Türü"
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.portal_invoice_page
 msgid "Communication history"
-msgstr ""
+msgstr "İletişim Geçmişi"
 
 #. module: account
 #: model:ir.model,name:account.model_res_company
@@ -4142,6 +4214,13 @@ msgstr "Şirketin bir hesap planı var"
 #: model:ir.model.fields,help:account.field_account_payment_method_line__company_id
 msgid "Company related to this journal"
 msgstr "Bu yevmiyeyle ilişkili şirket"
+
+#. module: account
+#. odoo-javascript
+#: code:addons/account/static/src/js/tours/account.js:0
+#, python-format
+msgid "Complete the partner data with email"
+msgstr ""
 
 #. module: account
 #: model:ir.model.fields,field_description:account.field_account_report__use_sections
@@ -4439,7 +4518,7 @@ msgstr "Ödeme Oluştur"
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.view_account_payment_register_form
 msgid "Create Payments"
-msgstr ""
+msgstr "Ödeme Oluştur"
 
 #. module: account
 #. odoo-python
@@ -4803,6 +4882,7 @@ msgstr "Para Birimleri"
 #: model:ir.model,name:account.model_res_currency
 #: model:ir.model.fields,field_description:account.field_account_automatic_entry_wizard__company_currency_id
 #: model:ir.model.fields,field_description:account.field_account_bank_statement__currency_id
+#: model:ir.model.fields,field_description:account.field_account_invoice_report__currency_id
 #: model:ir.model.fields,field_description:account.field_account_journal__currency_id
 #: model:ir.model.fields,field_description:account.field_account_move__currency_id
 #: model:ir.model.fields,field_description:account.field_account_move_line__currency_id
@@ -4896,16 +4976,6 @@ msgid "Current Year Earnings"
 msgstr "Cari Yıldaki Kazanç"
 
 #. module: account
-#: model_terms:ir.ui.view,arch_db:account.account_journal_dashboard_kanban_view
-msgid "Cust. Payment"
-msgstr "Müşt.Ödemesi"
-
-#. module: account
-#: model_terms:ir.ui.view,arch_db:account.account_journal_dashboard_kanban_view
-msgid "Cust. Payments"
-msgstr "Müşt. Ödemeler"
-
-#. module: account
 #: model:ir.model.fields,field_description:account.field_account_report_column__custom_audit_action_id
 msgid "Custom Audit Action"
 msgstr "Özel Denetim Eylemi"
@@ -4979,6 +5049,7 @@ msgstr "Müşteri Faturaları ve Tedarikçi Faturaları"
 #. module: account
 #. odoo-python
 #: code:addons/account/models/account_payment.py:0
+#: model_terms:ir.ui.view,arch_db:account.account_journal_dashboard_kanban_view
 #, python-format
 msgid "Customer Payment"
 msgstr "Müşteri Ödemesi"
@@ -5059,7 +5130,7 @@ msgstr "Özelleştirme"
 #. module: account
 #: model:onboarding.onboarding.step,description:account.onboarding_onboarding_step_base_document_layout
 msgid "Customize the look of your documents."
-msgstr ""
+msgstr "Belgelerinizin görünümünü özelleştirin."
 
 #. module: account
 #. odoo-javascript
@@ -5109,8 +5180,8 @@ msgid "Data consistency check"
 msgstr "Veri tutarlılığı kontrolü"
 
 #. module: account
-#. odoo-python
 #. odoo-javascript
+#. odoo-python
 #: code:addons/account/controllers/portal.py:0
 #: code:addons/account/static/src/components/account_resequence/account_resequence.xml:0
 #: model:ir.model.fields,field_description:account.field_account_accrued_orders_wizard__date
@@ -5393,6 +5464,7 @@ msgstr ""
 #: model:onboarding.onboarding.step,description:account.onboarding_onboarding_step_fiscal_year
 msgid "Define your fiscal years & tax returns periodicity."
 msgstr ""
+"Mali yıllarınızı ve vergi beyannamelerinin periyodikliğini tanımlayın."
 
 #. module: account
 #: model:ir.model.fields,help:account.field_account_journal__bank_statements_source
@@ -6064,6 +6136,8 @@ msgstr ""
 msgid ""
 "Early Payment Discount: <b>%(amount)s</b> if paid before <b>%(date)s</b>"
 msgstr ""
+"Erken Ödeme İndirimi: (<b>%(date)s</b> tarihinden önce ödediğinde "
+"<b>%(amount)s</b>)"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.view_move_line_payment_tree
@@ -6249,6 +6323,15 @@ msgstr "Özsermaye"
 
 #. module: account
 #. odoo-python
+#: code:addons/account/models/chart_template.py:0
+#, python-format
+msgid ""
+"Error while loading the localization. You should probably update your "
+"localization app first."
+msgstr ""
+
+#. module: account
+#. odoo-python
 #: code:addons/account/models/res_config_settings.py:0
 #, python-format
 msgid "Error!"
@@ -6293,8 +6376,8 @@ msgid "Example:"
 msgstr ""
 
 #. module: account
-#. odoo-python
 #. odoo-javascript
+#. odoo-python
 #: code:addons/account/models/chart_template.py:0
 #: code:addons/account/static/src/components/account_payment_field/account_payment.xml:0
 #: model:account.journal,name:account.1_exch
@@ -6324,8 +6407,8 @@ msgid "Expects a Chart of Accounts"
 msgstr "Hesap Planı Bekliyor"
 
 #. module: account
-#. odoo-python
 #. odoo-javascript
+#. odoo-python
 #: code:addons/account/static/src/components/account_type_selection/account_type_selection.js:0
 #: code:addons/account/wizard/accrued_orders.py:0
 #: model:ir.model.fields.selection,name:account.selection__account_account__internal_group__expense
@@ -6472,7 +6555,7 @@ msgstr "Çizginin ayrıntılarını doldurun."
 #: code:addons/account/static/src/js/tours/account.js:0
 #, python-format
 msgid "Fill your company data and let's continue."
-msgstr ""
+msgstr "Şirket bilgilerinizi doldurun ve devam edelim."
 
 #. module: account
 #: model:ir.model.fields,field_description:account.field_account_report__filter_fiscal_position
@@ -6694,7 +6777,7 @@ msgstr ""
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.portal_my_home_invoice
 msgid "Follow, download or pay your invoices"
-msgstr ""
+msgstr "Faturalarınızı takip edin, indirin veya ödeyin"
 
 #. module: account
 #: model:ir.model.fields,field_description:account.field_account_account__message_follower_ids
@@ -6948,6 +7031,18 @@ msgid "Gap"
 msgstr "Boşluk"
 
 #. module: account
+#: model_terms:ir.ui.view,arch_db:account.account_journal_dashboard_kanban_view
+msgid ""
+"Gaps due to canceled invoices, deleted entries or manual errors in open "
+"period."
+msgstr ""
+
+#. module: account
+#: model_terms:ir.ui.view,arch_db:account.account_journal_dashboard_kanban_view
+msgid "Gaps in the sequence"
+msgstr ""
+
+#. module: account
 #: model:ir.ui.menu,name:account.menu_finance_entries_generate_entries
 msgid "Generate Entries"
 msgstr "Kayıtları Oluştur"
@@ -6981,6 +7076,13 @@ msgstr "Şifrelenmiş bütünlük sonucunu PDF olarak alın."
 #: model_terms:ir.ui.view,arch_db:account.res_config_settings_view_form
 msgid "Get warnings when invoicing specific customers"
 msgstr "Belirli müşteriler için fatura keserken uyarılar alın"
+
+#. module: account
+#. odoo-javascript
+#: code:addons/account/static/src/js/tours/account.js:0
+#, python-format
+msgid "Go back"
+msgstr "Geri dön"
 
 #. module: account
 #. odoo-python
@@ -7534,7 +7636,7 @@ msgstr "Banka ekstrelerinizi CAMT.053 formatında içe aktarın"
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.res_config_settings_view_form
 msgid "Import your bank statements in CSV, XLS, and XLSX"
-msgstr ""
+msgstr "Banka ekstrelerinizi CSV, XLS ve XLSX olarak iç aktarın"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.res_config_settings_view_form
@@ -7778,14 +7880,12 @@ msgstr "İç Referans"
 #: code:addons/account/models/account_payment.py:0
 #: model:ir.model.fields,field_description:account.field_account_payment__is_internal_transfer
 #: model:ir.model.fields,field_description:account.field_res_config_settings__transfer_account_id
-#: model_terms:ir.ui.view,arch_db:account.account_journal_dashboard_kanban_view
 #, python-format
 msgid "Internal Transfer"
 msgstr "İç Transfer"
 
 #. module: account
 #: model:ir.actions.act_window,name:account.action_account_payments_transfer
-#: model_terms:ir.ui.view,arch_db:account.account_journal_dashboard_kanban_view
 #: model_terms:ir.ui.view,arch_db:account.view_account_payment_search
 msgid "Internal Transfers"
 msgstr "İç Transferler"
@@ -7852,6 +7952,13 @@ msgstr "Geçersiz"
 #, python-format
 msgid "Invalid \"Zip Range\", please configure it properly."
 msgstr "Zip kodunuz yanlış, lütfen doğru bir zip kodu giriniz."
+
+#. module: account
+#. odoo-python
+#: code:addons/account/models/account_report.py:0
+#, python-format
+msgid "Invalid domain for expression '%s' of line '%s': %s"
+msgstr ""
 
 #. module: account
 #. odoo-python
@@ -8140,10 +8247,39 @@ msgstr "Fatura İsatistikleri"
 
 #. module: account
 #. odoo-python
+#: code:addons/account/wizard/account_move_send.py:0
+#, python-format
+msgid "Invoices are being sent in the background."
+msgstr ""
+
+#. module: account
+#. odoo-python
+#: code:addons/account/models/account_move.py:0
+#: code:addons/account/models/account_move.py:0
+#, python-format
+msgid "Invoices in error"
+msgstr ""
+
+#. module: account
+#. odoo-python
 #: code:addons/account/models/account_journal_dashboard.py:0
 #, python-format
 msgid "Invoices owed to you"
 msgstr "Fatura borçları"
+
+#. module: account
+#. odoo-python
+#: code:addons/account/models/account_move.py:0
+#, python-format
+msgid "Invoices sent"
+msgstr ""
+
+#. module: account
+#. odoo-python
+#: code:addons/account/models/account_move.py:0
+#, python-format
+msgid "Invoices sent successfully."
+msgstr ""
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.account_journal_dashboard_kanban_view
@@ -8345,8 +8481,8 @@ msgid "Journal Currency"
 msgstr "Yevmiye Para Birimi"
 
 #. module: account
-#. odoo-python
 #. odoo-javascript
+#. odoo-python
 #: code:addons/account/models/account_journal_dashboard.py:0
 #: code:addons/account/static/src/components/journal_dashboard_activity/journal_dashboard_activity.js:0
 #: model:ir.actions.act_window,name:account.action_move_journal_line
@@ -8365,8 +8501,8 @@ msgid "Journal Entries by Date"
 msgstr "Tarihe Göre Yevmiye Kayıtları"
 
 #. module: account
-#. odoo-python
 #. odoo-javascript
+#. odoo-python
 #: code:addons/account/models/account_move.py:0
 #: code:addons/account/models/account_payment.py:0
 #: code:addons/account/static/src/components/journal_dashboard_activity/journal_dashboard_activity.js:0
@@ -9282,6 +9418,11 @@ msgid "Memo:"
 msgstr "Kısa Not:"
 
 #. module: account
+#: model:ir.model,name:account.model_base_partner_merge_automatic_wizard
+msgid "Merge Partner Wizard"
+msgstr "İş Ortağı Birleştirme Sihirbazı"
+
+#. module: account
 #: model:ir.model.fields,field_description:account.field_account_account__message_has_error
 #: model:ir.model.fields,field_description:account.field_account_bank_statement_line__message_has_error
 #: model:ir.model.fields,field_description:account.field_account_journal__message_has_error
@@ -10054,11 +10195,25 @@ msgstr ""
 "Böylece, Muhasebe panelinden banka hareketlerinin içe aktarılması için bir düğme eklenir."
 
 #. module: account
+#. odoo-javascript
+#: code:addons/account/static/src/js/tours/account.js:0
+#, python-format
+msgid "Once your invoice is ready, confirm it."
+msgstr "Faturanız hazır olduğunda onaylayın."
+
+#. module: account
 #: model_terms:ir.ui.view,arch_db:account.view_partner_property_form
 msgid "One or more Bank Accounts set on this partner are also used by other"
 msgstr ""
 "Bu iş ortağında ayarlanan bir veya daha fazla Banka Hesabı diğer ortaklar "
 "tarafından da kullanılmaktadır"
+
+#. module: account
+#. odoo-python
+#: code:addons/account/models/account_move.py:0
+#, python-format
+msgid "One or more invoices couldn't be processed."
+msgstr ""
 
 #. module: account
 #: model:ir.ui.menu,name:account.root_payment_menu
@@ -10135,8 +10290,11 @@ msgid "Oops"
 msgstr "Hata"
 
 #. module: account
+#. odoo-python
+#: code:addons/account/models/account_move.py:0
 #: model:ir.model.fields.selection,name:account.selection__account_invoice_report__state__posted
 #: model:ir.model.fields.selection,name:account.selection__account_journal__invoice_reference_type__none
+#, python-format
 msgid "Open"
 msgstr "Açık"
 
@@ -10630,6 +10788,20 @@ msgid "Partners"
 msgstr "İş Ortakları"
 
 #. module: account
+#. odoo-python
+#: code:addons/account/models/partner.py:0
+#, python-format
+msgid "Partners that are used in hashed entries cannot be merged."
+msgstr ""
+
+#. module: account
+#. odoo-python
+#: code:addons/account/wizard/account_move_send.py:0
+#, python-format
+msgid "Partners without email"
+msgstr ""
+
+#. module: account
 #: model_terms:ir.ui.view,arch_db:account.res_config_settings_view_form
 msgid "Pay your bills in one-click using Euro SEPA Service"
 msgstr "Euro SEPA Hizmetini kullanarak faturalarınızı tek tıklamayla ödeyin"
@@ -10683,7 +10855,7 @@ msgstr "Ödeme Tutarı:"
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.report_invoice_document
 msgid "Payment Communication:"
-msgstr ""
+msgstr "Ödeme İletişimi:"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.view_account_journal_form
@@ -10917,6 +11089,7 @@ msgstr "Ödeme: Ödeme Makbuzu"
 #: model:ir.model.fields,field_description:account.field_account_payment__payment_ids
 #: model:ir.ui.menu,name:account.menu_action_account_payments_payable
 #: model:ir.ui.menu,name:account.menu_action_account_payments_receivable
+#: model_terms:ir.ui.view,arch_db:account.account_journal_dashboard_kanban_view
 #: model_terms:ir.ui.view,arch_db:account.view_account_payment_search
 #, python-format
 msgid "Payments"
@@ -11063,9 +11236,14 @@ msgstr ""
 "birini ayarlayın."
 
 #. module: account
+#: model_terms:ir.ui.view,arch_db:account.account_move_send_form
+msgid "Please specify an email address on the"
+msgstr ""
+
+#. module: account
 #: model_terms:ir.ui.view,arch_db:account.bill_preview
 msgid "Please use the following communication for your payment:"
-msgstr ""
+msgstr "Ödemeniz için lütfen aşağıdaki iletişimi kullanın:"
 
 #. module: account
 #: model:ir.model.fields,field_description:account.field_account_bank_statement_line__access_url
@@ -11553,7 +11731,6 @@ msgstr "Denkleştirme Modeli"
 #. module: account
 #: model:ir.actions.act_window,name:account.action_account_reconcile_model
 #: model:ir.ui.menu,name:account.action_account_reconcile_model_menu
-#: model_terms:ir.ui.view,arch_db:account.account_journal_dashboard_kanban_view
 msgid "Reconciliation Models"
 msgstr "Denkleştirme Modelleri"
 
@@ -12504,6 +12681,13 @@ msgstr "Makbuzları e-posta ile gönderin"
 #. odoo-javascript
 #: code:addons/account/static/src/js/tours/account.js:0
 #, python-format
+msgid "Send the invoice and check what the customer will receive."
+msgstr "Faturayı gönderin ve müşterinin ne alacağını kontrol edin."
+
+#. module: account
+#. odoo-javascript
+#: code:addons/account/static/src/js/tours/account.js:0
+#, python-format
 msgid "Send the invoice to the customer and check what he'll receive."
 msgstr ""
 
@@ -12524,9 +12708,23 @@ msgid ""
 msgstr ""
 
 #. module: account
+#. odoo-python
+#: code:addons/account/wizard/account_move_send.py:0
+#, python-format
+msgid "Sending invoices"
+msgstr ""
+
+#. module: account
 #: model_terms:ir.ui.view,arch_db:account.view_account_payment_search
 msgid "Sent"
 msgstr "Gönderildi"
+
+#. module: account
+#. odoo-python
+#: code:addons/account/models/account_move.py:0
+#, python-format
+msgid "Sent invoices"
+msgstr ""
 
 #. module: account
 #: model:mail.template,description:account.mail_template_data_payment_receipt
@@ -13428,12 +13626,12 @@ msgstr "Varsa bu yevmiye kaleminin oluşmasına neden olan vergi dağıtım kale
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.view_move_form
 msgid "Tax excl."
-msgstr ""
+msgstr "Vergi hariç."
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.view_move_form
 msgid "Tax incl."
-msgstr ""
+msgstr "Vergi dahil."
 
 #. module: account
 #. odoo-python
@@ -13647,6 +13845,8 @@ msgid ""
 "The Early Payment Discount functionality can only be used with payment terms"
 " using a single 100% line. "
 msgstr ""
+"Erken Ödeme İndirimi işlevi yalnızca tek bir %100 satırının kullanıldığı "
+"ödeme koşullarında kullanılabilir."
 
 #. module: account
 #. odoo-python
@@ -14246,15 +14446,6 @@ msgstr ""
 "Yevmiyenin şirketinin iş ortakları ve ilgili banka hesabı uyuşmazlığı."
 
 #. module: account
-#. odoo-python
-#: code:addons/account/wizard/account_move_send.py:0
-#, python-format
-msgid ""
-"The partners on the following invoices have no email address, so those "
-"invoices will not be sent: %s"
-msgstr ""
-
-#. module: account
 #: model:ir.model.constraint,message:account.constraint_account_payment_check_amount_not_negative
 msgid "The payment amount cannot be negative."
 msgstr "Ödeme tutarı negatif olamaz."
@@ -14496,6 +14687,17 @@ msgid ""
 msgstr ""
 "Sıra hiçbir zaman yeniden başlatılacak.\n"
 "Bu durumda artan sayı '%(formatted_seq)s'dir."
+
+#. module: account
+#. odoo-python
+#: code:addons/account/models/account_move.py:0
+#, python-format
+msgid ""
+"The sequence will restart at 1 at the start of every financial year.\n"
+"The financial start year detected here is '%(year)s'.\n"
+"The financial end year detected here is '%(year_end)s'.\n"
+"The incrementing number in this case is '%(formatted_seq)s'."
+msgstr ""
 
 #. module: account
 #. odoo-python
@@ -15126,7 +15328,6 @@ msgstr "Bugünkü Aktiviteler"
 #. odoo-javascript
 #: code:addons/account/static/src/components/tax_totals/tax_totals.xml:0
 #: model:ir.model.fields,field_description:account.field_account_bank_statement_line__amount_total
-#: model:ir.model.fields,field_description:account.field_account_invoice_report__price_total
 #: model:ir.model.fields,field_description:account.field_account_move__amount_total
 #: model:ir.model.fields,field_description:account.field_account_move_line__price_total
 #: model:ir.model.fields,field_description:account.field_account_payment__amount_total
@@ -15252,7 +15453,7 @@ msgstr "Otomatik kayıttan etkilenen toplam tutar."
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.report_invoice_document
 msgid "Total amount in words: <br/>"
-msgstr ""
+msgstr "Yazı ile toplam tutar <br/>"
 
 #. module: account
 #: model:ir.model.fields,field_description:account.field_res_company__display_invoice_amount_total_words
@@ -15273,6 +15474,7 @@ msgid "Total amount you have to pay to this vendor."
 msgstr "Bu tedarikçiye ödenmesi gereken toplam meblağ."
 
 #. module: account
+#: model:ir.model.fields,field_description:account.field_account_invoice_report__price_total
 #: model_terms:ir.ui.view,arch_db:account.view_invoice_tree
 msgid "Total in Currency"
 msgstr "Para Birimi Cinsinden Toplam"
@@ -15826,13 +16028,6 @@ msgstr ""
 "denkleştirme)."
 
 #. module: account
-#. odoo-javascript
-#: code:addons/account/static/src/js/tours/account.js:0
-#, python-format
-msgid "Validate."
-msgstr "Validate."
-
-#. module: account
 #: model:mail.message.subtype,name:account.mt_invoice_validated
 msgid "Validated"
 msgstr "Doğrulanmış"
@@ -15946,7 +16141,6 @@ msgstr "Tedarikçi Ödeme Şartları"
 
 #. module: account
 #: model:ir.actions.act_window,name:account.action_account_payments_payable
-#: model_terms:ir.ui.view,arch_db:account.account_journal_dashboard_kanban_view
 #: model_terms:ir.ui.view,arch_db:account.res_config_settings_view_form
 #: model_terms:ir.ui.view,arch_db:account.view_account_payment_search
 msgid "Vendor Payments"
@@ -16024,6 +16218,15 @@ msgstr "Uyarılar"
 #: model:ir.model.fields,field_description:account.field_res_config_settings__group_warning_account
 msgid "Warnings in Invoices"
 msgstr "Faturalardaki Uyarılar"
+
+#. module: account
+#. odoo-python
+#: code:addons/account/models/account_move.py:0
+#, python-format
+msgid ""
+"We can't leave this document without any company. Please select a company "
+"for this document."
+msgstr ""
 
 #. module: account
 #. odoo-python
@@ -16691,12 +16894,19 @@ msgstr ""
 #, python-format
 msgid ""
 "You cannot import the \"openning_balance\" if the opening move (%s) is "
-"already posted.                         If you are absolutely sure you want "
-"to modify the opening balance of your accounts, reset the move to draft."
+"already posted. If you are absolutely sure you want to modify the opening "
+"balance of your accounts, reset the move to draft."
 msgstr ""
-"Açılış hareketi (%s) zaten kaydedilmişse açılış bakiyesini içeri "
+"Açılış hareketi (openning_balance) zaten onaylanmışsa \"%s\" içe "
 "aktaramazsınız. Hesaplarınızın açılış bakiyesini değiştirmek istediğinizden "
-"kesinlikle eminseniz, taslağa geçişi sıfırlayın."
+"kesinlikle eminseniz, hareketi taslak olarak sıfırlayın."
+
+#. module: account
+#. odoo-python
+#: code:addons/account/models/account_account.py:0
+#, python-format
+msgid "You cannot merge accounts."
+msgstr ""
 
 #. module: account
 #. odoo-python
@@ -16993,7 +17203,7 @@ msgstr "T&amp;C yansıtılacak şekilde bu dokümanı güncellemelisiniz."
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.portal_my_home_invoice
 msgid "Your Invoices"
-msgstr ""
+msgstr "Faturalarınız"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.view_account_position_form
@@ -17175,6 +17385,11 @@ msgid "e.g. domain.com"
 msgstr ""
 
 #. module: account
+#: model_terms:ir.ui.view,arch_db:account.account_move_send_form
+msgid "following partners."
+msgstr ""
+
+#. module: account
 #: model_terms:ir.ui.view,arch_db:account.view_move_form
 msgid ""
 "for this customer. You can allocate them to mark this credit note as paid."
@@ -17234,6 +17449,13 @@ msgstr ""
 #: model:ir.model.fields.selection,name:account.selection__account_reconcile_model__payment_tolerance_type__percentage
 msgid "in percentage"
 msgstr "yüzde olarak"
+
+#. module: account
+#. odoo-python
+#: code:addons/account/wizard/account_move_send.py:0
+#, python-format
+msgid "invoices"
+msgstr "faturalar"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.view_partner_bank_form_inherit_account

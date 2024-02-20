@@ -4,17 +4,20 @@
 # 
 # Translators:
 # Dávid Kováč, 2023
-# Rastislav Brencic <rastislav.brencic@azet.sk>, 2023
 # Jaroslav Bosansky <jaro.bosansky@ekoenergo.sk>, 2023
-# Wil Odoo, 2023
+# Sarah Bellefroid, 2024
+# Tomáš Píšek, 2024
+# Wil Odoo, 2024
+# Jakub Krkoška, 2024
+# Rastislav Brencic <rastislav.brencic@azet.sk>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 17.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-26 21:55+0000\n"
+"POT-Creation-Date: 2024-01-29 10:45+0000\n"
 "PO-Revision-Date: 2023-10-26 23:09+0000\n"
-"Last-Translator: Wil Odoo, 2023\n"
+"Last-Translator: Rastislav Brencic <rastislav.brencic@azet.sk>, 2024\n"
 "Language-Team: Slovak (https://app.transifex.com/odoo/teams/41243/sk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -412,6 +415,36 @@ msgid ""
 "</div>\n"
 "            "
 msgstr ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"    <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"        <t t-set=\"doc_name\" t-value=\"'quotation' if object.state in ('draft', 'sent') else 'order'\"></t>\n"
+"        Dobrý deň,\n"
+"        <br><br>\n"
+"        Vaša\n"
+"        <t t-if=\"ctx.get('proforma')\">\n"
+"            Pro forma faktúra pre <t t-out=\"doc_name or ''\">ponuku</t> <span style=\"font-weight: bold;\" t-out=\"object.name or ''\">S00052</span>\n"
+"            <t t-if=\"object.origin\">\n"
+"                (s referenciou: <t t-out=\"object.origin or ''\"></t> )\n"
+"            </t>\n"
+"            na čiastku <span style=\"font-weight: bold;\" t-out=\"format_amount(object.amount_total, object.currency_id) or ''\">$ 10.00</span> je pripravená.\n"
+"        </t>\n"
+"        <t t-else=\"\">\n"
+"            <t t-out=\"doc_name or ''\">ponuka</t> <span style=\"font-weight: bold;\" t-out=\"object.name or ''\"></span>\n"
+"            <t t-if=\"object.origin\">\n"
+"                (s referenciou: <t t-out=\"object.origin or ''\">S00052</t> )\n"
+"            </t>\n"
+"            na čiastku <span style=\"font-weight: bold;\" t-out=\"format_amount(object.amount_total, object.currency_id) or ''\">$ 10.00</span> je pripravená na potvrdenie.\n"
+"        </t>\n"
+"        <br><br>\n"
+"        V prípade dotazu nás kontaktujte.\n"
+"        <t t-if=\"not is_html_empty(object.user_id.signature)\">\n"
+"            <br><br>\n"
+"            <t t-out=\"object.user_id.signature or ''\">--<br>Mitchell Admin</t>\n"
+"        </t>\n"
+"        <br><br>\n"
+"    </p>\n"
+"</div>\n"
+"        "
 
 #. module: sale
 #: model:mail.template,body_html:sale.mail_template_sale_cancellation
@@ -457,23 +490,23 @@ msgstr ""
 
 #. module: sale
 #: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_content
-msgid "<i class=\"fa fa-fw fa-check\"/> <b>Authorized</b>"
+msgid "<i class=\"fa fa-fw fa-check\"/> Authorized"
 msgstr ""
 
 #. module: sale
 #: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_content
-msgid "<i class=\"fa fa-fw fa-check\"/> <b>Paid</b>"
-msgstr "<i class=\"fa fa-fw fa-check\"/> <b>Zaplatené</b>"
-
-#. module: sale
-#: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_content
-msgid "<i class=\"fa fa-fw fa-clock-o\"/> <b>Waiting Payment</b>"
-msgstr "<i class=\"fa fa-fw fa-clock-o\"/> <b>Čakajúca platba</b>"
+msgid "<i class=\"fa fa-fw fa-check\"/> Paid"
+msgstr ""
 
 #. module: sale
 #: model_terms:ir.ui.view,arch_db:sale.portal_my_quotations
 msgid "<i class=\"fa fa-fw fa-clock-o\"/> Expired"
 msgstr "<i class=\"fa fa-fw fa-clock-o\"/> Ukončená platnosť"
+
+#. module: sale
+#: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_content
+msgid "<i class=\"fa fa-fw fa-clock-o\"/> Waiting Payment"
+msgstr ""
 
 #. module: sale
 #: model_terms:ir.ui.view,arch_db:sale.utm_campaign_view_kanban
@@ -504,7 +537,7 @@ msgstr ""
 #. module: sale
 #: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_template
 msgid "<i class=\"fa fa-print\"/> View Details"
-msgstr ""
+msgstr "<i class=\"fa fa-print\"/> Zobraziť podrobnosti"
 
 #. module: sale
 #: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_template
@@ -514,17 +547,12 @@ msgstr "<i class=\"fa fa-times\"/> Zamietnuť"
 #. module: sale
 #: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_template
 msgid "<small class=\"text-muted\">Your contact</small>"
-msgstr ""
+msgstr "<small class=\"text-muted\">Vaša kontaktná osoba</small>"
 
 #. module: sale
 #: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_template
 msgid "<small><b class=\"text-muted\">Your advantage</b></small>"
 msgstr "<small><b class=\"text-muted\">Vaša výhoda</b></small>"
-
-#. module: sale
-#: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_template
-msgid "<small><b>This offer expires on</b></small>"
-msgstr ""
 
 #. module: sale
 #: model_terms:ir.ui.view,arch_db:sale.portal_my_orders
@@ -538,6 +566,11 @@ msgstr ""
 #. module: sale
 #: model_terms:ir.ui.view,arch_db:sale.crm_team_salesteams_view_form
 msgid "<span class=\"flex-grow-1\">/ Month</span>"
+msgstr ""
+
+#. module: sale
+#: model_terms:ir.ui.view,arch_db:sale.view_order_form
+msgid "<span class=\"mx-3\" invisible=\"not require_payment\">of</span>"
 msgstr ""
 
 #. module: sale
@@ -564,7 +597,7 @@ msgstr "<span>Akceptované na základe:</span>"
 #: model_terms:ir.ui.view,arch_db:sale.report_saleorder_document
 #: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_content
 msgid "<span>Amount</span>"
-msgstr "<span>Množstvo</span>"
+msgstr "<span>Suma bez DPH</span>"
 
 #. module: sale
 #: model_terms:ir.ui.view,arch_db:sale.sale_order_cancel_view_form
@@ -599,7 +632,7 @@ msgstr "<span>Dane</span>"
 
 #. module: sale
 #: model_terms:ir.ui.view,arch_db:sale.product_document_kanban
-msgid "<span>Visible at</span>"
+msgid "<span>Visibility</span>"
 msgstr ""
 
 #. module: sale
@@ -673,7 +706,7 @@ msgstr "<strong>Táto cenová ponuka bola zrušená.</strong>"
 #. module: sale
 #: model_terms:ir.ui.view,arch_db:sale.report_saleorder_document
 msgid "<strong>Your Reference:</strong><br/>"
-msgstr ""
+msgstr "<strong>Č. vašej objednávky</strong><br/>"
 
 #. module: sale
 #: model:ir.model.constraint,message:sale.constraint_sale_order_date_order_conditional_required
@@ -728,14 +761,14 @@ msgstr ""
 #: code:addons/sale/models/sale_order.py:0
 #, python-format
 msgid "Accept & Pay Quotation"
-msgstr ""
+msgstr "Prijať & platba cenovej ponuky"
 
 #. module: sale
 #. odoo-python
 #: code:addons/sale/models/sale_order.py:0
 #, python-format
 msgid "Accept & Sign Quotation"
-msgstr ""
+msgstr "Prijať & podpísať cenovú ponuku"
 
 #. module: sale
 #: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_template
@@ -793,6 +826,11 @@ msgid "Activity Exception Decoration"
 msgstr "Označenie výnimky v aktivite"
 
 #. module: sale
+#: model:ir.ui.menu,name:sale.sale_menu_config_activity_plan
+msgid "Activity Plans"
+msgstr "Plány aktivít"
+
+#. module: sale
 #: model:ir.model.fields,field_description:sale.field_sale_order__activity_state
 msgid "Activity State"
 msgstr "Stav aktivity"
@@ -807,6 +845,11 @@ msgstr "Ikona typu aktivity"
 #: model:ir.ui.menu,name:sale.sale_menu_config_activity_type
 msgid "Activity Types"
 msgstr "Typy aktivít"
+
+#. module: sale
+#: model_terms:ir.actions.act_window,help:sale.mail_activity_plan_action_sale_order
+msgid "Add a new plan"
+msgstr "Pridajte nový plán"
 
 #. module: sale
 #: model_terms:ir.ui.view,arch_db:sale.view_order_form
@@ -1200,7 +1243,7 @@ msgstr "Komunikácia"
 #. module: sale
 #: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_template
 msgid "Communication history"
-msgstr ""
+msgstr "História komunikácie"
 
 #. module: sale
 #: model:ir.model,name:sale.model_res_company
@@ -1343,7 +1386,7 @@ msgstr "Dátum vytvorenia"
 #. module: sale
 #: model_terms:ir.ui.view,arch_db:sale.view_sale_advance_payment_inv
 msgid "Create Draft Invoice"
-msgstr ""
+msgstr "Vytvoriť návrh faktúry"
 
 #. module: sale
 #: model:ir.model.fields,field_description:sale.field_sale_advance_payment_inv__advance_payment_method
@@ -1859,6 +1902,13 @@ msgstr ""
 #. odoo-python
 #: code:addons/sale/wizard/sale_make_invoice_advance.py:0
 #, python-format
+msgid "Down payment invoice"
+msgstr ""
+
+#. module: sale
+#. odoo-python
+#: code:addons/sale/wizard/sale_make_invoice_advance.py:0
+#, python-format
 msgid "Down payment of %s%%"
 msgstr "Zálohová platba %s%%"
 
@@ -1924,14 +1974,14 @@ msgstr "Expirácia"
 #. module: sale
 #: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_content
 msgid "Expiration Date:"
-msgstr ""
+msgstr "Platnosť cenovej ponuky:"
 
 #. module: sale
 #. odoo-python
 #: code:addons/sale/models/sale_order.py:0
 #, python-format
 msgid "Expires on %(date)s"
-msgstr ""
+msgstr "Platnosť do %(date)s"
 
 #. module: sale
 #: model_terms:ir.ui.view,arch_db:sale.view_order_product_search
@@ -2323,7 +2373,6 @@ msgstr "Vyfaktúrované tento mesiac"
 #: model:ir.actions.act_window,name:sale.action_invoice_salesteams
 #: model:ir.model.fields,field_description:sale.field_sale_order__invoice_ids
 #: model_terms:ir.ui.view,arch_db:sale.crm_team_view_kanban_dashboard
-#: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_content
 #: model_terms:ir.ui.view,arch_db:sale.view_order_form
 msgid "Invoices"
 msgstr "Faktúry"
@@ -2375,7 +2424,7 @@ msgstr "Splatnosť"
 #. module: sale
 #: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_content
 msgid "Invoicing and Shipping Address"
-msgstr ""
+msgstr "Fakturačná a dodacia adresa"
 
 #. module: sale
 #: model_terms:ir.ui.view,arch_db:sale.report_saleorder_document
@@ -2443,6 +2492,11 @@ msgstr "Položka účtovnej knihy"
 #: model:ir.model.fields,field_description:sale.field_sale_order_cancel__lang
 msgid "Language"
 msgstr "Jazyk"
+
+#. module: sale
+#: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_content
+msgid "Last Invoices"
+msgstr ""
 
 #. module: sale
 #: model:ir.model.fields,field_description:sale.field_sale_advance_payment_inv__write_uid
@@ -2771,7 +2825,7 @@ msgstr "Počet chýb"
 #. module: sale
 #: model:ir.model.fields,help:sale.field_sale_order__message_needaction_counter
 msgid "Number of messages requiring action"
-msgstr ""
+msgstr "Počet správ, ktoré vyžadujú akciu"
 
 #. module: sale
 #: model:ir.model.fields,help:sale.field_sale_order__message_has_error_counter
@@ -2960,11 +3014,6 @@ msgstr ""
 #. module: sale
 #: model_terms:ir.ui.view,arch_db:sale.view_order_product_search
 msgid "Order Date: Last 365 Days"
-msgstr ""
-
-#. module: sale
-#: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_content
-msgid "Order Detail"
 msgstr ""
 
 #. module: sale
@@ -3178,7 +3227,6 @@ msgstr "URL portálového prístupu"
 
 #. module: sale
 #: model_terms:ir.ui.view,arch_db:sale.res_config_settings_view_form
-#: model_terms:ir.ui.view,arch_db:sale.view_order_form
 msgid "Prepayment amount"
 msgstr ""
 
@@ -3448,9 +3496,8 @@ msgstr "Dátum cenovej ponuky"
 
 #. module: sale
 #: model_terms:ir.ui.view,arch_db:sale.report_saleorder_document
-#: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_content
 msgid "Quotation Date:"
-msgstr ""
+msgstr "Dátum vytvorenia cenovej ponuky:"
 
 #. module: sale
 #: model:ir.model.fields.selection,name:sale.selection__sale_order__state__sent
@@ -3676,6 +3723,11 @@ msgstr "Objednávka predaja"
 #: model:ir.model.fields,field_description:sale.field_res_users__sale_order_count
 msgid "Sale Order Count"
 msgstr "Počet objednávok predaja"
+
+#. module: sale
+#: model:ir.actions.act_window,name:sale.mail_activity_plan_action_sale_order
+msgid "Sale Order Plans"
+msgstr ""
 
 #. module: sale
 #: model:ir.model.fields,field_description:sale.field_res_config_settings__group_warning_sale
@@ -4116,7 +4168,7 @@ msgstr "Doprava"
 #. module: sale
 #: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_content
 msgid "Shipping Address"
-msgstr ""
+msgstr "Dodacia adresa"
 
 #. module: sale
 #: model:ir.model.fields,field_description:sale.field_res_config_settings__module_delivery_shiprocket
@@ -4138,7 +4190,7 @@ msgstr "Zobraziť marže na objednávkach"
 #: code:addons/sale/models/sale_order.py:0
 #, python-format
 msgid "Sign & Pay Quotation"
-msgstr ""
+msgstr "Podpísať & zaplatiť cenovú ponuku"
 
 #. module: sale
 #: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_template
@@ -4379,7 +4431,7 @@ msgstr "Obchodné podmienky"
 #. module: sale
 #: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_content
 msgid "Terms &amp; Conditions:"
-msgstr ""
+msgstr "Obchodné &amp; podmienky:"
 
 #. module: sale
 #: model:ir.model.fields,field_description:sale.field_sale_order__note
@@ -4541,6 +4593,14 @@ msgstr ""
 #: model:ir.model.fields,help:sale.field_res_company__prepayment_percent
 #: model:ir.model.fields,help:sale.field_res_config_settings__prepayment_percent
 msgid "The percentage of the amount needed to be paid to confirm quotations."
+msgstr ""
+
+#. module: sale
+#. odoo-python
+#. odoo-python
+#: code:addons/sale/models/product_template.py:0
+#, python-format
+msgid "The product (%s) has incompatible values: %s"
 msgstr ""
 
 #. module: sale
@@ -5148,7 +5208,7 @@ msgstr ""
 #. module: sale
 #: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_content
 msgid "Your Reference:"
-msgstr ""
+msgstr "Č. vašej objednávky:"
 
 #. module: sale
 #: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_template

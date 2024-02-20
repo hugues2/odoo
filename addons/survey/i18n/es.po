@@ -5,15 +5,16 @@
 # Translators:
 # Lucia Pacheco, 2023
 # Wil Odoo, 2023
-# Larissa Manderfeld, 2023
+# Pedro M. Baeza <pedro.baeza@tecnativa.com>, 2024
+# Larissa Manderfeld, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 17.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-26 21:55+0000\n"
+"POT-Creation-Date: 2024-01-05 12:31+0000\n"
 "PO-Revision-Date: 2023-10-26 23:09+0000\n"
-"Last-Translator: Larissa Manderfeld, 2023\n"
+"Last-Translator: Larissa Manderfeld, 2024\n"
 "Language-Team: Spanish (https://app.transifex.com/odoo/teams/41243/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -34,32 +35,32 @@ msgstr "# Preguntas seleccionadas al azar"
 #. module: survey
 #: model:survey.question.answer,value:survey.vendor_certification_page_2_question_1_choice_4
 msgid "$100"
-msgstr "$ 100"
+msgstr "100 €"
 
 #. module: survey
 #: model:survey.question.answer,value:survey.vendor_certification_page_2_question_1_choice_1
 msgid "$20"
-msgstr "20$"
+msgstr "20 €"
 
 #. module: survey
 #: model:survey.question.answer,value:survey.vendor_certification_page_2_question_1_choice_5
 msgid "$200"
-msgstr "$ 200"
+msgstr "200 €"
 
 #. module: survey
 #: model:survey.question.answer,value:survey.vendor_certification_page_2_question_1_choice_6
 msgid "$300"
-msgstr "$ 300"
+msgstr "300 €"
 
 #. module: survey
 #: model:survey.question.answer,value:survey.vendor_certification_page_2_question_1_choice_2
 msgid "$50"
-msgstr "$ 50"
+msgstr "50 €"
 
 #. module: survey
 #: model:survey.question.answer,value:survey.vendor_certification_page_2_question_1_choice_3
 msgid "$80"
-msgstr "$80"
+msgstr "80 €"
 
 #. module: survey
 #: model_terms:ir.ui.view,arch_db:survey.survey_progression
@@ -147,7 +148,7 @@ msgstr "1450 km"
 #. module: survey
 #: model:survey.question.answer,value:survey.survey_demo_burger_quiz_p4_q2_sug3
 msgid "16.2 kg"
-msgstr "16.2 kg"
+msgstr "16,2 kg"
 
 #. module: survey
 #: model_terms:ir.ui.view,arch_db:survey.certification_report_view_general
@@ -275,7 +276,7 @@ msgstr ""
 "                        <strong t-out=\"object.survey_id.display_name or ''\">Creación de mobiliario</strong>\n"
 "                    .\n"
 "                </p>\n"
-"                <p>¡Felicidades por aprobar el cuestionario con un puntaje de <strong t-out=\"object.scoring_percentage\"></strong>%!</p>\n"
+"                <p>¡Felicidades por aprobar el cuestionario con una puntuación de <strong t-out=\"object.scoring_percentage\"></strong>%!</p>\n"
 "            </td></tr>\n"
 "        </tbody>\n"
 "    </table>\n"
@@ -352,7 +353,7 @@ msgstr ""
 #. module: survey
 #: model_terms:ir.ui.view,arch_db:survey.question_result_matrix
 msgid "<i class=\"fa fa-bar-chart me-1\"/>Graph"
-msgstr "<i class=\"fa fa-bar-chart me-1\"/>Gráfico"
+msgstr "<i class=\"fa fa-bar-chart me-1\"/>Gráfica"
 
 #. module: survey
 #: model_terms:ir.ui.view,arch_db:survey.user_input_session_manage_content
@@ -437,8 +438,8 @@ msgid ""
 "<i class=\"fa fa-long-arrow-right mx-2\" aria-label=\"Arrow icon\" "
 "title=\"Arrow\"/>"
 msgstr ""
-"<i class=\"fa fa-long-arrow-right mx-2\" aria-label=\"Ícono de flecha \" "
-"title=\"Flecha \"/>"
+"<i class=\"fa fa-long-arrow-right mx-2\" aria-label=\"Icono de flecha\" "
+"title=\"Flecha\"/>"
 
 #. module: survey
 #: model_terms:ir.ui.view,arch_db:survey.survey_page_statistics_header
@@ -1055,12 +1056,12 @@ msgstr "Respuestas"
 #. module: survey
 #: model:ir.model.fields,field_description:survey.field_survey_survey__session_answer_count
 msgid "Answers Count"
-msgstr "Conteo de respuestas"
+msgstr "Número de respuestas"
 
 #. module: survey
 #: model:ir.model.fields.selection,name:survey.selection__survey_survey__access_mode__public
 msgid "Anyone with the link"
-msgstr "Cualquiera con el link"
+msgstr "Cualquier persona que tenga el enlace"
 
 #. module: survey
 #: model:ir.model.fields,field_description:survey.field_gamification_challenge__challenge_category
@@ -1115,12 +1116,12 @@ msgstr "Evaluación"
 #: model:ir.model.fields,field_description:survey.field_survey_survey__message_attachment_count
 #: model:ir.model.fields,field_description:survey.field_survey_user_input__message_attachment_count
 msgid "Attachment Count"
-msgstr "Nº de archivos adjuntos"
+msgstr "Número de archivos adjuntos"
 
 #. module: survey
 #: model:ir.model.fields,field_description:survey.field_survey_invite__attachment_ids
 msgid "Attachments"
-msgstr "Adjuntos"
+msgstr "Archivos adjuntos"
 
 #. module: survey
 #: model:ir.model.fields,field_description:survey.field_survey_user_input__attempts_number
@@ -1245,7 +1246,7 @@ msgstr "¡Tenga en cuenta los años bisiestos!"
 #: code:addons/survey/models/survey_survey_template.py:0
 #, python-format
 msgid "Blue Pen"
-msgstr "Pluma azul"
+msgstr "Bolígrafo azul"
 
 #. module: survey
 #: model:ir.model.fields,field_description:survey.field_survey_invite__body_has_template_value
@@ -1430,7 +1431,7 @@ msgstr "Oro clásico"
 #. module: survey
 #: model:ir.model.fields.selection,name:survey.selection__survey_survey__certification_report_layout__classic_purple
 msgid "Classic Purple"
-msgstr "Morado Clásico"
+msgstr "Morado clásico"
 
 #. module: survey
 #: model:survey.question.answer,value:survey.survey_demo_quiz_p3_q6_row3
@@ -1620,8 +1621,8 @@ msgid "Corner Desk Right Sit"
 msgstr "Escritorio de esquina derecho sentarse"
 
 #. module: survey
-#. odoo-python
 #. odoo-javascript
+#. odoo-python
 #: code:addons/survey/models/survey_user_input.py:0
 #: code:addons/survey/static/src/js/survey_result.js:0
 #: model:ir.model.fields,field_description:survey.field_survey_question_answer__is_correct
@@ -2077,7 +2078,7 @@ msgstr "Seguidores (Contactos)"
 #: model:ir.model.fields,help:survey.field_survey_survey__activity_type_icon
 #: model:ir.model.fields,help:survey.field_survey_user_input__activity_type_icon
 msgid "Font awesome icon e.g. fa-tasks"
-msgstr "Icono de Font Awesome ej. fa-tasks"
+msgstr "Icono de Font Awesome p. ej. fa-tasks"
 
 #. module: survey
 #: model:survey.survey,title:survey.survey_demo_food_preferences
@@ -2415,7 +2416,7 @@ msgstr ""
 #: model:ir.model.fields,help:survey.field_survey_survey__message_needaction
 #: model:ir.model.fields,help:survey.field_survey_user_input__message_needaction
 msgid "If checked, new messages require your attention."
-msgstr "Si está marcado hay nuevos mensajes que requieren su atención."
+msgstr "Si está marcada, hay nuevos mensajes que requieren su atención."
 
 #. module: survey
 #: model:ir.model.fields,help:survey.field_survey_survey__message_has_error
@@ -2423,7 +2424,7 @@ msgstr "Si está marcado hay nuevos mensajes que requieren su atención."
 #: model:ir.model.fields,help:survey.field_survey_user_input__message_has_error
 #: model:ir.model.fields,help:survey.field_survey_user_input__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
-msgstr "Si se encuentra marcado, algunos mensajes tienen error de envío."
+msgstr "Si está marcada, algunos mensajes tienen error de envío."
 
 #. module: survey
 #: model:ir.model.fields,help:survey.field_survey_question__save_as_email
@@ -2544,8 +2545,8 @@ msgstr ""
 " que se tenga en cuenta una respuesta y una puntuación de respuesta."
 
 #. module: survey
-#. odoo-python
 #. odoo-javascript
+#. odoo-python
 #: code:addons/survey/models/survey_user_input.py:0
 #: code:addons/survey/static/src/js/survey_result.js:0
 #, python-format
@@ -2565,7 +2566,7 @@ msgstr "La entrada debe ser un correo electrónico"
 #. module: survey
 #: model:ir.model.fields,field_description:survey.field_survey_user_input__invite_token
 msgid "Invite token"
-msgstr "Token de acceso"
+msgstr "Token de invitación"
 
 #. module: survey
 #: model:ir.model.fields.selection,name:survey.selection__survey_survey__access_mode__token
@@ -2979,7 +2980,7 @@ msgstr "Quizás estabas buscando"
 #: model:ir.model.fields,field_description:survey.field_survey_survey__message_has_error
 #: model:ir.model.fields,field_description:survey.field_survey_user_input__message_has_error
 msgid "Message Delivery error"
-msgstr "Error de Envío de Mensaje"
+msgstr "Error de envío de mensaje"
 
 #. module: survey
 #: model:ir.model.fields,field_description:survey.field_survey_survey__message_ids
@@ -3092,7 +3093,7 @@ msgstr "Elección múltiple por fila"
 #: model:ir.model.fields,field_description:survey.field_survey_survey__my_activity_date_deadline
 #: model:ir.model.fields,field_description:survey.field_survey_user_input__my_activity_date_deadline
 msgid "My Activity Deadline"
-msgstr "Mi fecha límite de actividad"
+msgstr "Fecha límite de mi actividad"
 
 #. module: survey
 #: model:gamification.badge,name:survey.vendor_certification_badge
@@ -3156,7 +3157,7 @@ msgstr "Siguiente evento en el calendario de actividades."
 #: model:ir.model.fields,field_description:survey.field_survey_survey__activity_date_deadline
 #: model:ir.model.fields,field_description:survey.field_survey_user_input__activity_date_deadline
 msgid "Next Activity Deadline"
-msgstr "Siguiente plazo de actividad"
+msgstr "Fecha límite de la siguiente actividad"
 
 #. module: survey
 #: model:ir.model.fields,field_description:survey.field_survey_survey__activity_summary
@@ -3168,7 +3169,7 @@ msgstr "Resumen de la siguiente actividad"
 #: model:ir.model.fields,field_description:survey.field_survey_survey__activity_type_id
 #: model:ir.model.fields,field_description:survey.field_survey_user_input__activity_type_id
 msgid "Next Activity Type"
-msgstr "Siguiente tipo de actividad"
+msgstr "Tipo de la siguiente actividad"
 
 #. module: survey
 #: model_terms:ir.ui.view,arch_db:survey.survey_fill_form_in_progress
@@ -3551,8 +3552,8 @@ msgid "Papyrus"
 msgstr "Papiro"
 
 #. module: survey
-#. odoo-python
 #. odoo-javascript
+#. odoo-python
 #: code:addons/survey/models/survey_user_input.py:0
 #: code:addons/survey/static/src/js/survey_result.js:0
 #, python-format
@@ -3837,7 +3838,7 @@ msgstr "El tipo de pregunta debe estar vacío para estas páginas: %s"
 #: model_terms:ir.ui.view,arch_db:survey.survey_page_statistics_inner
 #: model_terms:ir.ui.view,arch_db:survey.survey_survey_view_form
 msgid "Questions"
-msgstr "Cuestionario"
+msgstr "Preguntas"
 
 #. module: survey
 #: model:ir.ui.menu,name:survey.survey_menu_questions
@@ -3913,7 +3914,7 @@ msgstr "Destinatarios"
 #: code:addons/survey/models/survey_survey_template.py:0
 #, python-format
 msgid "Red Pen"
-msgstr "Pluma roja"
+msgstr "Bolígrafo rojo"
 
 #. module: survey
 #: model:ir.model.fields,field_description:survey.field_survey_survey__answer_count
@@ -4019,7 +4020,7 @@ msgstr "Fila4"
 #: model:ir.model.fields,field_description:survey.field_survey_survey__message_has_sms_error
 #: model:ir.model.fields,field_description:survey.field_survey_user_input__message_has_sms_error
 msgid "SMS Delivery error"
-msgstr "Error de entrega del SMS"
+msgstr "Error de envío del SMS"
 
 #. module: survey
 #: model:survey.question.answer,value:survey.survey_demo_quiz_p4_q1_sug4
@@ -4087,7 +4088,7 @@ msgstr "Puntuación con respuestas después de cada página"
 #. module: survey
 #: model:ir.model.fields.selection,name:survey.selection__survey_survey__scoring_type__scoring_with_answers
 msgid "Scoring with answers at the end"
-msgstr "Calificación con respuestas al final"
+msgstr "Puntuación con respuestas al final"
 
 #. module: survey
 #: model:ir.model.fields.selection,name:survey.selection__survey_survey__scoring_type__scoring_without_answers
@@ -4420,9 +4421,9 @@ msgid ""
 "Planned: Future activities."
 msgstr ""
 "Estado basado en actividades\n"
-"Vencida: la fecha tope ya ha pasado\n"
-"Hoy: La fecha tope es hoy\n"
-"Planificada: futuras actividades."
+"Vencida: la fecha límite ya ha pasado\n"
+"Hoy: la fecha límite es hoy\n"
+"Planificada: actividades futuras."
 
 #. module: survey
 #: model:survey.question.answer,value:survey.survey_demo_food_preferences_q4_sug1
@@ -4912,8 +4913,8 @@ msgstr ""
 "libre de personalizarlo como quieras!"
 
 #. module: survey
-#. odoo-python
 #. odoo-javascript
+#. odoo-python
 #: code:addons/survey/models/survey_question.py:0
 #: code:addons/survey/static/src/js/survey_form.js:0
 #: code:addons/survey/tests/test_survey.py:0
@@ -5053,7 +5054,7 @@ msgstr ""
 #. module: survey
 #: model_terms:ir.ui.view,arch_db:survey.survey_survey_view_search
 msgid "Today Activities"
-msgstr "Actividades de Hoy"
+msgstr "Actividades de hoy"
 
 #. module: survey
 #: model:survey.question.answer,value:survey.survey_demo_burger_quiz_p2_q2_sug2
@@ -5132,8 +5133,8 @@ msgstr ""
 "electrónico del remitente."
 
 #. module: survey
-#. odoo-python
 #. odoo-javascript
+#. odoo-python
 #: code:addons/survey/models/survey_user_input.py:0
 #: code:addons/survey/static/src/js/survey_result.js:0
 #, python-format
@@ -5588,7 +5589,7 @@ msgstr ""
 #: code:addons/survey/models/survey_survey_template.py:0
 #, python-format
 msgid "Yellow Pen"
-msgstr "Pluma amarilla"
+msgstr "Bolígrafo amarillo"
 
 #. module: survey
 #: model:survey.question.answer,value:survey.survey_demo_food_preferences_q1_sug1
@@ -5610,7 +5611,7 @@ msgid ""
 "mechanism."
 msgstr ""
 "Solo puede crear certificaciones para encuestas que tengan un mecanismo de "
-"calificación."
+"puntuación."
 
 #. module: survey
 #: model_terms:ir.actions.act_window,help:survey.action_survey_user_input
@@ -5744,11 +5745,6 @@ msgstr "intentos"
 #, python-format
 msgid "close"
 msgstr "cerrar"
-
-#. module: survey
-#: model_terms:ir.ui.view,arch_db:survey.survey_results_filters
-msgid "dropdown-item d-flex align-items-center justify-content-between"
-msgstr "dropdown-item d-flex align-items-center justify-content-between"
 
 #. module: survey
 #: model_terms:ir.ui.view,arch_db:survey.survey_invite_view_form

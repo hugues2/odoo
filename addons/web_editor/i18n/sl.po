@@ -7,21 +7,22 @@
 # Vida Potočnik <vida.potocnik@mentis.si>, 2023
 # laznikd <laznik@mentis.si>, 2023
 # Boris Kodelja <boris@hbs.si>, 2023
-# Grega Vavtar <grega@hbs.si>, 2023
 # Tomaž Jug <tomaz@editor.si>, 2023
 # matjaz k <matjaz@mentis.si>, 2023
 # Matjaz Mozetic <m.mozetic@matmoz.si>, 2023
 # Tadej Lupšina <tadej@hbs.si>, 2023
 # Martin Trigaux, 2023
 # Jasmina Macur <jasmina@hbs.si>, 2023
+# Katja Deržič, 2024
+# Grega Vavtar <grega@hbs.si>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 17.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-26 21:56+0000\n"
+"POT-Creation-Date: 2024-01-29 10:46+0000\n"
 "PO-Revision-Date: 2023-10-26 23:09+0000\n"
-"Last-Translator: Jasmina Macur <jasmina@hbs.si>, 2023\n"
+"Last-Translator: Grega Vavtar <grega@hbs.si>, 2024\n"
 "Language-Team: Slovenian (https://app.transifex.com/odoo/teams/41243/sl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -253,6 +254,13 @@ msgstr ""
 
 #. module: web_editor
 #. odoo-javascript
+#: code:addons/web_editor/static/src/xml/snippets.xml:0
+#, python-format
+msgid "ACCESS OPTIONS ANYWAY"
+msgstr ""
+
+#. module: web_editor
+#. odoo-javascript
 #: code:addons/web_editor/static/src/js/wysiwyg/wysiwyg.js:0
 #, python-format
 msgid "AI Tools"
@@ -296,6 +304,7 @@ msgstr "Dodajte vrstico"
 
 #. module: web_editor
 #. odoo-javascript
+#: code:addons/web_editor/static/src/components/media_dialog/document_selector.js:0
 #: code:addons/web_editor/static/src/components/media_dialog/image_selector.js:0
 #, python-format
 msgid "Add URL"
@@ -334,13 +343,6 @@ msgstr ""
 #: code:addons/web_editor/static/src/js/wysiwyg/wysiwyg.js:0
 #, python-format
 msgid "Add an emoji"
-msgstr ""
-
-#. module: web_editor
-#. odoo-javascript
-#: code:addons/web_editor/static/src/components/media_dialog/document_selector.js:0
-#, python-format
-msgid "Add document"
 msgstr ""
 
 #. module: web_editor
@@ -1318,7 +1320,7 @@ msgstr ""
 #. module: web_editor
 #: model_terms:ir.ui.view,arch_db:web_editor.snippet_options_background_options
 msgid "Floating shapes"
-msgstr ""
+msgstr "Plavajoče oblike"
 
 #. module: web_editor
 #. odoo-javascript
@@ -1393,7 +1395,14 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/web_editor/static/src/js/wysiwyg/widgets/chatgpt_alternatives_dialog.xml:0
 #, python-format
-msgid "Generating alternatives..."
+msgid "Generating"
+msgstr ""
+
+#. module: web_editor
+#. odoo-javascript
+#: code:addons/web_editor/static/src/js/wysiwyg/widgets/chatgpt_alternatives_dialog.xml:0
+#, python-format
+msgid "Generating an alternative..."
 msgstr ""
 
 #. module: web_editor
@@ -2139,7 +2148,7 @@ msgstr ""
 #. module: web_editor
 #: model:ir.model.fields,field_description:web_editor.field_web_editor_converter_test_sub__name
 msgid "Name"
-msgstr "Ime in priimek"
+msgstr "Naziv"
 
 #. module: web_editor
 #. odoo-javascript
@@ -2468,6 +2477,13 @@ msgstr "Qweb polje - besedilo"
 #: model:ir.model,name:web_editor.model_ir_qweb_field_qweb
 msgid "Qweb Field qweb"
 msgstr "Qweb polje - qweb"
+
+#. module: web_editor
+#. odoo-javascript
+#: code:addons/web_editor/static/src/xml/snippets.xml:0
+#, python-format
+msgid "REPLACE BY NEW VERSION"
+msgstr ""
 
 #. module: web_editor
 #: model_terms:ir.ui.view,arch_db:web_editor.colorpicker
@@ -3184,7 +3200,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/web_editor/static/src/xml/snippets.xml:0
 #, python-format
-msgid "This block is outdated"
+msgid "This block is outdated."
 msgstr ""
 
 #. module: web_editor
@@ -3235,15 +3251,6 @@ msgstr "Naslov"
 #. module: web_editor
 #: model_terms:ir.ui.view,arch_db:web_editor.snippet_options
 msgid "Title tag"
-msgstr ""
-
-#. module: web_editor
-#. odoo-javascript
-#: code:addons/web_editor/static/src/xml/snippets.xml:0
-#, python-format
-msgid ""
-"To make changes, drop this block and use the new options in the last "
-"version."
 msgstr ""
 
 #. module: web_editor
@@ -3576,11 +3583,25 @@ msgstr "Da"
 
 #. module: web_editor
 #. odoo-javascript
+#: code:addons/web_editor/static/src/xml/snippets.xml:0
+#, python-format
+msgid "You can still access the block options but it might be ineffective."
+msgstr ""
+
+#. module: web_editor
+#. odoo-javascript
 #: code:addons/web_editor/static/src/components/media_dialog/document_selector.xml:0
 #, python-format
 msgid ""
 "You can upload documents with the button located in the top left of the "
 "screen."
+msgstr ""
+
+#. module: web_editor
+#. odoo-javascript
+#: code:addons/web_editor/static/src/xml/snippets.xml:0
+#, python-format
+msgid "You might not be able to customize it anymore."
 msgstr ""
 
 #. module: web_editor
@@ -3637,6 +3658,13 @@ msgstr "Pomanjšaj"
 #: model_terms:ir.ui.view,arch_db:web_editor.snippet_options_image_optimization_widgets
 msgid "add"
 msgstr "dodaj"
+
+#. module: web_editor
+#. odoo-javascript
+#: code:addons/web_editor/static/src/js/wysiwyg/widgets/chatgpt_alternatives_dialog.xml:0
+#, python-format
+msgid "alternatives..."
+msgstr ""
 
 #. module: web_editor
 #. odoo-javascript

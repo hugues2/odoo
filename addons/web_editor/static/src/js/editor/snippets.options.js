@@ -4600,8 +4600,8 @@ registry.sizing = SnippetOptionWidget.extend({
             if (rowEl.classList.contains("o_grid_mode") && !isMobile) {
                 self.options.wysiwyg.odooEditor.observerUnactive('displayBackgroundGrid');
                 backgroundGridEl = gridUtils._addBackgroundGrid(rowEl, 0);
-                self.options.wysiwyg.odooEditor.observerActive('displayBackgroundGrid');
                 gridUtils._setElementToMaxZindex(backgroundGridEl, rowEl);
+                self.options.wysiwyg.odooEditor.observerActive('displayBackgroundGrid');
             }
 
             // For loop to handle the cases where it is ne, nw, se or sw. Since
@@ -5670,6 +5670,34 @@ registry.SnippetMove = SnippetOptionWidget.extend(ColumnLayoutMixin, {
         $overlayArea.prepend($buttons[1]);
         $overlayArea.prepend($buttons[0]);
 
+        // Needed for compatibility (with already dropped snippets).
+        const parentEl = this.$target[0].parentElement;
+        if (parentEl.classList.contains("row")) {
+            const columnEls = [...parentEl.children];
+            let orderedColumnEls = columnEls.filter(el => el.style.order);
+
+            // TODO: remove in master once handled by a migration script.
+            // If there is no inline order, make sure that any existing order
+            // class is replaced with inline CSS.
+            if (!orderedColumnEls.length) {
+                for (const el of columnEls) {
+                    const orderClass = el.className.match(/(^|\s+)(?<cls>order-(?<ord>[0-9]+))(?!\S)/);
+                    if (orderClass) {
+                        el.classList.remove(orderClass.groups.cls);
+                        el.style.order = orderClass.groups.ord;
+                        orderedColumnEls.push(el);
+                    }
+                }
+            }
+
+            // If the target is a column, check if all the columns are either
+            // mobile ordered or not. If they are not consistent, then we remove
+            // the mobile order classes from all of them, to avoid issues.
+            if (orderedColumnEls.length && orderedColumnEls.length !== columnEls.length) {
+                this._removeMobileOrders(orderedColumnEls);
+            }
+        }
+
         return this._super(...arguments);
     },
     /**
@@ -5677,20 +5705,19 @@ registry.SnippetMove = SnippetOptionWidget.extend(ColumnLayoutMixin, {
      */
     onClone(options) {
         this._super.apply(this, arguments);
-        const mobileOrder = this._getItemMobileOrder(this.$target[0]);
+        const mobileOrder = this.$target[0].style.order;
         // If the order has been adapted on mobile, it must be different
         // for each clone.
         if (options.isCurrent && mobileOrder) {
             const siblingEls = this.$target[0].parentElement.children;
-            const cloneEls = [...siblingEls].filter(el => el.classList.contains(mobileOrder[0]));
+            const cloneEls = [...siblingEls].filter(el => el.style.order === mobileOrder);
             // For cases in which multiple clones are made at the same time, we
             // change the order for all clones at once. (e.g.: it happens when
             // increasing the columns count.) This makes sure the clones get a
             // mobile order in line with their DOM order.
             cloneEls.forEach((el, i) => {
                 if (i > 0) {
-                    const newMobileOrder = siblingEls.length - cloneEls.length + i;
-                    el.classList.replace(mobileOrder[0], `order-${newMobileOrder}`);
+                    el.style.order = siblingEls.length - cloneEls.length + i;
                 }
             });
         }
@@ -5698,20 +5725,22 @@ registry.SnippetMove = SnippetOptionWidget.extend(ColumnLayoutMixin, {
     /**
      * @override
      */
+    onMove() {
+        this._super.apply(this, arguments);
+        // Remove all the mobile order classes after a drag and drop.
+        this._removeMobileOrders(this.$target[0].parentElement.children);
+    },
+    /**
+     * @override
+     */
     onRemove() {
         this._super.apply(this, arguments);
-        const targetMobileOrder = this._getItemMobileOrder(this.$target[0]);
+        const targetMobileOrder = this.$target[0].style.order;
         // If the order has been adapted on mobile, the gap created by the
         // removed snippet must be filled in.
         if (targetMobileOrder) {
-            const targetOrder = parseInt(targetMobileOrder[1]);
-
-            [...this.$target[0].parentElement.children].forEach(el => {
-                const elOrder = parseInt(this._getItemMobileOrder(el)[1]);
-                if (elOrder > targetOrder) {
-                    el.classList.replace(`order-${elOrder}`, `order-${elOrder - 1}`);
-                }
-            });
+            const targetOrder = parseInt(targetMobileOrder);
+            this._fillRemovedItemGap(this.$target[0].parentElement, targetOrder);
         }
     },
 
@@ -5733,7 +5762,7 @@ registry.SnippetMove = SnippetOptionWidget.extend(ColumnLayoutMixin, {
         let siblingEls, mobileOrder;
         if (moveLeftOrRight) {
             siblingEls = this.$target[0].parentElement.children;
-            mobileOrder = !!this._getItemMobileOrder(this.$target[0]);
+            mobileOrder = !!this.$target[0].style.order;
         }
         if (moveLeftOrRight && isMobile && !isNavItem) {
             if (!mobileOrder) {
@@ -5768,9 +5797,7 @@ registry.SnippetMove = SnippetOptionWidget.extend(ColumnLayoutMixin, {
                 }
             }
             if (mobileOrder) {
-                for (const el of siblingEls) {
-                    el.className = el.className.replace(/\border(-lg)?-[0-9]+\b/g, "");
-                }
+                this._removeMobileOrders(siblingEls);
             }
         }
         if (!this.$target.is(this.data.noScroll)
@@ -5820,15 +5847,15 @@ registry.SnippetMove = SnippetOptionWidget.extend(ColumnLayoutMixin, {
             // On mobile, items' reordering is independent from desktop inside
             // a snippet (left or right), not at a higher level (up or down).
             if (moveLeftOrRight && isMobileView) {
-                const targetMobileOrder = this._getItemMobileOrder(this.$target[0]);
+                const targetMobileOrder = this.$target[0].style.order;
                 if (targetMobileOrder) {
                     const siblingEls = this.$target[0].parentElement.children;
                     const orderModifier = widgetName === "move_left_opt" ? -1 : 1;
                     let delta = 0;
                     while (true) {
                         delta += orderModifier;
-                        const nextOrderClass = `order-${parseInt(targetMobileOrder[1]) + delta}`;
-                        const siblingEl = [...siblingEls].find(el => el.classList.contains(nextOrderClass));
+                        const nextOrder = parseInt(targetMobileOrder) + delta;
+                        const siblingEl = [...siblingEls].find(el => el.style.order === nextOrder.toString());
                         if (!siblingEl) {
                             break;
                         }
@@ -5857,13 +5884,13 @@ registry.SnippetMove = SnippetOptionWidget.extend(ColumnLayoutMixin, {
      * @param {HTMLCollection} siblingEls
      */
     _swapMobileOrders(widgetValue, siblingEls) {
-        const targetMobileOrder = this._getItemMobileOrder(this.$target[0]);
+        const targetMobileOrder = this.$target[0].style.order;
         const orderModifier = widgetValue === "prev" ? -1 : 1;
         let delta = 0;
         while (true) {
             delta += orderModifier;
-            const newOrderClass = `order-${parseInt(targetMobileOrder[1]) + delta}`;
-            const comparedEl = [...siblingEls].find(el => el.classList.contains(newOrderClass));
+            const newOrder = parseInt(targetMobileOrder) + delta;
+            const comparedEl = [...siblingEls].find(el => el.style.order === newOrder.toString());
             // TODO In master: remove break.
             if (!comparedEl) {
                 break;
@@ -5871,8 +5898,8 @@ registry.SnippetMove = SnippetOptionWidget.extend(ColumnLayoutMixin, {
             if (window.getComputedStyle(comparedEl).display === "none") {
                 continue;
             }
-            this.$target[0].classList.replace(targetMobileOrder[0], newOrderClass);
-            comparedEl.classList.replace(newOrderClass, targetMobileOrder[0]);
+            this.$target[0].style.order = newOrder;
+            comparedEl.style.order = targetMobileOrder;
             break;
         }
     },
@@ -6244,11 +6271,15 @@ const ImageHandlerOption = SnippetOptionWidget.extend({
         }
     },
     /**
-     * Returns a list of valid formats for a given image.
+     * Returns a list of valid formats for a given image or an empty list if
+     * there is no mimetypeBeforeConversion data attribute on the image.
      *
      * @private
      */
     async _computeAvailableFormats() {
+        if (!this.mimetypeBeforeConversion) {
+            return [];
+        }
         const img = this._getImg();
         const original = await loadImage(this.originalSrc);
         const maxWidth = img.dataset.width ? img.naturalWidth : original.naturalWidth;
@@ -6324,6 +6355,7 @@ const ImageHandlerOption = SnippetOptionWidget.extend({
         }
         this.originalId = img.dataset.originalId;
         this.originalSrc = img.dataset.originalSrc;
+        this.mimetypeBeforeConversion = img.dataset.mimetypeBeforeConversion;
     },
     /**
      * Sets the image's width to its suggested size.
@@ -6396,6 +6428,9 @@ const ImageHandlerOption = SnippetOptionWidget.extend({
      * @override
      */
     _computeWidgetVisibility(widgetName, params) {
+        if (widgetName === "format_select_opt" && !this.mimetypeBeforeConversion) {
+            return false;
+        }
         if (this._isImageProcessingWidget(widgetName, params)) {
             const img = this._getImg();
             return this._isImageSupportedForProcessing(img, true);
@@ -8974,6 +9009,7 @@ registry.SnippetSave = SnippetOptionWidget.extend({
                                 ? _t("Custom %s", this.data.snippetName)
                                 : _t("Custom Button");
                             const targetCopyEl = this.$target[0].cloneNode(true);
+                            targetCopyEl.classList.add('s_custom_snippet');
                             delete targetCopyEl.dataset.name;
                             if (isButton) {
                                 targetCopyEl.classList.remove("mb-2");
@@ -8983,6 +9019,18 @@ registry.SnippetSave = SnippetOptionWidget.extend({
                             // current widget has been destroyed and is orphaned, so this._rpc
                             // will not work as it can't trigger_up. For this reason, we need
                             // to bypass the service provider and use the global RPC directly
+
+                            // Get editable parent TODO find proper method to get it directly
+                            let editableParentEl;
+                            for (const parentEl of this.options.getContentEditableAreas()) {
+                                if (parentEl.contains(this.$target[0])) {
+                                    editableParentEl = parentEl;
+                                    break;
+                                }
+                            }
+                            context['model'] = editableParentEl.dataset.oeModel;
+                            context['field'] = editableParentEl.dataset.oeField;
+                            context['resId'] = editableParentEl.dataset.oeId;
                             await jsonrpc(`/web/dataset/call_kw/ir.ui.view/save_snippet`, {
                                 model: "ir.ui.view",
                                 method: "save_snippet",

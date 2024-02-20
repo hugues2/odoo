@@ -3,19 +3,19 @@
 # 	* website
 # 
 # Translators:
-# Martin Trigaux, 2023
 # Yenthe Van Ginneken <yenthespam@gmail.com>, 2023
-# Wil Odoo, 2023
-# Jolien De Paepe, 2023
-# Erwin van der Ploeg <erwin@odooexperts.nl>, 2023
+# Martin Trigaux, 2024
+# Wil Odoo, 2024
+# Erwin van der Ploeg <erwin@odooexperts.nl>, 2024
+# Jolien De Paepe, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 17.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-26 21:54+0000\n"
+"POT-Creation-Date: 2024-01-29 10:44+0000\n"
 "PO-Revision-Date: 2023-10-26 23:09+0000\n"
-"Last-Translator: Erwin van der Ploeg <erwin@odooexperts.nl>, 2023\n"
+"Last-Translator: Jolien De Paepe, 2024\n"
 "Language-Team: Dutch (https://app.transifex.com/odoo/teams/41243/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -958,10 +958,12 @@ msgid ""
 "                                                            <option value=\"3\">Three</option>\n"
 "                                                        </select>"
 msgstr ""
-"<select id=\"exampleSelect\" class=\"form-select\"><option j=1 value=\"Open "
-"this select menu\">Open dit keuzemenu</option><option j=2 value=One> "
-"Een</option><option j=3 value=Two> Twee</option><option j=4 value=Three> "
-"Drie</option></select>"
+"<select id=\"exampleSelect\" class=\"form-select\">\n"
+"                                                            <option selected=\"true\">Open dit selectiemenu</option>\n"
+"                                                            <option value=\"1\">Een</option>\n"
+"                                                            <option value=\"2\">Twee</option>\n"
+"                                                            <option value=\"3\">Drie</option>\n"
+"                                                        </select>"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.header_text_element
@@ -1060,11 +1062,13 @@ msgstr ""
 msgid ""
 "<small>\n"
 "                            <i class=\"fa fa-1x fa-fw fa-envelope me-1\"/>\n"
-"                             info@yourcompany.example.com\n"
+"                            info@yourcompany.example.com\n"
 "                        </small>"
 msgstr ""
-"<small><i class=\"fa fa-1x fa-fw fa-envelope "
-"me-1\"/>info@uwbedrijf.voorbeeld.com</i></small>"
+"<small>\n"
+"                            <i class=\"fa fa-1x fa-fw fa-envelope me-1\"/>\n"
+"                            info@yourcompany.example.com\n"
+"                        </small>"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_comparisons
@@ -1572,6 +1576,13 @@ msgstr ""
 
 #. module: website
 #. odoo-javascript
+#: code:addons/website/static/src/xml/web_editor.xml:0
+#, python-format
+msgid "AI"
+msgstr "IA"
+
+#. module: website
+#. odoo-javascript
 #: code:addons/website/static/src/xml/website.editor.xml:0
 #, python-format
 msgid "API Key"
@@ -1605,6 +1616,13 @@ msgstr "Over ons"
 #: model_terms:ir.ui.view,arch_db:website.template_footer_minimalist
 msgid "About us"
 msgstr "Over ons"
+
+#. module: website
+#. odoo-python
+#: code:addons/website/models/website.py:0
+#, python-format
+msgid "Access Denied"
+msgstr "Toegang geweigerd"
 
 #. module: website
 #: model:ir.model.fields,field_description:website.field_website_visitor__access_token
@@ -1835,6 +1853,11 @@ msgstr "Voeg hierna een nieuw veld toe"
 #: model_terms:ir.ui.view,arch_db:website.s_website_form_options
 msgid "Add a new field at the end"
 msgstr "Voeg aan het einde een nieuw veld toe"
+
+#. module: website
+#: model_terms:ir.ui.view,arch_db:website.view_view_form_extend
+msgid "Add groups in the \"Access Rights\" tab below."
+msgstr "Voeg groepen toe in het onderstaand tabblad \"Toegangsrechter\"."
 
 #. module: website
 #. odoo-python
@@ -2200,6 +2223,13 @@ msgstr "Ankernaam"
 #: model_terms:ir.ui.view,arch_db:website.s_masonry_block_texts_image_texts_template
 msgid "And a great subtitle"
 msgstr "En een geweldige ondertitel"
+
+#. module: website
+#. odoo-javascript
+#: code:addons/website/static/src/xml/web_editor.xml:0
+#, python-format
+msgid "Animate"
+msgstr "animeren"
 
 #. module: website
 #. odoo-javascript
@@ -4341,6 +4371,18 @@ msgid "Display this website when users visit this domain"
 msgstr "Toon de website wanneer de bezoeker dit domein bezoekt"
 
 #. module: website
+#. odoo-javascript
+#: code:addons/website/static/src/components/edit_head_body_dialog/edit_head_body_dialog.xml:0
+#: code:addons/website/static/src/xml/website.editor.xml:0
+#, python-format
+msgid ""
+"Do not copy/paste code you do not understand, this could put your data at "
+"risk."
+msgstr ""
+"Kopieer/plak geen code die je niet begrijpt, dit kan uw gegevens in gevaar "
+"brengen."
+
+#. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_mega_menu_cards
 msgid ""
 "Do you need specific information? Our specialists will help you with "
@@ -5653,6 +5695,18 @@ msgid "Google Search Console"
 msgstr "Google Search console"
 
 #. module: website
+#. odoo-python
+#: code:addons/website/models/res_config_settings.py:0
+#: model_terms:ir.ui.view,arch_db:website.res_config_settings_view_form
+#, python-format
+msgid ""
+"Google doesn't need to be pinged anymore. It will automatically fetch your "
+"/sitemap.xml."
+msgstr ""
+"Google hoeft niet meer gepingd te worden. Het zal automatisch je "
+"/sitemap.xml ophalen."
+
+#. module: website
 #: model:ir.model.fields,help:website.field_res_config_settings__google_search_console
 #: model:ir.model.fields,help:website.field_website__google_search_console
 msgid "Google key, or Enable to access first reply"
@@ -5954,7 +6008,10 @@ msgid "High"
 msgstr "Hoog"
 
 #. module: website
+#. odoo-javascript
+#: code:addons/website/static/src/xml/web_editor.xml:0
 #: model_terms:ir.ui.view,arch_db:website.snippet_options
+#, python-format
 msgid "Highlight"
 msgstr "Uitgelicht"
 
@@ -6016,8 +6073,8 @@ msgid "Home page of the current website"
 msgstr "Startpagina van de huidige website"
 
 #. module: website
-#. odoo-python
 #. odoo-javascript
+#. odoo-python
 #: code:addons/website/models/website.py:0
 #: code:addons/website/static/src/client_actions/website_preview/website_preview.xml:0
 #: model:ir.model.fields,field_description:website.field_website_page__is_homepage
@@ -6220,6 +6277,16 @@ msgstr ""
 "Als je de huidige bewerkingen verwijdert, gaan alle niet-opgeslagen "
 "wijzigingen verloren. Je kunt annuleren om terug te keren naar de "
 "bewerkingsmodus."
+
+#. module: website
+#. odoo-javascript
+#: code:addons/website/static/src/components/resource_editor/resource_editor_warning.xml:0
+#: code:addons/website/static/src/xml/website.editor.xml:0
+#, python-format
+msgid ""
+"If you need to add analytics or marketing tags, inject code in your <head> "
+"or <body> instead."
+msgstr ""
 
 #. module: website
 #. odoo-javascript
@@ -8089,6 +8156,11 @@ msgid "Next"
 msgstr "Volgende"
 
 #. module: website
+#: model_terms:ir.ui.view,arch_db:website.step_wizard
+msgid "Next:"
+msgstr "Volgende:"
+
+#. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_tabs_options
 msgid "No Slide Effect"
 msgstr "Geen dia effect"
@@ -9162,7 +9234,7 @@ msgstr "Prijzen"
 #: model_terms:ir.ui.view,arch_db:website.new_page_template_groups
 #: model_terms:ir.ui.view,arch_db:website.new_page_template_pricing_s_text_block_h1
 msgid "Pricing Plans"
-msgstr "Pakket Prijzen"
+msgstr "Pakketprijzen"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_alert_options
@@ -9382,6 +9454,11 @@ msgstr "Qweb"
 #: model:ir.model,name:website.model_ir_qweb_field_contact
 msgid "Qweb Field Contact"
 msgstr "QWeb veld contact"
+
+#. module: website
+#: model:ir.model,name:website.model_ir_qweb_field_html
+msgid "Qweb Field HTML"
+msgstr "Qweb veld HTML"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_chart_options
@@ -13187,6 +13264,13 @@ msgstr "Je hebt niet de rechten om te publiceren/depubliceren"
 #. odoo-javascript
 #: code:addons/website/static/src/components/dialog/seo.xml:0
 #, python-format
+msgid "You don't have permissions to edit this record."
+msgstr "Je hebt geen toestemming om deze record te wijzingen."
+
+#. module: website
+#. odoo-javascript
+#: code:addons/website/static/src/components/dialog/seo.xml:0
+#, python-format
 msgid ""
 "You have hidden this page from search results. It won't be indexed by search"
 " engines."
@@ -13254,6 +13338,17 @@ msgstr ""
 #, python-format
 msgid "Your Email"
 msgstr "Je e-mail"
+
+#. module: website
+#. odoo-javascript
+#: code:addons/website/static/src/snippets/s_embed_code/000.js:0
+#, python-format
+msgid ""
+"Your Embed Code snippet doesn't have anything to display. Click on Edit to "
+"modify it."
+msgstr ""
+"Je snippet Code insluiten heeft niets om weer te geven. Klik op Wijzigen om "
+"deze te wijzigen."
 
 #. module: website
 #. odoo-javascript

@@ -3,19 +3,22 @@
 # 	* stock
 # 
 # Translators:
-# Wil Odoo, 2023
 # 山西清水欧度(QQ:54773801) <54773801@qq.com>, 2023
-# Chloe Wang, 2023
 # 何彬 <vnsoft.he@gmail.com>, 2023
 # Jeffery CHEN <jeffery9@gmail.com>, 2023
+# Wil Odoo, 2024
+# Martin Trigaux, 2024
+# Chloe Wang, 2024
+# Yazi Tian, 2024
+# 湘子 南 <1360857908@qq.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 17.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-26 21:54+0000\n"
+"POT-Creation-Date: 2024-01-05 12:31+0000\n"
 "PO-Revision-Date: 2023-10-26 23:09+0000\n"
-"Last-Translator: Jeffery CHEN <jeffery9@gmail.com>, 2023\n"
+"Last-Translator: 湘子 南 <1360857908@qq.com>, 2024\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/odoo/teams/41243/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -106,6 +109,13 @@ msgstr "# 退货"
 
 #. module: stock
 #. odoo-python
+#: code:addons/stock/models/stock_warehouse.py:0
+#, python-format
+msgid "%(name)s (copy)(%(id)s)"
+msgstr "%(name)s (copy)(%(id)s)"
+
+#. module: stock
+#. odoo-python
 #: code:addons/stock/wizard/stock_replenishment_info.py:0
 #, python-format
 msgid ""
@@ -126,6 +136,7 @@ msgstr "%(warehouse)s: 供应产品来自 %(supplier)s"
 #: code:addons/stock/models/stock_location.py:0
 #: code:addons/stock/models/stock_location.py:0
 #: code:addons/stock/models/stock_package_type.py:0
+#: code:addons/stock/models/stock_picking.py:0
 #: code:addons/stock/models/stock_picking.py:0
 #: code:addons/stock/models/stock_rule.py:0
 #: code:addons/stock/models/stock_storage_category.py:0
@@ -500,6 +511,11 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:stock.view_picking_form
 msgid "<span class=\"o_stat_text\">Allocation</span>"
 msgstr "<span class=\"o_stat_text\">分配</span>"
+
+#. module: stock
+#: model_terms:ir.ui.view,arch_db:stock.view_picking_form
+msgid "<span class=\"o_stat_text\">Detailed Operations</span>"
+msgstr "<span class=\"o_stat_text\">详细操作</span>"
 
 #. module: stock
 #: model_terms:ir.ui.view,arch_db:stock.product_form_view_procurement_button
@@ -1213,6 +1229,11 @@ msgid "At Confirmation"
 msgstr "确认时"
 
 #. module: stock
+#: model_terms:ir.ui.view,arch_db:stock.search_product_lot_filter
+msgid "At Customer"
+msgstr "向客户"
+
+#. module: stock
 #: model:ir.model.fields,field_description:stock.field_stock_lot__message_attachment_count
 #: model:ir.model.fields,field_description:stock.field_stock_picking__message_attachment_count
 #: model:ir.model.fields,field_description:stock.field_stock_scrap__message_attachment_count
@@ -1291,8 +1312,8 @@ msgid "Automatic No Step Added"
 msgstr "自动并不增加步骤"
 
 #. module: stock
-#. odoo-python
 #. odoo-javascript
+#. odoo-python
 #: code:addons/stock/models/stock_picking.py:0
 #: code:addons/stock/static/src/widgets/forecast_widget.xml:0
 #: model:ir.model.fields.selection,name:stock.selection__stock_move__state__assigned
@@ -1408,7 +1429,7 @@ msgstr "在安排日期之前"
 msgid ""
 "Below text serves as a suggestion and doesn’t engage Odoo S.A. "
 "responsibility."
-msgstr "以下文本仅作为建议，Odoo公司不承担责任。"
+msgstr "以下文本仅作为建议，ERP 公司不承担责任."
 
 #. module: stock
 #: model:ir.model.fields.selection,name:stock.selection__res_partner__picking_warn__block
@@ -1558,7 +1579,9 @@ msgid ""
 "(Chicago) in its entirety and does not include any costs relating to the "
 "legislation of the country in which the client is located."
 msgstr ""
-"某些国家根据其国内立法，对结算单金额实行源头预扣。任何来源的预扣款将由客户支付给税务机关。在任何情况下，我公司（芝加哥）都不能涉及与一个国家的立法有关的费用。因此，结算单金额将全部由我公司（芝加哥）承担，不包括与客户所在国家的立法有关的任何费用。"
+"某些国家根据其国内立法，对结算单金额实行源头预扣。任何来源的预扣款将由客户支付给税务机关。在任何情况下，My Company (Chicago) "
+"都不能涉及与一个国家的立法有关的费用。因此，结算单金额将全部由 My Company (Chicago) "
+"承担，不包括与客户所在国家的立法有关的任何费用。"
 
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_stock_return_picking__move_dest_exists
@@ -1725,6 +1748,7 @@ msgstr "公司"
 #: model:ir.model.fields,field_description:stock.field_stock_warehouse__company_id
 #: model:ir.model.fields,field_description:stock.field_stock_warehouse_orderpoint__company_id
 #: model_terms:ir.ui.view,arch_db:stock.quant_search_view
+#: model_terms:ir.ui.view,arch_db:stock.search_product_lot_filter
 msgid "Company"
 msgstr "公司"
 
@@ -2120,6 +2144,7 @@ msgstr "创建新仓库会自动激活库存地址设置"
 
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_stock_picking__date
+#: model_terms:ir.ui.view,arch_db:stock.search_product_lot_filter
 #: model_terms:ir.ui.view,arch_db:stock.view_move_search
 msgid "Creation Date"
 msgstr "创建时间"
@@ -2128,6 +2153,11 @@ msgstr "创建时间"
 #: model:ir.model.fields,help:stock.field_stock_picking__date
 msgid "Creation Date, usually the time of the order"
 msgstr "创建日期，通常是订单的时间"
+
+#. module: stock
+#: model_terms:ir.ui.view,arch_db:stock.search_product_lot_filter
+msgid "Creation date"
+msgstr "创建日期"
 
 #. module: stock
 #. odoo-python
@@ -2433,7 +2463,7 @@ msgstr "通过此仓库的默认路线"
 msgid ""
 "Define a minimum stock rule so that Odoo automatically creates requests for "
 "quotations or confirmed manufacturing orders to resupply your stock."
-msgstr "设置一个最小库存规则，odoo会依据规则自动创建报价单或确认生产单，以满足最小库存量。"
+msgstr "设置一个最小库存规则，ERP 会依据规则自动创建报价单或确认生产单，以满足最小库存量."
 
 #. module: stock
 #: model_terms:ir.actions.act_window,help:stock.action_warehouse_form
@@ -2455,7 +2485,7 @@ msgstr ""
 "（库存、货架、储位等等），\n"
 "业务伙伴位置（客户、\n"
 "供应商）和虚拟位置，即是对方的库存作业，如：生产订单\n"
-"的消耗、盘点等。"
+"的消耗、盘点等."
 
 #. module: stock
 #: model:ir.model.fields,help:stock.field_stock_location__removal_strategy_id
@@ -2721,6 +2751,7 @@ msgstr "目的地地址 "
 #. odoo-python
 #: code:addons/stock/models/stock_rule.py:0
 #: model:ir.model.fields,field_description:stock.field_stock_move__location_dest_id
+#: model:ir.model.fields,field_description:stock.field_stock_move_line__picking_location_dest_id
 #: model:ir.model.fields,field_description:stock.field_stock_picking__location_dest_id
 #: model:ir.model.fields,field_description:stock.field_stock_rule__location_dest_id
 #: model_terms:ir.ui.view,arch_db:stock.view_move_search
@@ -2770,7 +2801,7 @@ msgstr "目的路线"
 #. module: stock
 #. odoo-python
 #: code:addons/stock/models/stock_move.py:0
-#: model_terms:ir.ui.view,arch_db:stock.view_picking_form
+#: code:addons/stock/models/stock_picking.py:0
 #, python-format
 msgid "Detailed Operations"
 msgstr "作业详情"
@@ -3030,8 +3061,9 @@ msgid ""
 " inventory adjustments, batch picking, moving lots or pallets, low inventory"
 " checks, etc. Go to the \"Apps\" menu to activate the barcode interface."
 msgstr ""
-"享受Odoo条码应用带来的快节奏体验。它的速度快得惊人，即使没有稳定的网络连接也能工作。它支持所有流程：盘点、批量拣货、移动批次或托盘、低库存检查等。进入"
-" \"应用 \"菜单，激活条码界面。"
+"享受 ERP "
+"条码应用带来的快节奏体验。它的速度快得惊人，即使没有稳定的网络连接也能工作。它支持所有流程：盘点、批量拣货、移动批次或托盘、低库存检查等。进入 \"应用"
+" \"菜单，激活条码界面."
 
 #. module: stock
 #: model:ir.model.fields,help:stock.field_product_product__tracking
@@ -3055,8 +3087,8 @@ msgid ""
 msgstr ""
 "系统中每一个库存作业都是将产品从一个\n"
 "位置移至另一位置。例如，若果您从供应商那边收到产品，\n"
-"Odoo将会把产品从供应商位置调拨到仓位置置。每个报告可用在\n"
-"实体位置、业务伙伴位置或者虚拟位置进行。"
+"ERP 将会把产品从供应商位置调拨到仓位置置。每个报告可用在\n"
+"实体位置、业务伙伴位置或者虚拟位置进行."
 
 #. module: stock
 #: model_terms:ir.ui.view,arch_db:stock.exception_on_picking
@@ -3648,7 +3680,9 @@ msgid ""
 "payment date, My Company (Chicago) reserves the right to call on the "
 "services of a debt recovery company. All legal expenses will be payable by "
 "the client."
-msgstr "如果在到期付款日期后超过六十（60）天仍未完成款，我公司（芝加哥）预留要求债务追讨公司提供服务的权利。所有法律费用将由客户支付。"
+msgstr ""
+"如果在到期付款日期后超过六十（60）天仍未完成款，My Company (Chicago) "
+"预留要求债务追讨公司提供服务的权利。所有法律费用将由客户支付。"
 
 #. module: stock
 #: model:ir.model.fields.selection,name:stock.selection__stock_storage_category__allow_new_product__same
@@ -3729,63 +3763,63 @@ msgstr ""
 msgid ""
 "If this checkbox is ticked, Odoo will automatically print the delivery slip "
 "of a picking when it is validated."
-msgstr "如果勾选该复选框，Odoo 将在拣货验证后自动打印交货单。"
+msgstr "如果勾选该复选框，ERP 将在拣货验证后自动打印交货单。"
 
 #. module: stock
 #: model:ir.model.fields,help:stock.field_stock_picking_type__auto_print_lot_labels
 msgid ""
 "If this checkbox is ticked, Odoo will automatically print the lot/SN labels "
 "of a picking when it is validated."
-msgstr "如果勾选该复选框，Odoo 将在验证拣货时自动打印拣货的批次/SN 标签。"
+msgstr "如果勾选该复选框，ERP 将在验证拣货时自动打印拣货的批次/SN 标签。"
 
 #. module: stock
 #: model:ir.model.fields,help:stock.field_stock_picking_type__auto_print_package_label
 msgid ""
 "If this checkbox is ticked, Odoo will automatically print the package label "
 "when \"Put in Pack\" button is used."
-msgstr "如果勾选该复选框，Odoo 将在使用 \"放入包装 \"按钮时自动打印包装标签。"
+msgstr "如果勾选该复选框，ERP 将在使用 \"放入包装 \"按钮时自动打印包装标签。"
 
 #. module: stock
 #: model:ir.model.fields,help:stock.field_stock_picking_type__auto_print_packages
 msgid ""
 "If this checkbox is ticked, Odoo will automatically print the packages and "
 "their contents of a picking when it is validated."
-msgstr "如果勾选该复选框，Odoo 将在采样验证时自动打印采样包及其内容。"
+msgstr "如果勾选该复选框，ERP 将在采样验证时自动打印采样包及其内容。"
 
 #. module: stock
 #: model:ir.model.fields,help:stock.field_stock_picking_type__auto_print_product_labels
 msgid ""
 "If this checkbox is ticked, Odoo will automatically print the product labels"
 " of a picking when it is validated."
-msgstr "如果勾选该复选框，Odoo 将在采摘验证时自动打印产品标签。"
+msgstr "如果勾选该复选框，ERP 将在采摘验证时自动打印产品标签。"
 
 #. module: stock
 #: model:ir.model.fields,help:stock.field_stock_picking_type__auto_print_reception_report_labels
 msgid ""
 "If this checkbox is ticked, Odoo will automatically print the reception "
 "report labels of a picking when it is validated."
-msgstr "如果勾选该复选框，Odoo 将在采摘验证时自动打印采摘的接收报告标签。"
+msgstr "如果勾选该复选框，ERP 将在采摘验证时自动打印采摘的接收报告标签。"
 
 #. module: stock
 #: model:ir.model.fields,help:stock.field_stock_picking_type__auto_print_reception_report
 msgid ""
 "If this checkbox is ticked, Odoo will automatically print the reception "
 "report of a picking when it is validated and has assigned moves."
-msgstr "如果勾选该复选框，Odoo 将在采摘验证并分配移动后自动打印采摘的接收报告。"
+msgstr "如果勾选该复选框，ERP 将在采摘验证并分配移动后自动打印采摘的接收报告。"
 
 #. module: stock
 #: model:ir.model.fields,help:stock.field_stock_picking_type__auto_print_return_slip
 msgid ""
 "If this checkbox is ticked, Odoo will automatically print the return slip of"
 " a picking when it is validated."
-msgstr "如果勾选该复选框，Odoo 将在验证拣货时自动打印退货单。"
+msgstr "如果勾选该复选框，ERP 将在验证拣货时自动打印退货单。"
 
 #. module: stock
 #: model:ir.model.fields,help:stock.field_stock_picking_type__auto_show_reception_report
 msgid ""
 "If this checkbox is ticked, Odoo will automatically show the reception "
 "report (if there are moves to allocate to) when validating."
-msgstr "如果勾选此复选框，Odoo将在验证时自动显示接收报表（如果有要分配的库存移动）。"
+msgstr "如果勾选此复选框，ERP 将在验证时自动显示接收报表（如果有要分配的库存移动）。"
 
 #. module: stock
 #: model:ir.model.fields,help:stock.field_stock_picking_type__print_label
@@ -3794,6 +3828,7 @@ msgstr "如果该复选框被选中，标签将在此作业中被打印。"
 
 #. module: stock
 #: model:ir.model.fields,help:stock.field_stock_move__show_operations
+#: model:ir.model.fields,help:stock.field_stock_picking__show_operations
 #: model:ir.model.fields,help:stock.field_stock_picking_type__show_operations
 msgid ""
 "If this checkbox is ticked, the pickings lines will represent detailed stock"
@@ -3874,6 +3909,11 @@ msgid "Import Template for Inventory Adjustments"
 msgstr "库存调整导入模版"
 
 #. module: stock
+#: model_terms:ir.ui.view,arch_db:stock.quant_search_view
+msgid "In Stock"
+msgstr "有现货"
+
+#. module: stock
 #: model:ir.model.fields,field_description:stock.field_stock_warehouse__in_type_id
 msgid "In Type"
 msgstr "入库类型"
@@ -3885,7 +3925,9 @@ msgid ""
 "any claim by means of a letter sent by recorded delivery to its registered "
 "office within 8 days of the delivery of the goods or the provision of the "
 "services."
-msgstr "为使其可被受理，我公司（芝加哥）必须在交付货物或提供服务后8天内通过记录递送的方式将任何索赔通知到其注册办公室。"
+msgstr ""
+"为使其可被受理，My Company (Chicago) 必须在交付货物或提供服务后 8 天内通过挂号信方式将任何索赔通知 My Company "
+"(Chicago) 到其注册办公室。"
 
 #. module: stock
 #. odoo-javascript
@@ -4034,6 +4076,7 @@ msgstr "非法的域左作业符 %s"
 #. module: stock
 #. odoo-python
 #: code:addons/stock/models/product.py:0 code:addons/stock/models/product.py:0
+#: code:addons/stock/models/stock_lot.py:0
 #, python-format
 msgid "Invalid domain operator %s"
 msgstr "非法的域操作符 %s"
@@ -4041,6 +4084,7 @@ msgstr "非法的域操作符 %s"
 #. module: stock
 #. odoo-python
 #: code:addons/stock/models/product.py:0 code:addons/stock/models/product.py:0
+#: code:addons/stock/models/stock_lot.py:0
 #, python-format
 msgid "Invalid domain right operand '%s'. It must be of type Integer/Float"
 msgstr "无效位域右移运算 '%s'。必须为整数或浮点数"
@@ -4297,6 +4341,14 @@ msgstr "保持计数的计数"
 #: model_terms:ir.ui.view,arch_db:stock.stock_inventory_conflict_form_view
 msgid "Keep Difference"
 msgstr "保持差异"
+
+#. module: stock
+#. odoo-javascript
+#: code:addons/stock/static/src/widgets/lots_dialog.xml:0
+#: code:addons/stock/static/src/widgets/lots_dialog.xml:0
+#, python-format
+msgid "Keep current lines"
+msgstr "保留当前明细行"
 
 #. module: stock
 #: model_terms:ir.ui.view,arch_db:stock.stock_inventory_conflict_form_view
@@ -4558,6 +4610,11 @@ msgstr "链接的移动"
 
 #. module: stock
 #: model_terms:ir.ui.view,arch_db:stock.view_picking_form
+msgid "List view of detailed operations"
+msgstr "详细操作的列表视图"
+
+#. module: stock
+#: model_terms:ir.ui.view,arch_db:stock.view_picking_form
 msgid "List view of operations"
 msgstr "作业的列表视图"
 
@@ -4609,7 +4666,7 @@ msgstr "位置类型"
 #. module: stock
 #: model:ir.model.fields,help:stock.field_stock_move__location_dest_id
 msgid "Location where the system will stock the finished products."
-msgstr "系统存储成品的位置."
+msgstr "系统成品入库的位置."
 
 #. module: stock
 #: model_terms:ir.ui.view,arch_db:stock.view_putaway_search
@@ -4841,6 +4898,14 @@ msgid "Manual Operation"
 msgstr "手动作业"
 
 #. module: stock
+#. odoo-python
+#: code:addons/stock/wizard/product_replenish.py:0
+#: code:addons/stock/wizard/product_replenish.py:0
+#, python-format
+msgid "Manual Replenishment"
+msgstr "手动补给"
+
+#. module: stock
 #: model:ir.model.fields.selection,name:stock.selection__stock_picking_type__reservation_method__manual
 msgid "Manually"
 msgstr "手动"
@@ -5057,7 +5122,8 @@ msgid ""
 "to appear as a third party in the context of any claim for damages filed "
 "against the client by an end consumer."
 msgstr ""
-"我公司（芝加哥）承诺尽最大努力按照商定的时间框架在适当的时候提供有效的服务。然而，它的任何义务都不能被认为是取得成果的义务。在任何情况下，我公司（芝加哥）不能被客户要求作为第三方出现在最终消费者对客户提出的任何损害索赔中。"
+"My Company (Chicago) 承诺尽最大努力按照商定的时间框架在适当的时候提供高效服务。然而，它的任何义务都不能被认为是取得成果的义务。My"
+" Company (Chicago) 在任何情况下都不能被客户要求作为第三方出现在最终消费者对客户提出的任何损害索赔中。"
 
 #. module: stock
 #: model_terms:ir.ui.view,arch_db:stock.quant_search_view
@@ -5324,8 +5390,8 @@ msgid "Normal"
 msgstr "正常"
 
 #. module: stock
-#. odoo-python
 #. odoo-javascript
+#. odoo-python
 #: code:addons/stock/models/stock_picking.py:0
 #: code:addons/stock/static/src/stock_forecasted/forecasted_details.xml:0
 #: code:addons/stock/static/src/widgets/forecast_widget.xml:0
@@ -5426,7 +5492,7 @@ msgid ""
 "                                        install the IoT App on a computer that is on the same local network as the\n"
 "                                        barcode operator and configure the routing of the reports."
 msgstr ""
-"Odoo 默认打开 PDF 预览。如果您（仅限企业用户）想立即打印，请执行以下操作\n"
+"ERP 默认打开 PDF 预览。如果您（仅限企业用户）想立即打印，请执行以下操作\n"
 "                                        在与条码操作员位于同一本地网络的计算机上安装 IoT 应用程序，并配置报告的路由。\n"
 "                                        条码操作员的计算机上安装物联网应用程序，并配置报告的路由。"
 
@@ -5442,6 +5508,7 @@ msgstr "办公椅子"
 #: model:ir.model.fields,field_description:stock.field_stock_warehouse_orderpoint__qty_on_hand
 #: model_terms:ir.ui.view,arch_db:stock.product_product_stock_tree
 #: model_terms:ir.ui.view,arch_db:stock.quant_search_view
+#: model_terms:ir.ui.view,arch_db:stock.search_product_lot_filter
 #: model_terms:ir.ui.view,arch_db:stock.view_stock_product_template_tree
 #: model_terms:ir.ui.view,arch_db:stock.view_stock_product_tree
 #: model_terms:ir.ui.view,arch_db:stock.view_stock_quant_tree_simple
@@ -5450,6 +5517,7 @@ msgid "On Hand"
 msgstr "在手"
 
 #. module: stock
+#: model:ir.model.fields,field_description:stock.field_stock_lot__product_qty
 #: model_terms:ir.ui.view,arch_db:stock.view_stock_quant_tree_editable
 #: model_terms:ir.ui.view,arch_db:stock.view_stock_quant_tree_inventory_editable
 msgid "On Hand Quantity"
@@ -5679,8 +5747,8 @@ msgid ""
 "My Company (Chicago) will be authorized to suspend any provision of services"
 " without prior warning in the event of late payment."
 msgstr ""
-"我们的结算单应在21个工作日内支付，除非结算单或订单上注明了其他付款时限。如果在到期日没有付款，我公司（芝加哥）预留要求支付固定利息的权利，金额为剩余款项的10%"
-" o%。如果逾期付款，我公司（芝加哥）将被授权暂停提供任何服务，而无需事先警告。"
+"我们的结算单应在 21 个工作日内支付，除非结算单或订单上注明了其他付款时限。如果在到期日没有付款，My Company (Chicago) "
+"预留要求支付固定利息的权利，金额为剩余款项的10% 。如果逾期付款，My Company (Chicago) 将被授权暂停提供任何服务，而无需事先警告。"
 
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_stock_warehouse__out_type_id
@@ -6615,6 +6683,7 @@ msgstr "推"
 
 #. module: stock
 #: model_terms:ir.ui.view,arch_db:stock.view_picking_form
+#: model_terms:ir.ui.view,arch_db:stock.view_stock_move_line_detailed_operation_tree
 msgid "Put in Pack"
 msgstr "放入包裹"
 
@@ -6735,7 +6804,6 @@ msgstr "未包装数量"
 #: code:addons/stock/static/src/client_actions/stock_traceability_report_backend.xml:0
 #: model:ir.model.fields,field_description:stock.field_product_replenish__quantity
 #: model:ir.model.fields,field_description:stock.field_report_stock_quantity__product_qty
-#: model:ir.model.fields,field_description:stock.field_stock_lot__product_qty
 #: model:ir.model.fields,field_description:stock.field_stock_move__quantity
 #: model:ir.model.fields,field_description:stock.field_stock_move_line__quantity
 #: model:ir.model.fields,field_description:stock.field_stock_quant__quantity
@@ -7804,13 +7872,6 @@ msgid "Sequence picking"
 msgstr "拣货单号"
 
 #. module: stock
-#. odoo-python
-#: code:addons/stock/models/stock_picking.py:0
-#, python-format
-msgid "Sequences %s already exist."
-msgstr "序列 %s 已存在。"
-
-#. module: stock
 #: model:ir.model.fields,field_description:stock.field_stock_move__lot_ids
 msgid "Serial Numbers"
 msgstr "序列号"
@@ -8003,6 +8064,7 @@ msgstr "显示清除Qty按钮"
 
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_stock_move__show_operations
+#: model:ir.model.fields,field_description:stock.field_stock_picking__show_operations
 #: model:ir.model.fields,field_description:stock.field_stock_picking_type__show_operations
 msgid "Show Detailed Operations"
 msgstr "显示作业详情"
@@ -8029,11 +8091,6 @@ msgstr "显示批次文本"
 #: model:ir.model.fields,field_description:stock.field_product_template__show_on_hand_qty_status_button
 msgid "Show On Hand Qty Status Button"
 msgstr "在状态按钮显示在手数量"
-
-#. module: stock
-#: model:ir.model.fields,field_description:stock.field_stock_picking__show_operations
-msgid "Show Operations"
-msgstr "显示作业"
 
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_stock_picking_type__show_picking_type
@@ -8164,6 +8221,7 @@ msgstr "源单据"
 #. odoo-python
 #: code:addons/stock/models/stock_rule.py:0
 #: model:ir.model.fields,field_description:stock.field_stock_move__location_id
+#: model:ir.model.fields,field_description:stock.field_stock_move_line__picking_location_id
 #: model:ir.model.fields,field_description:stock.field_stock_picking__location_id
 #: model:ir.model.fields,field_description:stock.field_stock_rule__location_src_id
 #: model:ir.model.fields,field_description:stock.field_stock_scrap__location_id
@@ -8477,6 +8535,11 @@ msgid "Storage Locations"
 msgstr "储存位置"
 
 #. module: stock
+#: model_terms:ir.ui.view,arch_db:stock.view_stock_move_line_operation_tree
+msgid "Store To"
+msgstr "储存到"
+
+#. module: stock
 #: model:ir.model.fields,help:stock.field_res_config_settings__group_stock_multi_locations
 #: model_terms:ir.ui.view,arch_db:stock.res_config_settings_view_form
 msgid ""
@@ -8627,6 +8690,13 @@ msgstr "创建的调拨的预计日期将基于该提前期进行计算。"
 #: model:ir.model.fields,help:stock.field_stock_package_type__sequence
 msgid "The first in the sequence is the default one."
 msgstr "第一个序列中是默认的"
+
+#. module: stock
+#. odoo-python
+#: code:addons/stock/wizard/product_replenish.py:0
+#, python-format
+msgid "The following replenishment order have been generated"
+msgstr "已生成以下补货订单"
 
 #. module: stock
 #: model_terms:ir.ui.view,arch_db:stock.view_product_replenish
@@ -9028,6 +9098,17 @@ msgstr "此记录早已存在。"
 #, python-format
 msgid "This report cannot be used for done and not done %s at the same time"
 msgstr "报告不能同时存在已完成和未完成%s"
+
+#. module: stock
+#. odoo-python
+#: code:addons/stock/models/stock_picking.py:0
+#, python-format
+msgid ""
+"This sequence prefix is already being used by another operation type. It is "
+"recommended that you select a unique prefix to avoid issues and/or repeated "
+"reference values or assign the existing reference sequence to this operation"
+" type."
+msgstr "此序列前缀已被其他操作类型使用。建议您选择一个唯一的前缀，以避免出现问题和/或重复参考值，或将现有参考序列分配给此操作类型。"
 
 #. module: stock
 #: model:ir.model.fields,help:stock.field_product_product__property_stock_production
@@ -9541,8 +9622,8 @@ msgid "Update Quantities"
 msgstr "更新数量"
 
 #. module: stock
-#. odoo-python
 #. odoo-javascript
+#. odoo-python
 #: code:addons/stock/models/product.py:0
 #: code:addons/stock/static/src/stock_forecasted/forecasted_buttons.xml:0
 #: code:addons/stock/static/src/stock_forecasted/forecasted_buttons.xml:0
@@ -10075,11 +10156,6 @@ msgid "Write one lot/serial name per line, followed by the quantity."
 msgstr "每行写一个批次/序列名称，然后是数量。"
 
 #. module: stock
-#: model_terms:ir.ui.view,arch_db:stock.view_stock_move_line_operation_tree
-msgid "Write your SN/LN one by one or copy paste a list."
-msgstr "一个一个地写您的SN/LN或者复制粘贴一个列表。"
-
-#. module: stock
 #: model_terms:ir.ui.view,arch_db:stock.stock_quant_relocate_view_form
 msgid ""
 "You are about to move quantities in a package without moving the full package.\n"
@@ -10495,6 +10571,13 @@ msgstr "您需要激活存储位置，以便能够执行内部作业类型。"
 
 #. module: stock
 #. odoo-python
+#: code:addons/stock/wizard/product_replenish.py:0
+#, python-format
+msgid "You need to select a route to replenish your products"
+msgstr "您需要选择补货的路线"
+
+#. module: stock
+#. odoo-python
 #: code:addons/stock/models/stock_move.py:0
 #, python-format
 msgid "You need to set a Serial Number before generating more."
@@ -10555,9 +10638,9 @@ msgid ""
 "            Choose the quantity to buy or manufacture and launch orders in a click.\n"
 "            To save time in the future, set the rules as \"automated\"."
 msgstr ""
-"在odoo系统可以自动补货，目的是减少人工干预，降低人力成本。在这里您可以找到基于智能化的库存预测的补货建议。\n"
+"在 ERP 系统可以自动补货，目的是减少人工干预，降低人力成本。在这里您可以找到基于智能化的库存预测的补货建议。\n"
 "            然后您就选择要购买或生产的数量，然后单击启动订单。\n"
-"            为了节省将来的时间，请将规则设置为“automated自动补货”。"
+"            为了节省将来的时间，请将规则设置为“automated自动补货”."
 
 #. module: stock
 #: model_terms:res.company,lunch_notify_message:stock.res_company_1
@@ -10676,6 +10759,11 @@ msgstr "例如：物理位置"
 #: model_terms:ir.ui.view,arch_db:stock.view_picking_type_form
 msgid "e.g. Receptions"
 msgstr "例如:接待"
+
+#. module: stock
+#: model_terms:ir.ui.view,arch_db:stock.view_stock_move_line_operation_tree
+msgid "e.g. SN000001"
+msgstr "例如：SN000001"
 
 #. module: stock
 #: model_terms:ir.ui.view,arch_db:stock.view_location_form

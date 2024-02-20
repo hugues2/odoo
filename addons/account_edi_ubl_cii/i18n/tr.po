@@ -8,14 +8,15 @@
 # Ertuğrul Güreş <ertugrulg@projetgrup.com>, 2023
 # Levent Karakaş <levent@mektup.at>, 2023
 # abc Def <hdogan1974@gmail.com>, 2023
+# sinem cil, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 17.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-26 21:55+0000\n"
+"POT-Creation-Date: 2024-01-05 12:31+0000\n"
 "PO-Revision-Date: 2023-10-26 23:09+0000\n"
-"Last-Translator: abc Def <hdogan1974@gmail.com>, 2023\n"
+"Last-Translator: sinem cil, 2024\n"
 "Language-Team: Turkish (https://app.transifex.com/odoo/teams/41243/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -627,6 +628,7 @@ msgid "Each invoice line should have a product or a label."
 msgstr ""
 
 #. module: account_edi_ubl_cii
+#. odoo-python
 #: code:addons/account_edi_ubl_cii/models/account_edi_common.py:0
 #, python-format
 msgid "Each invoice line should have at least one tax."
@@ -730,39 +732,13 @@ msgstr ""
 msgid ""
 "No gross price, net price nor line subtotal amount found for line in xml"
 msgstr ""
+"xml'de satır için brüt fiyat, net fiyat veya satır alt toplam tutarı "
+"bulunamadı"
 
 #. module: account_edi_ubl_cii
 #: model_terms:ir.ui.view,arch_db:account_edi_ubl_cii.account_invoice_pdfa_3_facturx_metadata
 msgid "Odoo"
 msgstr "Odoo"
-
-#. module: account_edi_ubl_cii
-#. odoo-python
-#: code:addons/account_edi_ubl_cii/models/account_edi_common.py:0
-#, python-format
-msgid "Output VAT, reduced rate, low"
-msgstr ""
-
-#. module: account_edi_ubl_cii
-#. odoo-python
-#: code:addons/account_edi_ubl_cii/models/account_edi_common.py:0
-#, python-format
-msgid "Output VAT, reduced rate, middle"
-msgstr ""
-
-#. module: account_edi_ubl_cii
-#. odoo-python
-#: code:addons/account_edi_ubl_cii/models/account_edi_common.py:0
-#, python-format
-msgid "Output VAT, reduced rate, raw fish"
-msgstr ""
-
-#. module: account_edi_ubl_cii
-#. odoo-python
-#: code:addons/account_edi_ubl_cii/models/account_edi_common.py:0
-#, python-format
-msgid "Output VAT, regular rate"
-msgstr ""
 
 #. module: account_edi_ubl_cii
 #: model:ir.model.fields,field_description:account_edi_ubl_cii.field_res_partner__peppol_endpoint
@@ -824,6 +800,13 @@ msgstr ""
 
 #. module: account_edi_ubl_cii
 #. odoo-python
+#: code:addons/account_edi_ubl_cii/models/account_edi_xml_ubl_bis3.py:0
+#, python-format
+msgid "The VAT of the %s should be prefixed with its country code."
+msgstr ""
+
+#. module: account_edi_ubl_cii
+#. odoo-python
 #: code:addons/account_edi_ubl_cii/models/account_edi_xml_cii_facturx.py:0
 #: code:addons/account_edi_ubl_cii/models/account_edi_xml_ubl_20.py:0
 #, python-format
@@ -861,6 +844,8 @@ msgid ""
 "The invoice contains line(s) with a negative unit price, which is not "
 "allowed. You might need to set a negative quantity instead."
 msgstr ""
+"Fatura, izin verilmeyen negatif birim fiyatlı satır(lar) içeriyor. Bunun "
+"yerine negatif bir miktar ayarlamanız gerekebilir."
 
 #. module: account_edi_ubl_cii
 #. odoo-python

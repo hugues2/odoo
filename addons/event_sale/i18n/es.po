@@ -4,7 +4,7 @@
 # 
 # Translators:
 # Wil Odoo, 2023
-# Larissa Manderfeld, 2023
+# Larissa Manderfeld, 2024
 # 
 msgid ""
 msgstr ""
@@ -12,7 +12,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-26 21:55+0000\n"
 "PO-Revision-Date: 2023-10-26 23:09+0000\n"
-"Last-Translator: Larissa Manderfeld, 2023\n"
+"Last-Translator: Larissa Manderfeld, 2024\n"
 "Language-Team: Spanish (https://app.transifex.com/odoo/teams/41243/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -422,7 +422,7 @@ msgstr "Eventos pasados"
 #. module: event_sale
 #: model:ir.model.fields,field_description:event_sale.field_event_sale_report__sale_status
 msgid "Payment Status"
-msgstr "Estado de Pago"
+msgstr "Estado de pago"
 
 #. module: event_sale
 #: model_terms:ir.ui.view,arch_db:event_sale.event_sale_report_view_search
@@ -585,14 +585,14 @@ msgstr "Final de las ventas"
 #: model:ir.model.fields,field_description:event_sale.field_registration_editor__sale_order_id
 #: model:ir.model.fields.selection,name:event_sale.selection__event_sale_report__sale_order_state__sale
 msgid "Sales Order"
-msgstr "Pedido de venta"
+msgstr "Orden de venta"
 
 #. module: event_sale
 #: model:ir.model,name:event_sale.model_sale_order_line
 #: model:ir.model.fields,field_description:event_sale.field_event_registration__sale_order_line_id
 #: model:ir.model.fields,field_description:event_sale.field_registration_editor_line__sale_order_line_id
 msgid "Sales Order Line"
-msgstr "Línea de pedido de venta"
+msgstr "Línea de orden de venta"
 
 #. module: event_sale
 #: model_terms:ir.ui.view,arch_db:event_sale.event_event_ticket_view_tree_from_event

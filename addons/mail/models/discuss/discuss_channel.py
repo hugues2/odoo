@@ -2,6 +2,7 @@
 
 import base64
 import logging
+from babel.lists import format_list
 from collections import defaultdict
 from hashlib import sha512
 from secrets import choice
@@ -12,7 +13,7 @@ from odoo.addons.base.models.avatar_mixin import get_hsl_from_seed
 from odoo.exceptions import UserError, ValidationError
 from odoo.osv import expression
 from odoo.tools import html_escape, get_lang
-from odoo.tools.misc import DEFAULT_SERVER_DATETIME_FORMAT
+from odoo.tools.misc import babel_locale_parse, DEFAULT_SERVER_DATETIME_FORMAT
 
 _logger = logging.getLogger(__name__)
 
@@ -483,21 +484,19 @@ class Channel(models.Model):
         # notify only user input (comment or incoming / outgoing emails)
         if message_type not in ('comment', 'email', 'email_outgoing'):
             return []
-        # notify only mailing lists or if mentioning recipients
-        if not pids:
-            return []
-
-        email_from = tools.email_normalize(msg_vals.get('email_from') or message.email_from)
-        author_id = msg_vals.get('author_id') or message.author_id.id
 
         recipients_data = []
         if pids:
+            email_from = tools.email_normalize(msg_vals.get('email_from') or message.email_from)
+            author_id = msg_vals.get('author_id') or message.author_id.id
             self.env['res.partner'].flush_model(['active', 'email', 'partner_share'])
             self.env['res.users'].flush_model(['notification_type', 'partner_id'])
             sql_query = """
                 SELECT DISTINCT ON (partner.id) partner.id,
+                       partner.lang,
                        partner.partner_share,
-                       users.notification_type
+                       COALESCE(users.notification_type, 'email') as notif,
+                       COALESCE(users.share, FALSE) as ushare
                   FROM res_partner partner
              LEFT JOIN res_users users on partner.id = users.partner_id
                  WHERE partner.active IS TRUE
@@ -507,16 +506,42 @@ class Channel(models.Model):
                 sql_query,
                 (email_from or '', list(pids), [author_id] if author_id else [], )
             )
-            for partner_id, partner_share, notif in self._cr.fetchall():
+            for partner_id, lang, partner_share, notif, ushare in self._cr.fetchall():
                 # ocn_client: will add partners to recipient recipient_data. more ocn notifications. We neeed to filter them maybe
                 recipients_data.append({
-                    'id': partner_id,
-                    'share': partner_share,
                     'active': True,
-                    'notif': notif or 'email',
-                    'type': 'user' if not partner_share and notif else 'customer',
                     'groups': [],
+                    'id': partner_id,
+                    'is_follower': False,
+                    'lang': lang,
+                    'notif': notif,
+                    'share': partner_share,
+                    'type': 'user' if not partner_share and notif else 'customer',
+                    'uid': False,
+                    'ushare': ushare,
                 })
+
+        if self.is_chat or self.channel_type == "group":
+            already_in_ids = [r['id'] for r in recipients_data]
+            recipients_data += [
+                {
+                    'active': partner.active,
+                    'groups': [],
+                    'id': partner.id,
+                    'is_follower': False,
+                    'lang': partner.lang,
+                    'notif': 'web_push',
+                    'share': partner.partner_share,
+                    'type': 'customer',
+                    'uid': False,
+                    'ushare': False,
+                } for partner in self.sudo().channel_member_ids.filtered(
+                    lambda member: (
+                        not member.mute_until_dt and
+                        member.partner_id.id not in already_in_ids
+                    )
+                ).partner_id
+            ]
 
         return recipients_data
 
@@ -549,8 +574,6 @@ class Channel(models.Model):
         ]
         # sudo: bus.bus - sending on safe channel (discuss.channel)
         self.env["bus.bus"].sudo()._sendmany(bus_notifications)
-        if self.is_chat or self.channel_type == "group":
-            self._notify_thread_by_web_push(message, rdata, msg_vals, **kwargs)
         return rdata
 
     def _message_receive_bounce(self, email, partner):
@@ -1207,22 +1230,41 @@ class Channel(models.Model):
         })
 
     def execute_command_help(self, **kwargs):
-        partner = self.env.user.partner_id
         if self.channel_type == 'channel':
-            msg = _("You are in channel <b>#%s</b>.", html_escape(self.name))
+            msg = html_escape(_("You are in channel %(bold_start)s#%(channel_name)s%(bold_end)s.")) % {
+                "bold_start": Markup("<b>"),
+                "bold_end": Markup("</b>"),
+                "channel_name": self.name,
+            }
         else:
             all_channel_members = self.env['discuss.channel.member'].with_context(active_test=False)
-            channel_members = all_channel_members.search([('partner_id', '!=', partner.id), ('channel_id', '=', self.id)])
-            msg = _("You are in a private conversation with <b>@%s</b>.", _(" @").join(html_escape(member.partner_id.name or member.guest_id.name) for member in channel_members) if channel_members else _("Anonymous"))
+            channel_members = all_channel_members.search([("is_self", "=", False), ("channel_id", "=", self.id)], order='id asc')
+            if channel_members:
+                member_names = Markup(
+                    format_list(
+                        [f"<b>@%(member_{member.id})s</b>" for member in channel_members],
+                        locale=babel_locale_parse(get_lang(self.env).code),
+                    )
+                ) % {
+                    f"member_{member.id}": member.partner_id.name or member.guest_id.name for member in channel_members
+                }
+                msg = html_escape(_("You are in a private conversation with %(member_names)s.")) % {
+                    "member_names": member_names,
+                }
+            else:
+                msg = _("You are alone in a private conversation.")
         msg += self._execute_command_help_message_extra()
-
-        self._send_transient_message(partner, msg)
+        self._send_transient_message(self.env.user.partner_id, msg)
 
     def _execute_command_help_message_extra(self):
-        msg = _("""<br><br>
-            Type <b>@username</b> to mention someone, and grab their attention.<br>
-            Type <b>#channel</b> to mention a channel.<br>
-            Type <b>/command</b> to execute a command.<br>""")
+        msg = html_escape(
+            _(
+                "%(new_line)s"
+                "%(new_line)sType %(bold_start)s@username%(bold_end)s to mention someone, and grab their attention."
+                "%(new_line)sType %(bold_start)s#channel%(bold_end)s to mention a channel."
+                "%(new_line)sType %(bold_start)s/command%(bold_end)s to execute a command."
+            )
+        ) % {"bold_start": Markup("<b>"), "bold_end": Markup("</b>"), "new_line": Markup("<br>")}
         return msg
 
     def execute_command_leave(self, **kwargs):
@@ -1244,28 +1286,6 @@ class Channel(models.Model):
             msg = _("Users in this channel: %(members)s %(dots)s and you.", members=", ".join(members), dots=dots)
 
         self._send_transient_message(self.env.user.partner_id, msg)
-
-    def _notify_thread_by_web_push(self, message, recipients_data, msg_vals=False, **kwargs):
-        """ Specifically handle channel members. """
-        chat_channels = self.filtered(lambda channel: channel.channel_type == 'chat')
-        if chat_channels:
-            # modify rdata only for calling super. Do not deep copy as we only
-            # add data into list but we do not modify item content
-            channel_rdata = recipients_data.copy()
-            channel_rdata += [
-                {'id': partner.id,
-                 'share': partner.partner_share,
-                 'active': partner.active,
-                 'notif': 'web_push',
-                 'type': 'customer',
-                 'groups': [],
-                 }
-                for partner in chat_channels.channel_member_ids.filtered(lambda member: not member.mute_until_dt).partner_id
-            ]
-        else:
-            channel_rdata = recipients_data
-
-        return super()._notify_thread_by_web_push(message, channel_rdata, msg_vals=msg_vals, **kwargs)
 
     def _notify_by_web_push_prepare_payload(self, message, msg_vals=False):
         payload = super()._notify_by_web_push_prepare_payload(message, msg_vals=msg_vals)

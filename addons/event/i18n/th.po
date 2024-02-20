@@ -4,15 +4,15 @@
 # 
 # Translators:
 # Wil Odoo, 2023
-# Rasareeyar Lappiam, 2023
+# Rasareeyar Lappiam, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 17.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-26 21:55+0000\n"
+"POT-Creation-Date: 2024-01-05 12:31+0000\n"
 "PO-Revision-Date: 2023-10-26 23:09+0000\n"
-"Last-Translator: Rasareeyar Lappiam, 2023\n"
+"Last-Translator: Rasareeyar Lappiam, 2024\n"
 "Language-Team: Thai (https://app.transifex.com/odoo/teams/41243/th/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1291,7 +1291,7 @@ msgid ""
 "                    </div>\n"
 "                    <t t-if=\"object.barcode\"> \n"
 "                        <div style=\"margin-bottom: 5px;\">\n"
-"                            <img t-attf-src=\"/report/barcode/QR/{{object.barcode}}?&amp;width=100&amp;height=100&amp;quiet=0\" alt=\"QR Code\">\n"
+"                            <img t-attf-src=\"/report/barcode/QR/{{object.barcode}}?&amp;width=100&amp;height=100&amp;quiet=0\" width=\"100\" height=\"100\" alt=\"QR Code\">\n"
 "                        </div>\n"
 "                    </t>\n"
 "                    <t t-if=\"not object.company_id.uses_default_logo\">\n"
@@ -1527,7 +1527,7 @@ msgstr ""
 "                    </div>\n"
 "                    <t t-if=\"object.barcode\"> \n"
 "                        <div style=\"margin-bottom: 5px;\">\n"
-"                            <img t-attf-src=\"/report/barcode/QR/{{object.barcode}}?&amp;width=100&amp;height=100&amp;quiet=0\" alt=\"QR Code\">\n"
+"                            <img t-attf-src=\"/report/barcode/QR/{{object.barcode}}?&amp;width=100&amp;height=100&amp;quiet=0\" width=\"100\" height=\"100\" alt=\"QR Code\">\n"
 "                        </div>\n"
 "                    </t>\n"
 "                    <t t-if=\"not object.company_id.uses_default_logo\">\n"
@@ -1540,31 +1540,31 @@ msgstr ""
 "            </table>\n"
 "        </td>\n"
 "    </tr>\n"
-"    <!-- คำอธิบายกิจกรรม -->\n"
+"    <!-- รายละเอียดกิจกรรม -->\n"
 "    <tr>\n"
 "        <td align=\"center\" style=\"min-width: 590px;\">\n"
 "            <table width=\"590\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"min-width: 590px; background-color: white; padding: 0px 8px 0px 8px; border-collapse:separate;\">\n"
 "                <tr><td valign=\"top\" style=\"font-size: 14px;\">\n"
 "                    <div>\n"
-"                        เรียน <t t-out=\"object.name or 'Guest'\"></t><br>\n"
+"                        เรียน <t t-out=\"object.name or 'Guest'\"></t>,<br>\n"
 "                        เรายินดีที่จะยืนยันการลงทะเบียนของคุณเพื่อเข้าร่วมงาน\n"
 "                        <t t-if=\"is_online\">\n"
-"                            <a t-att-href=\"object.event_id.website_url\" style=\"color:#875A7B;text-decoration:none;\" t-out=\"object.event_id.name or ''\">เปิดเผยคอลเลกชันของ OpenWood ออนไลน์</a>\n"
+"                            <a t-att-href=\"object.event_id.website_url\" style=\"color:#875A7B;text-decoration:none;\" t-out=\"object.event_id.name or ''\">เปิดเผยคอลเลกชัน OpenWood ออนไลน์</a>\n"
 "                        </t>\n"
 "                        <t t-else=\"\">\n"
-"                            <strong t-out=\"object.event_id.name or ''\">เปิดเผยคอลเลกชันของ OpenWood ออนไลน์</strong>\n"
-"                        </t>.\n"
+"                            <strong t-out=\"object.event_id.name or ''\">เปิดเผยคอลเลกชัน OpenWood ออนไลน์</strong>\n"
+"                        </t>\n"
 "                        <t t-if=\"object.partner_id and object.partner_id.name and object.partner_id.name != object.name\">\n"
-"                            ตั๋วนี้ลงทะเบียนโดย<t t-out=\"object.partner_id.name\"></t>\n"
+"                            ตั๋วนี้ได้รับการลงทะเบียนโดย<t t-out=\"object.partner_id.name\"></t>\n"
 "                        </t>\n"
 "                    </div>\n"
 "                    <div t-if=\"is_sale\">\n"
 "                        <br>\n"
-"                        คำสั่งซื้อตั๋วนี้มีเลขที่อ้างอิง<t t-out=\"object.sale_order_id.name\"></t>\n"
-"                        และถูกกำหนดไว้เมื่อ <t t-out=\"object.sale_order_id.date_order.date()\"></t>\n"
+"                        คำสั่งซื้อตั๋วนี้มีการอ้างอิง <t t-out=\"object.sale_order_id.name\"></t>\n"
+"                        และถูกสำรองไว้เมื่อ <t t-out=\"object.sale_order_id.date_order.date()\"></t>\n"
 "                        <t t-if=\"object.sale_order_line_id.price_unit\"> เป็นจำนวน\n"
 "                            <t t-out=\"object.sale_order_line_id.price_unit\" t-options=\"{'widget': 'monetary', 'display_currency': object.sale_order_line_id.currency_id}\"></t>\n"
-"                        </t>.\n"
+"                        </t>\n"
 "                    </div>\n"
 "                    <div>\n"
 "                        <br>\n"
@@ -1577,14 +1577,14 @@ msgstr ""
 "                        <br><br>\n"
 "                    </div>\n"
 "                    <div>\n"
-"                        แล้วพบกันเร็วๆนี้<br>\n"
+"                        เราหวังว่าจะได้พบคุณเร็วๆนี้!<br>\n"
 "                        <span style=\"color: #454748;\">\n"
 "                        -- <br>\n"
 "                        <t t-if=\"event_organizer\">\n"
 "                            <t t-out=\"event_organizer.name\">YourCompany</t>\n"
 "                        </t>\n"
 "                        <t t-else=\"\">\n"
-"                            ทีมงาน <t t-out=\"object.event_id.name or ''\">เปิดเผยคอลเลกชันของ OpenWood ออนไลน์</t>\n"
+"                            ทีมงาน <t t-out=\"object.event_id.name or ''\">เปิดเผยคอลเลกชัน OpenWood ออนไลน์</t>\n"
 "                        </t>\n"
 "                        </span>\n"
 "                    </div>\n"
@@ -1606,9 +1606,9 @@ msgstr ""
 "                                <img src=\"/web_editor/font_to_img/61555/rgb(81,81,102)/34\" style=\"padding:4px;max-width:inherit;\" height=\"34\" alt=\"\">\n"
 "                            </td>\n"
 "                            <td style=\"padding: 0px 10px 0px 10px;width:50%;line-height:20px;vertical-align:top;\">\n"
-"                                <div><t t-out=\"object.event_id.name or ''\">เปิดเผยคอลเลกชันของ OpenWood ออนไลน์</t></div>\n"
-"                                <div><strong>จาก</strong> <t t-out=\"object.event_id.date_begin_located or ''\">วันที่ 4 พฤษภาคม 2564 07:00:00 น</t></div>\n"
-"                                <div><strong>ถึง</strong> <t t-out=\"object.event_id.date_end_located or ''\">วันที่ 6 พฤษภาคม 2564 เวลา 17:00:00 น</t></div>\n"
+"                                <div><t t-out=\"object.event_id.name or ''\">เปิดเผยคอลเลกชัน OpenWood ออนไลน์</t></div>\n"
+"                                <div><strong>จาก</strong> <t t-out=\"object.event_id.date_begin_located or ''\">วันที่ 4 พฤษภาคม 2564 07:00:00 น.</t></div>\n"
+"                                <div><strong>ถึง</strong> <t t-out=\"object.event_id.date_end_located or ''\">วันที่ 6 พฤษภาคม 2564 เวลา 17:00:00 น.</t></div>\n"
 "                                <div style=\"font-size:12px;color:#9e9e9e\"><i>(<t t-out=\"object.event_id.date_tz or ''\">ยุโรป/บรัสเซลส์</t>)</i></div>\n"
 "                            </td>\n"
 "                            <td style=\"vertical-align:top;\">\n"
@@ -1663,12 +1663,12 @@ msgstr ""
 "                    <!-- ติดต่อผู้จัดงาน -->\n"
 "                    <t t-if=\"event_organizer\">\n"
 "                        <div>\n"
-"                            <span style=\"font-weight:300;margin:10px 0px\">มีคำถามเกี่ยวกับงานนี้?</span>\n"
-"                            <div>โปรดติดต่อผู้จัดงาน:</div>\n"
+"                            <span style=\"font-weight:300;margin:10px 0px\">มีคำถามเกี่ยวกับกิจกรรมนี้?</span>\n"
+"                            <div>กรุณาติดต่อผู้จัดงาน:</div>\n"
 "                            <ul>\n"
 "                                <li><t t-out=\"event_organizer.name or ''\">YourCompany</t></li>\n"
 "                                <t t-if=\"event_organizer.email\">\n"
-"                                    <li>เมล: <a t-attf-href=\"mailto:{{ event_organizer.email }}\" style=\"text-decoration:none;color:#875A7B;\" t-out=\"event_organizer.email or ''\">info@yourcompany.com</a></li>\n"
+"                                    <li>อีเมล: <a t-attf-href=\"mailto:{{ event_organizer.email }}\" style=\"text-decoration:none;color:#875A7B;\" t-out=\"event_organizer.email or ''\">info@yourcompany.com</a></li>\n"
 "                                </t>\n"
 "                                <t t-if=\"event_organizer.phone\">\n"
 "                                    <li>โทรศัพท์: <t t-out=\"event_organizer.phone\">+1 650-123-4567</t></li>\n"
@@ -1688,7 +1688,7 @@ msgstr ""
 "                    <!-- การตลาด PWA -->\n"
 "                    <t t-if=\"is_online\">\n"
 "                        <div>\n"
-"                            <strong>รับประสบการณ์การใช้งานบนมือถือที่ดีที่สุด</strong>\n"
+"                            <strong>สัมผัสประสบการณ์บนมือถือที่ดีที่สุด</strong>\n"
 "                            <a href=\"/event\">ติดตั้งแอปมือถือของเรา</a>\n"
 "                        </div>\n"
 "                    </t>\n"
@@ -3393,7 +3393,7 @@ msgstr "ที่นั้งสูงสุด"
 #: model:ir.model.fields,field_description:event.field_event_registration__utm_medium_id
 #: model_terms:ir.ui.view,arch_db:event.view_registration_search
 msgid "Medium"
-msgstr "สื่อกลาง"
+msgstr "วิธีที่เข้ามา"
 
 #. module: event
 #: model:ir.model.fields,field_description:event.field_event_event__message_has_error
@@ -3616,7 +3616,7 @@ msgstr ""
 #. module: event
 #: model:event.event,name:event.event_7
 msgid "OpenWood Collection Online Reveal"
-msgstr "OpenWood Collection Online Reveal"
+msgstr "เปิดเผยคอลเลกชัน OpenWood ออนไลน์"
 
 #. module: event
 #: model:res.partner,website_short_description:event.res_partner_event_2
@@ -3739,7 +3739,7 @@ msgstr "โปรแกรม"
 #. module: event
 #: model_terms:event.event,description:event.event_2
 msgid "Project management, Human resources, Contract management."
-msgstr "การจัดการโปรเจกต์ ทรัพยากรบุคคล การจัดการสัญญา"
+msgstr "การจัดการโปรเจ็กต์ ทรัพยากรบุคคล การจัดการสัญญา"
 
 #. module: event
 #: model:ir.model.fields,field_description:event.field_event_registration__registration_properties
@@ -3804,8 +3804,8 @@ msgid "Registered"
 msgstr "ลงทะเบียนแล้ว"
 
 #. module: event
-#. odoo-python
 #. odoo-javascript
+#. odoo-python
 #: code:addons/event/models/event_ticket.py:0
 #: code:addons/event/models/event_ticket.py:0
 #: code:addons/event/static/src/client_action/event_registration_summary_dialog.xml:0
@@ -4426,8 +4426,8 @@ msgid "This ticket is not for an ongoing event"
 msgstr "ทิกเก็ตนี้ไม่ใช่สำหรับอีเวนต์ต่อเนื่อง"
 
 #. module: event
-#. odoo-python
 #. odoo-javascript
+#. odoo-python
 #: code:addons/event/controllers/main.py:0
 #: code:addons/event/static/src/client_action/event_registration_summary_dialog.xml:0
 #: model_terms:ir.ui.view,arch_db:event.event_event_ticket_view_form_from_event

@@ -30,20 +30,20 @@
 # Martin Trigaux, 2023
 # Pekko Tuomisto <pekko.tuomisto@web-veistamo.fi>, 2023
 # Mikko Virtanen <mikko.virtanen2013@gmail.com>, 2023
-# Tuomo Aura <tuomo.aura@web-veistamo.fi>, 2023
-# Jarmo Kortetjärvi <jarmo.kortetjarvi@gmail.com>, 2023
 # Tuomas Lyyra <tuomas.lyyra@legenda.fi>, 2023
 # Antti Oksman <antti.oksman@web-veistamo.fi>, 2023
 # Larissa Manderfeld, 2023
-# Ossi Mantylahti <ossi.mantylahti@obs-solutions.fi>, 2023
+# Tuomo Aura <tuomo.aura@web-veistamo.fi>, 2024
+# Jarmo Kortetjärvi <jarmo.kortetjarvi@gmail.com>, 2024
+# Ossi Mantylahti <ossi.mantylahti@obs-solutions.fi>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 17.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-26 21:55+0000\n"
+"POT-Creation-Date: 2024-01-29 10:45+0000\n"
 "PO-Revision-Date: 2023-10-26 23:09+0000\n"
-"Last-Translator: Ossi Mantylahti <ossi.mantylahti@obs-solutions.fi>, 2023\n"
+"Last-Translator: Ossi Mantylahti <ossi.mantylahti@obs-solutions.fi>, 2024\n"
 "Language-Team: Finnish (https://app.transifex.com/odoo/teams/41243/fi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -505,23 +505,23 @@ msgstr ""
 
 #. module: sale
 #: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_content
-msgid "<i class=\"fa fa-fw fa-check\"/> <b>Authorized</b>"
-msgstr "<i class=\"fa fa-fw fa-check\"/> <b>Valtuutettu</b>"
+msgid "<i class=\"fa fa-fw fa-check\"/> Authorized"
+msgstr ""
 
 #. module: sale
 #: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_content
-msgid "<i class=\"fa fa-fw fa-check\"/> <b>Paid</b>"
-msgstr "<i class=\"fa fa-fw fa-check\"/><b>Maksettu</b>"
-
-#. module: sale
-#: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_content
-msgid "<i class=\"fa fa-fw fa-clock-o\"/> <b>Waiting Payment</b>"
-msgstr "<i class=\"fa fa-fw fa-clock-o\"/><b>Odottaa maksua</b>"
+msgid "<i class=\"fa fa-fw fa-check\"/> Paid"
+msgstr ""
 
 #. module: sale
 #: model_terms:ir.ui.view,arch_db:sale.portal_my_quotations
 msgid "<i class=\"fa fa-fw fa-clock-o\"/> Expired"
 msgstr "<i class=\"fa fa-fw fa-clock-o\"/> Vanhentunut"
+
+#. module: sale
+#: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_content
+msgid "<i class=\"fa fa-fw fa-clock-o\"/> Waiting Payment"
+msgstr ""
 
 #. module: sale
 #: model_terms:ir.ui.view,arch_db:sale.utm_campaign_view_kanban
@@ -570,11 +570,6 @@ msgid "<small><b class=\"text-muted\">Your advantage</b></small>"
 msgstr "<small><b class=\"text-muted\">Etusi</b></small>"
 
 #. module: sale
-#: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_template
-msgid "<small><b>This offer expires on</b></small>"
-msgstr ""
-
-#. module: sale
 #: model_terms:ir.ui.view,arch_db:sale.portal_my_orders
 msgid ""
 "<span class=\"d-none d-md-inline\">Sales Order #</span>\n"
@@ -587,6 +582,11 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:sale.crm_team_salesteams_view_form
 msgid "<span class=\"flex-grow-1\">/ Month</span>"
 msgstr "<span class=\"flex-grow-1\">/ kuukausi</span>"
+
+#. module: sale
+#: model_terms:ir.ui.view,arch_db:sale.view_order_form
+msgid "<span class=\"mx-3\" invisible=\"not require_payment\">of</span>"
+msgstr ""
 
 #. module: sale
 #: model_terms:ir.ui.view,arch_db:sale.product_form_view_sale_order_button
@@ -647,7 +647,7 @@ msgstr "<span>Verot</span>"
 
 #. module: sale
 #: model_terms:ir.ui.view,arch_db:sale.product_document_kanban
-msgid "<span>Visible at</span>"
+msgid "<span>Visibility</span>"
 msgstr ""
 
 #. module: sale
@@ -847,6 +847,11 @@ msgid "Activity Exception Decoration"
 msgstr "Toimenpiteen poikkeuksen tyyli"
 
 #. module: sale
+#: model:ir.ui.menu,name:sale.sale_menu_config_activity_plan
+msgid "Activity Plans"
+msgstr "Toimintasuunnitelmat"
+
+#. module: sale
 #: model:ir.model.fields,field_description:sale.field_sale_order__activity_state
 msgid "Activity State"
 msgstr "Toimenpiteen tila"
@@ -861,6 +866,11 @@ msgstr "Toimenpiteen ikoni"
 #: model:ir.ui.menu,name:sale.sale_menu_config_activity_type
 msgid "Activity Types"
 msgstr "Toimenpiteiden tyypit"
+
+#. module: sale
+#: model_terms:ir.actions.act_window,help:sale.mail_activity_plan_action_sale_order
+msgid "Add a new plan"
+msgstr "Lisää uusi suunnitelma"
 
 #. module: sale
 #: model_terms:ir.ui.view,arch_db:sale.view_order_form
@@ -1932,6 +1942,13 @@ msgstr ""
 #. odoo-python
 #: code:addons/sale/wizard/sale_make_invoice_advance.py:0
 #, python-format
+msgid "Down payment invoice"
+msgstr ""
+
+#. module: sale
+#. odoo-python
+#: code:addons/sale/wizard/sale_make_invoice_advance.py:0
+#, python-format
 msgid "Down payment of %s%%"
 msgstr "Ennakkomaksu: %s%%"
 
@@ -2394,7 +2411,6 @@ msgstr "Laskutettu tässä kuussa"
 #: model:ir.actions.act_window,name:sale.action_invoice_salesteams
 #: model:ir.model.fields,field_description:sale.field_sale_order__invoice_ids
 #: model_terms:ir.ui.view,arch_db:sale.crm_team_view_kanban_dashboard
-#: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_content
 #: model_terms:ir.ui.view,arch_db:sale.view_order_form
 msgid "Invoices"
 msgstr "Laskut"
@@ -2515,6 +2531,11 @@ msgstr "Päiväkirjatapahtuma"
 #: model:ir.model.fields,field_description:sale.field_sale_order_cancel__lang
 msgid "Language"
 msgstr "Kieli"
+
+#. module: sale
+#: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_content
+msgid "Last Invoices"
+msgstr ""
 
 #. module: sale
 #: model:ir.model.fields,field_description:sale.field_sale_advance_payment_inv__write_uid
@@ -3041,11 +3062,6 @@ msgid "Order Date: Last 365 Days"
 msgstr "Myyty viimeisen 365 päivän aikana"
 
 #. module: sale
-#: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_content
-msgid "Order Detail"
-msgstr ""
-
-#. module: sale
 #: model:ir.model.fields,field_description:sale.field_sale_order__order_line
 #: model_terms:ir.ui.view,arch_db:sale.view_order_form
 msgid "Order Lines"
@@ -3256,7 +3272,6 @@ msgstr "Portaalin osoite"
 
 #. module: sale
 #: model_terms:ir.ui.view,arch_db:sale.res_config_settings_view_form
-#: model_terms:ir.ui.view,arch_db:sale.view_order_form
 msgid "Prepayment amount"
 msgstr ""
 
@@ -3526,7 +3541,6 @@ msgstr "Tarjouksen päiväys"
 
 #. module: sale
 #: model_terms:ir.ui.view,arch_db:sale.report_saleorder_document
-#: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_content
 msgid "Quotation Date:"
 msgstr "Tarjous päivämäärä:"
 
@@ -3756,6 +3770,11 @@ msgstr "Myyntitilaus"
 #: model:ir.model.fields,field_description:sale.field_res_users__sale_order_count
 msgid "Sale Order Count"
 msgstr "Myyntitilausten lukumäärä"
+
+#. module: sale
+#: model:ir.actions.act_window,name:sale.mail_activity_plan_action_sale_order
+msgid "Sale Order Plans"
+msgstr ""
 
 #. module: sale
 #: model:ir.model.fields,field_description:sale.field_res_config_settings__group_warning_sale
@@ -4635,6 +4654,14 @@ msgstr ""
 #: model:ir.model.fields,help:sale.field_res_config_settings__prepayment_percent
 msgid "The percentage of the amount needed to be paid to confirm quotations."
 msgstr ""
+
+#. module: sale
+#. odoo-python
+#. odoo-python
+#: code:addons/sale/models/product_template.py:0
+#, python-format
+msgid "The product (%s) has incompatible values: %s"
+msgstr "Tuotteella (%s) on yhteensopimattomia arvoja: %s"
 
 #. module: sale
 #. odoo-python
